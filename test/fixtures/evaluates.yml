@@ -1,0 +1,11 @@
+one:
+  product_id: 1
+  user_id: 1
+  star: 1
+  content: MyText
+
+two:
+  product_id: 1
+  user_id: 1
+  star: 1
+  content: MyText

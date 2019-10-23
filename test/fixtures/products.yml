@@ -1,0 +1,17 @@
+one:
+  category_id: 1
+  name: MyString
+  image: MyString
+  price: 1.5
+  discount: 1.5
+  sold_many: false
+  description: MyText
+
+two:
+  category_id: 1
+  name: MyString
+  image: MyString
+  price: 1.5
+  discount: 1.5
+  sold_many: false
+  description: MyText
