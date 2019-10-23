@@ -1,0 +1,17 @@
+one:
+  payment_id: 1
+  status_id: 1
+  remember_digest: MyString
+  name: MyString
+  address: MyText
+  email: MyString
+  phone: MyString
+
+two:
+  payment_id: 1
+  status_id: 1
+  remember_digest: MyString
+  name: MyString
+  address: MyText
+  email: MyString
+  phone: MyString

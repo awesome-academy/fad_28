@@ -1,0 +1,11 @@
+one:
+  your_name: MyString
+  product_name: MyString
+  image: MyString
+  description: MyText
+
+two:
+  your_name: MyString
+  product_name: MyString
+  image: MyString
+  description: MyText

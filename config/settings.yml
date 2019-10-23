@@ -1,0 +1,14 @@
+# Numbers in model
+smallest:
+  of_price: 0
+  of_discount: 0
+  of_star: 0
+  of_quantity: 0
+biggest:
+  of_discount: 100
+  of_star: 6
+  of_quantity: 100
+size:
+  of_email: 255
+  of_name: 30
+  of_password: 6
