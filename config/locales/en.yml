@@ -1,1 +1,17 @@
 en:
+  not_support: is not support
+  base: FAD
+  layouts:
+    header:
+      home: home
+      product: product
+      share: share
+      signup: sign up
+      signin: sign in
+  home:
+    index:
+      fruit: fruit
+      vegetables: vegetables
+      natural: 100% natural
+      discount: Discount when ordering today
+      view: view now

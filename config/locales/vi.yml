@@ -1,0 +1,17 @@
+vi:
+  not_support: không hỗ trợ
+  base: FAD
+  layouts:
+    header:
+      home: trang chủ
+      product: sản phẩm
+      share: chia sẻ
+      signup: đăng ký
+      signin: đăng nhập
+  home:
+    index:
+      fruit: trái cây
+      vegetables: rau củ
+      natural: 100% tự nhiên
+      discount: Giảm giá khi đặt mua ngay hôm nay
+      view: xem ngay

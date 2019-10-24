@@ -1,1 +1,61 @@
 @import 'bootstrap';
+@import 'color';
+
+.alert {
+  width: 30%;
+  border-radius: 0;
+  margin-top: 76px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1000;
+}
+.navbar {
+  background: $white;
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  .navbar-collapse {
+    justify-content: center;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    color: $nav-link;
+    padding: 0 1rem !important;
+    font-weight: bold;
+  }
+  .nav-link:hover { color: $green; }
+}
+.bg-1 { background: image-url('slide-1.jpg'); }
+.bg-2 { background: image-url('slide-2.jpg'); }
+.bg-1, .bg-2 {
+  height: 650px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .content-slide {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .text {
+      color: $white;
+      i {
+        padding: 10px 15px;
+        background: $green;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      h1 { font-weight: bold; }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .navbar .nav-link {
+    padding: 10px !important;
+  }
+  .content-slide {
+    flex-direction: column;
+  }
+}
