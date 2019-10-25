@@ -15,3 +15,26 @@ en:
       natural: 100% natural
       discount: Discount when ordering today
       view: view now
+  users:
+    new:
+      page: Sign up
+      signup: Member Registration
+      submit: Create Account
+    create:
+      saved: Account registration successful
+    show:
+      not_found: User is not found
+      manager: The system manage
+      customer: Loyal customer
+      control: control
+      update: profile
+      password: password
+      feedback: feedback
+      order: order
+      share: share
+      email: Email
+      gender: Gender
+      phone: Phone
+      address: Address
+      male: male
+      female: female

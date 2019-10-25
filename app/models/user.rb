@@ -6,7 +6,11 @@ class User < ApplicationRecord
     format: {with: FORMAT_EMAIL}, length: {maximum: Settings.size.of_email}
   validates :name, presence: true, length: {maximum: Settings.size.of_name}
   validates :phone, numericality: true, allow_nil: true
-  has_secuse_password
+  has_secure_password
   validates :password, presence: true, allow_nil: true,
     length: {minimum: Settings.size.of_password}
+
+  enum role_id: {admin: 1, customer: 2}
+
+  before_save{email.downcase!}
 end

@@ -1,6 +1,11 @@
 @import 'bootstrap';
 @import 'color';
 
+body {
+  margin: 0;
+  padding: 0;
+  background: $bg;
+}
 .alert {
   width: 30%;
   border-radius: 0;
@@ -51,8 +56,39 @@
     }
   }
 }
+.div-form {
+  width: 50%;
+  padding: 2rem;
+  background: $white;
+  box-shadow: 5px 6px 7px 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+label { font-weight: bold; }
+.show-left {
+  img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  .img-fluid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h5 { line-height: 2; }
+}
+.nav-pills .nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+}
 @media only screen and (max-width: 576px) {
   .alert { width: 100%; }
   .navbar .nav-link { padding: 10px !important; }
   .content-slide { flex-direction: column; }
+  .div-form {
+    width: 100%;
+    padding: 1rem;
+  }
 }
