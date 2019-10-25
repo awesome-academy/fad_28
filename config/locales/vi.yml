@@ -43,6 +43,15 @@ vi:
       address: Địa chỉ
       male: nam
       female: nữ
+    show:
+      saved: Đăng ký tài khoản thành công
+      not_found: Không tìm thấy người dùng
+      control: bảng điều khiển
+      update: cập nhật hồ sơ
+      password: đổi mật khẩu
+      feedback: phản hồi của bạn
+      order: đơn đặt hàng
+      share: chia sẻ của bạn
   activerecord:
     attributes:
       user:
