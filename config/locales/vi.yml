@@ -73,14 +73,21 @@ vi:
   session:
     new:
       page: Đăng nhập
+<<<<<<< HEAD
+=======
+      login: Đăng nhập
+>>>>>>> Sign in
       email: Email
       password: Mật khẩu
       remember: Lưu tài khoản
       forgot: Quên mật khẩu?
       submit: Đăng nhập
+<<<<<<< HEAD
     create:
       invalid: Email hoặc mật khẩu của bạn không chính xác
       success: Đăng nhập thành công
     destroy:
       not_signed_in: Vui lòng đăng nhập
       signout: Đã đăng xuất
+=======
+>>>>>>> Sign in

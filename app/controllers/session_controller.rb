@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+<<<<<<< HEAD
   before_action :not_signin, only: [:new, :create]
   before_action :load_user, only: :create
   before_action :signed_in, only: :destroy
@@ -25,5 +26,15 @@ class SessionController < ApplicationController
     return if @user&.authenticate params[:session][:password]
     flash.now[:danger] = t ".invalid"
     render :new
+=======
+  def new; end
+
+  def create
+
+  end
+
+  def destroy
+
+>>>>>>> Sign in
   end
 end

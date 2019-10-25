@@ -1,7 +1,13 @@
 <% provide :page, t(".page") %>
+<<<<<<< HEAD
 <div class="div-form">
   <h1 class="text-center"><%= t ".page"%></h1><br>
   <%= form_for :session do |f| %>
+=======
+<div class="login">
+  <h1 class="text-center"><%= t ".login"%></h1><br>
+  <%= form_for :session, url: "signin_path" do |f| %>
+>>>>>>> Sign in
     <div class="form-group">
       <%= f.label t(".email") %>
       <%= f.text_field :email, class: "form-control form-control-lg" %>
@@ -13,7 +19,11 @@
     <div class="component">
       <div class="custom-control custom-checkbox">
         <%= f.check_box :remember, class: "custom-control-input" %>
+<<<<<<< HEAD
         <%= f.label :remember, t(".remember"), class: "custom-control-label" %>
+=======
+        <%= f.label t(".remember"), class: "custom-control-label" %>
+>>>>>>> Sign in
       </div>
       <div><%= link_to t(".forgot"), "#" %></div>
     </div>

@@ -1,4 +1,5 @@
 module SessionHelper
+<<<<<<< HEAD
   def signin user
     session[:user] = user.id
   end
@@ -42,4 +43,6 @@ module SessionHelper
     session.delete :user
     @current_user = nil
   end
+=======
+>>>>>>> Sign in
 end

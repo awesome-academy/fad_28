@@ -63,3 +63,12 @@ en:
       feedback: your feedback
       order: order bill
       share: your share
+  session:
+    new:
+      page: Login
+      login: Login
+      email: Email
+      password: Password
+      remember: Remember me
+      forgot: Forgot password?
+      submit: Sign in
