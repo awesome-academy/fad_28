@@ -41,8 +41,10 @@
           <%= link_to t(".share"), "#share", class: "nav-link", "data-toggle": "tab" %>
         </li>
       </ul>
+      <br>
       <div class="tab-content">
         <div class="tab-pane active" id="control">
+          <%= link_to t(".signout"), signout_path, class: "btn btn-danger btn-lg" %>
         </div>
         <div class="tab-pane fade" id="update">
         </div>
