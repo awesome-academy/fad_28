@@ -15,3 +15,48 @@ vi:
       natural: 100% tự nhiên
       discount: Giảm giá khi đặt mua ngay hôm nay
       view: xem ngay
+  users:
+    new:
+      page: Đăng ký
+      signup: Đăng Ký Thành Viên
+      name: Tên của bạn
+      email: Email để đăng nhập
+      password: Mật khẩu
+      confirm: Xác nhận mật khẩu
+      submit: Tạo tài khoản
+    create:
+      saved: Đăng ký tài khoản thành công
+    show:
+      not_found: Không tìm thấy người dùng
+      manager: Quản lý hệ thống
+      customer: Khách hàng thân thiết
+      control: điều khiển
+      update: hồ sơ
+      password: mật khẩu
+      feedback: phản hồi
+      order: đơn đặt hàng
+      share: chia sẻ
+      email: Email
+      gender: Giới tính
+      phone: Số điện thoại
+      address: Địa chỉ
+      male: nam
+      female: nữ
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        name: Tên
+        password: Mật khẩu
+        password_confirmation: Xác nhận mật khẩu
+        gender: Giới tính
+        address: Địa chỉ
+        phone: Số điện thoại
+        image: Ảnh đại diện
+    errors:
+      messages:
+        blank: không được để trống
+        invalid: không chính xác
+        too_long: quá dài
+        too_short: quá ngắn
+        confirmation: không đúng
