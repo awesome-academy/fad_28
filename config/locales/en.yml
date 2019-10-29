@@ -54,3 +54,29 @@ en:
     destroy:
       not_signed_in: Please login
       signout: Signed out
+  user_mailer:
+    reset_password:
+      reset: Reset Password
+      app: Foods and Drinks Store
+      hello: Hello,
+      message: You can reset password here
+  reset_password:
+    new:
+      page: Forgot password
+      submit: Confirm
+    create:
+      sent: Please check email to reset your password
+      not_found: Email is not found
+    edit:
+      page: Reset password
+      password: Password
+      confirm: Password confirmation
+      submit: Confirm
+      not_found: User is not found
+      invalid: Invalid link
+    update:
+      blank: can't be blank
+      success: Reset password successful
+      fail: Reset password failure
+      not_found: User is not found
+      invalid: Invalid link

@@ -20,7 +20,7 @@ module SessionHelper
       @current_user ||= User.find_by id: session[:user]
     elsif cookies.signed[:user]
       user = User.find_by id: cookies.signed[:user]
-      if user&.authenticate? cookies[:remember_token]
+      if user&.authenticate?(:remember, cookies[:remember_token])
         signin user
         @current_user = user
       end
@@ -32,7 +32,7 @@ module SessionHelper
     redirect_to signin_path
   end
 
-  def not_signin
+  def signed_out
     return if current_user.nil?
     redirect_to current_user
   end

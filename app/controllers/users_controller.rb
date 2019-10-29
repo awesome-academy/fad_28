@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_in, :load_user, :correct_user, only: :show
-  before_action :not_signin, only: [:new, :create]
+  before_action :signed_out, only: [:new, :create]
 
   def show; end
 

@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  before_action :not_signin, only: [:new, :create]
+  before_action :signed_out, only: [:new, :create]
   before_action :load_user, only: :create
   before_action :signed_in, only: :destroy
 
