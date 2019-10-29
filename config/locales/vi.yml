@@ -43,15 +43,6 @@ vi:
       address: Địa chỉ
       male: nam
       female: nữ
-    show:
-      saved: Đăng ký tài khoản thành công
-      not_found: Không tìm thấy người dùng
-      control: bảng điều khiển
-      update: cập nhật hồ sơ
-      password: đổi mật khẩu
-      feedback: phản hồi của bạn
-      order: đơn đặt hàng
-      share: chia sẻ của bạn
   activerecord:
     attributes:
       user:
@@ -73,21 +64,40 @@ vi:
   session:
     new:
       page: Đăng nhập
-<<<<<<< HEAD
-=======
-      login: Đăng nhập
->>>>>>> Sign in
       email: Email
       password: Mật khẩu
       remember: Lưu tài khoản
       forgot: Quên mật khẩu?
       submit: Đăng nhập
-<<<<<<< HEAD
     create:
       invalid: Email hoặc mật khẩu của bạn không chính xác
       success: Đăng nhập thành công
     destroy:
       not_signed_in: Vui lòng đăng nhập
       signout: Đã đăng xuất
-=======
->>>>>>> Sign in
+  user_mailer:
+    reset_password:
+      reset: Đặt lại mật khẩu
+      app: Foods and Drinks Store
+      hello: Xin chào,
+      message: Bạn có thể đặt lại mật khẩu tại đây
+  reset_password:
+    new:
+      page: Quên mật khẩu
+      submit: Xác nhận
+    create:
+      sent: Vui lòng kiểm tra email của bạn để thay đổi mật khẩu
+      not_found: Email không tồn tại
+    edit:
+      page: Đổi mật khẩu
+      password: Mật khẩu
+      confirm: Xác nhận mật khẩu
+      submit: Xác nhận
+      not_found: Người dùng không tồn tại
+      invalid: Đường dẫn không chính xác
+    update:
+      blank: không được để trống
+      success: Đặt lại mật khẩu thành công
+      fail: Đặt lại mật khẩu thất bại
+      not_found: Người dùng không tồn tại
+      invalid: Đường dẫn không chính xác

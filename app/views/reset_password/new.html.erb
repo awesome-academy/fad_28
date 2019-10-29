@@ -1,0 +1,13 @@
+<%= provide :page, t(".page") %>
+<div class="div-form">
+  <h1 class="text-center"><%= t ".page" %></h1>
+  <%= form_with scope: :reset, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control form-control-lg" %>
+    </div>
+    <div class="text-center">
+      <%= f.submit t(".submit"), class: "btn btn-lg btn-success" %>
+    </div>
+  <% end %>
+</div>

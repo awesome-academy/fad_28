@@ -54,21 +54,29 @@ en:
     destroy:
       not_signed_in: Please login
       signout: Signed out
-    show:
-      saved: Account registration successful
-      not_found: User is not found
-      control: control panal
-      update: update profile
-      password: change password
-      feedback: your feedback
-      order: order bill
-      share: your share
-  session:
+  user_mailer:
+    reset_password:
+      reset: Reset Password
+      app: Foods and Drinks Store
+      hello: Hello,
+      message: You can reset password here
+  reset_password:
     new:
-      page: Login
-      login: Login
-      email: Email
+      page: Forgot password
+      submit: Confirm
+    create:
+      sent: Please check email to reset your password
+      not_found: Email is not found
+    edit:
+      page: Reset password
       password: Password
-      remember: Remember me
-      forgot: Forgot password?
-      submit: Sign in
+      confirm: Password confirmation
+      submit: Confirm
+      not_found: User is not found
+      invalid: Invalid link
+    update:
+      blank: can't be blank
+      success: Reset password successful
+      fail: Reset password failure
+      not_found: User is not found
+      invalid: Invalid link

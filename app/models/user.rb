@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :evaluates, dependent: :destroy
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :reset_password_token
 
   FORMAT_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: {case_sensitive: false},
@@ -39,8 +39,22 @@ class User < ApplicationRecord
     update_attribute :remember_digest, nil
   end
 
-  def authenticate? remember_token
-    return false unless remember_digest
-    BCrypt::Password.new(remember_digest).is_password? remember_token
+  def authenticate? attribute, token
+    digest = send "#{attribute}_digest"
+    return false unless digest
+    BCrypt::Password.new(digest).is_password? token
+  end
+
+  def save_reset_password_token
+    self.reset_password_token = new_token
+    update_attribute :reset_password_digest, digest(reset_password_token)
+  end
+
+  def clear_reset_password_token
+    update_attribute :reset_password_digest, nil
+  end
+
+  def send_email_reset_password
+    UserMailer.reset_password(self).deliver_now
   end
 end
