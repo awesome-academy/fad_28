@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include SessionHelper
+
   before_action :load_language
 
   private

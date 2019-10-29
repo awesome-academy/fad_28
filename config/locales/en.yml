@@ -8,6 +8,7 @@ en:
       share: share
       signup: sign up
       signin: sign in
+      account: account
   home:
     index:
       fruit: fruit
@@ -38,3 +39,18 @@ en:
       address: Address
       male: male
       female: female
+      signout: Sign out
+  session:
+    new:
+      page: Login
+      email: Email
+      password: Password
+      remember: Remember me
+      forgot: Forgot password?
+      submit: Sign in
+    create:
+      invalid: Your email or password invalid
+      success: Sign in successful
+    destroy:
+      not_signed_in: Please login
+      signout: Signed out
