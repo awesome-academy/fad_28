@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-sm-2">
+      <%= render "share/menu_admin" %>
+    </div>
+    <div class="col-md-10">
+      <br>
+      <div class="row">
+        <div class="col-md-8"><%= render "users/filter" %></div>
+        <div class="col-md-4">
+          <%= link_to t(".create"), signup_path, class: "btn btn-success btn-lg btn-block" %>
+        </div>
+      </div>
+      <table class="table">
+        <tr>
+          <th><%= t ".name" %></th>
+          <th><%= t ".email" %></th>
+          <th><%= t ".gender" %></th>
+          <th><%= t ".phone" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+        <%= render @users %>
+      </table>
+      <%= will_paginate @users %>
+    </div>
+  </div>
+</div>

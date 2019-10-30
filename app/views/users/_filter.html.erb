@@ -1,0 +1,11 @@
+<%= form_with url:users_path, method: :get, local: true do |f| %>
+  <div class="input-group search-box">
+    <div class="input-group-prepend">
+      <%= f.button :submit, class: "btn btn-lg btn-success" do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    </div>
+    <%= f.text_field :name, placeholder: t(".search_name"),
+      class: "form-control form-control-lg" %>
+  </div>
+<% end %>

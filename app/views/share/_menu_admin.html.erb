@@ -1,0 +1,34 @@
+<div class="menu">
+  <ul class="nav flex-column">
+    <li class="nav-items">
+      <%= link_to admin_path, class: "nav-link" do %>
+        <i class="fa fa-undo-alt"></i>
+        <%= t ".dashboard" %>
+      <% end %>
+    </li>
+    <li class="nav-items">
+      <%= link_to users_path, class: "nav-link" do %>
+        <i class="fa fa-users"></i>
+        <%= t ".user" %>
+      <% end %>
+    </li>
+    <li class="nav-items">
+      <%= link_to "#", class: "nav-link" do %>
+        <i class="fa fa-notes-medical"></i>
+        <%= t ".order" %>
+      <% end %>
+    </li>
+    <li class="nav-items">
+      <%= link_to "#", class: "nav-link" do %>
+        <i class="fa fa-balance-scale-right"></i>
+        <%= t ".product" %>
+      <% end %>
+    </li>
+    <li class="nav-items">
+      <%= link_to "#", class: "nav-link" do %>
+        <i class="fa fa-indent"></i>
+        <%= t ".category" %>
+      <% end %>
+    </li>
+  </ul>
+</div>

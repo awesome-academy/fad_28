@@ -1,0 +1,8 @@
+<tr>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= gender_for user %></td>
+  <td><%= user.phone %></td>
+  <td><%= link_to t(".delete"), user, method: :delete,
+    data: {confirm: t(".confirm")}, class: "btn btn-danger" unless user.admin? %></td>
+</tr>

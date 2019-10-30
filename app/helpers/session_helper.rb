@@ -42,4 +42,14 @@ module SessionHelper
     session.delete :user
     @current_user = nil
   end
+
+  def only_admin
+    return if current_user.admin?
+    redirect_to root_path
+  end
+
+  def allow_signup
+    return if current_user.nil? || current_user.admin?
+    redirect_to current_user
+  end
 end

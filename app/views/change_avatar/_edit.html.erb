@@ -1,0 +1,21 @@
+<div class="modal fade" id="change-avatar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5><%= t ".change_avatar" %></h5>
+        <button class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <%= form_for @user, url: change_avatar_path(@user), html: {id: "file"} do |f| %>
+        <div class="modal-body">
+          <div class="custom-file">
+            <%= f.file_field :image, class: "custom-file-input" %>
+            <%= f.label :image, class: "custom-file-label" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit t(".submit"), class: "btn btn-block btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

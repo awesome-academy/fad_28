@@ -20,6 +20,12 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: "form-control form-control-lg" %>
     </div>
+    <% if current_user&.admin? %>
+      <div class="form-group">
+        <%= f.label :role_id %>
+        <%= f.select :role_id, load_role, {}, {class: "form-control form-control-lg"} %>
+      </div>
+    <% end %>
     <div class="text-center">
       <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
     </div>

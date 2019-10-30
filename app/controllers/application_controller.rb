@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
 
   before_action :load_language
 
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t ".not_found"
+    redirect_to root_path
+  end
+
   private
 
   def load_language

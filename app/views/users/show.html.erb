@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-md-4">
       <div class="show-left">
-        <%= image_tag("avatar.png", class: "img-fluid") %>
+        <div class="avatar">
+          <%= image_tag @user.image.url %>
+        </div>
         <h1 class="text-center"><strong><%= @user.name %></strong></h1>
         <hr>
         <h5><strong><%= t ".email" %></strong> <%= @user.email %></h5>
@@ -10,7 +12,7 @@
         <h5><strong><%= t ".phone" %></strong> <%= @user.phone %></h5>
         <h5><strong><%= t ".address" %></strong> <%= @user.address %></h5>
         <% if @user.admin? %>
-          <%= link_to t(".manager"), "#", class: "btn btn-lg btn-warning btn-block" %>
+          <%= link_to t(".manager"), admin_path, class: "btn btn-lg btn-warning btn-block" %>
         <% elsif @user.customer? %>
           <h5><strong><%= t ".customer" %></strong></h5>
           <div class="progress">
@@ -45,10 +47,17 @@
       <div class="tab-content">
         <div class="tab-pane active" id="control">
           <%= link_to t(".signout"), signout_path, class: "btn btn-danger btn-lg" %>
+          <br><br>
+          <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#change-avatar">
+            <i class="fa fa-camera"></i>
+          </button>
+          <%= render "change_avatar/edit" %>
         </div>
         <div class="tab-pane fade" id="update">
+          <%= render "users/edit_profile" %>
         </div>
         <div class="tab-pane fade" id="password">
+          <%= render "change_password/edit" %>
         </div>
         <div class="tab-pane fade" id="feedback">
         </div>
