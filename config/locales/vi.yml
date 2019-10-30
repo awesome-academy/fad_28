@@ -75,3 +75,29 @@ vi:
     destroy:
       not_signed_in: Vui lòng đăng nhập
       signout: Đã đăng xuất
+  user_mailer:
+    reset_password:
+      reset: Đặt lại mật khẩu
+      app: Foods and Drinks Store
+      hello: Xin chào,
+      message: Bạn có thể đặt lại mật khẩu tại đây
+  reset_password:
+    new:
+      page: Quên mật khẩu
+      submit: Xác nhận
+    create:
+      sent: Vui lòng kiểm tra email của bạn để thay đổi mật khẩu
+      not_found: Email không tồn tại
+    edit:
+      page: Đổi mật khẩu
+      password: Mật khẩu
+      confirm: Xác nhận mật khẩu
+      submit: Xác nhận
+      not_found: Người dùng không tồn tại
+      invalid: Đường dẫn không chính xác
+    update:
+      blank: không được để trống
+      success: Đặt lại mật khẩu thành công
+      fail: Đặt lại mật khẩu thất bại
+      not_found: Người dùng không tồn tại
+      invalid: Đường dẫn không chính xác
