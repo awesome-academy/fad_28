@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :reset_password, only: [:edit, :update]
     resources :change_password, :change_avatar, only: :update
     get "admin", to: "admin#index"
+    resources :categories, except: :show
   end
 end

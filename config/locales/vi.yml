@@ -67,9 +67,6 @@ vi:
       gender: Giới tính
       phone: Số điện thoại
       action: Hoạt động
-    filter:
-      submit: Tìm kiếm
-      search_name: nhập tên người dùng...
   activerecord:
     attributes:
       user:
@@ -82,6 +79,9 @@ vi:
         phone: Số điện thoại
         image: Ảnh đại diện
         role_id: Quyền truy cập
+      category:
+        name: Tên
+        parent: Thể loại
     errors:
       messages:
         blank: không được để trống
@@ -89,6 +89,8 @@ vi:
         too_long: quá dài
         too_short: quá ngắn
         confirmation: không đúng
+        taken: đã tồn tại
+        required: không tồn tại
   session:
     new:
       page: Đăng nhập
@@ -157,5 +159,35 @@ vi:
       order: Đơn đặt hàng
       category: Loại hàng hóa
       product: Sản phẩm
-    filter_form:
-      title: Tìm kiếm theo tên...
+    filter:
+      search_name: tìm kiếm theo tên
+  categories:
+    index:
+      page: Thể loại
+      name: Tên
+      parent: Thể loại
+      action: Hoạt động
+      new: Thể loại mới
+      info: Thông tin
+    category:
+      edit: Sửa
+      delete: Xóa
+      confirm: Bạn đã chắc chắn chưa
+      number: sản phẩm đang sử dụng
+      none: KHÔNG
+    new:
+      page: Thể loại mới
+    form:
+      submit: Lưu lại
+      select: Chọn thể loại cha
+    update:
+      success: Cật nhật thể loại thành công
+      fail: Cập nhật thể loại thất bại
+    create:
+      success: Tạo thể loại thành công
+    edit:
+      page: Sửa thể loại
+    destroy:
+      success: Đã xóa
+      fail: Không thể xóa
+      can't_delete: Không thể xóa danh mục sản phẩm hiện có
