@@ -21,3 +21,6 @@ vn:
 
 # Checkbox
 remembered: "1"
+
+# Paginate
+items: 20

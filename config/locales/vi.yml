@@ -27,6 +27,7 @@ vi:
       submit: Tạo tài khoản
     create:
       saved: Đăng ký tài khoản thành công
+      success: Đã tạo tài khoản
     show:
       not_found: Không tìm thấy người dùng
       manager: Quản lý hệ thống
@@ -43,6 +44,32 @@ vi:
       address: Địa chỉ
       male: nam
       female: nữ
+    edit_profile:
+      update: Cập nhật hồ sơ
+      male: Nam
+      female: Nữ
+      submit: Cập nhật
+    update:
+      success: Cập nhật hồ sơ thành công
+      fail: Cập nhật hồ sơ thất bại
+    destroy:
+      success: Đã xóa
+      fail: Không thể xóa
+    user:
+      male: Nam
+      female: Nữ
+      delete: Xóa
+      confirm: Bạn đã chắc chắn chưa?
+    index:
+      create: Tạo người dùng mới
+      name: Tên
+      email: Email
+      gender: Giới tính
+      phone: Số điện thoại
+      action: Hoạt động
+    filter:
+      submit: Tìm kiếm
+      search_name: nhập tên người dùng...
   activerecord:
     attributes:
       user:
@@ -54,6 +81,7 @@ vi:
         address: Địa chỉ
         phone: Số điện thoại
         image: Ảnh đại diện
+        role_id: Quyền truy cập
     errors:
       messages:
         blank: không được để trống
@@ -101,3 +129,33 @@ vi:
       fail: Đặt lại mật khẩu thất bại
       not_found: Người dùng không tồn tại
       invalid: Đường dẫn không chính xác
+  change_password:
+    edit:
+      page: Đổi mật khẩu
+      old_password: Mật khẩu cũ
+      new_password: Mật khẩu mới
+      confirm: Xác nhận mật khẩu
+      submit: Thay đổi
+    update:
+      not_found: Người dùng không tồn tại
+      not_match: Mật khẩu cũ không trùng khớp
+      success: Đã đổi mật khẩu. Vui lòng đăng nhập lại
+      fail: Đổi mật khẩu thất bại
+  change_avatar:
+    update:
+      success: Đã thay đổi ảnh đại diện
+      not_found: Không tìm thấy người dùng
+      not_found: Không tìm thấy người dùng
+      not_change: Không thay đổi
+    edit:
+      change_avatar: Đổi ảnh đại diện
+      submit: Xác nhận
+  share:
+    menu_admin:
+      dashboard: Bảng điều khiển
+      user: Người dùng
+      order: Đơn đặt hàng
+      category: Loại hàng hóa
+      product: Sản phẩm
+    filter_form:
+      title: Tìm kiếm theo tên...

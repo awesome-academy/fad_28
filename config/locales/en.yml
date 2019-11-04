@@ -23,6 +23,7 @@ en:
       submit: Create Account
     create:
       saved: Account registration successful
+      success: Created account
     show:
       not_found: User is not found
       manager: The system manage
@@ -40,6 +41,32 @@ en:
       male: male
       female: female
       signout: Sign out
+    edit_profile:
+      update: Update profile
+      male: Male
+      female: Female
+      submit: Update
+    update:
+      success: Update profile successful
+      fail: Update profile failure
+    destroy:
+      success: Deleted
+      fail: Can't delete
+    user:
+      male: Male
+      female: Female
+      delete: Delete
+      confirm: Are you sure?
+    index:
+      create: Create new user
+      name: Name
+      email: Email
+      gender: Gender
+      phone: Phone
+      action: Action
+    filter:
+      submit: Search
+      search_name: enter user name...
   session:
     new:
       page: Login
@@ -80,3 +107,33 @@ en:
       fail: Reset password failure
       not_found: User is not found
       invalid: Invalid link
+  change_password:
+    edit:
+      page: Change password
+      old_password: Old password
+      new_password: New password
+      confirm: Password confirmation
+      submit: Change
+    update:
+      not_found: User is not found
+      not_match: Old password is not match
+      success: Changed password. Please sign in again
+      fail: Change password failure
+  change_avatar:
+    update:
+      success: Change avatar successful
+      not_found: User is not found
+      fail: Change avatar failure
+      not_change: Don't change
+    edit:
+      change_avatar: Change avatar
+      submit: Confirm
+  share:
+    menu_admin:
+      dashboard: Dashboard
+      user: Users
+      order: Orders
+      category: Categories
+      product: Products
+    filter_form:
+      title: Search for name...

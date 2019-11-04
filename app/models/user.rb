@@ -10,11 +10,15 @@ class User < ApplicationRecord
   validates :phone, numericality: true, allow_nil: true
   has_secure_password
   validates :password, presence: true,
-    length: {minimum: Settings.size.of_password}
+    length: {minimum: Settings.size.of_password}, on: :skip
 
-  enum role_id: {admin: 1, customer: 2}
+  enum role_id: {admin: 1, customer: 2, employee: 3}
+
+  mount_uploader :image, ImageUploader
 
   before_save{email.downcase!}
+
+  scope :filter_by, ->(params){where "name like ?", "%#{params}%"}
 
   def digest string
     cost =

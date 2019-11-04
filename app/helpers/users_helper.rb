@@ -6,4 +6,8 @@ module UsersHelper
       t ".female"
     end
   end
+
+  def load_role
+    User.role_ids.keys
+  end
 end

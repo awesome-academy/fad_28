@@ -4,7 +4,7 @@ class OrderItem < ApplicationRecord
 
   validates :product_id, :order_id, presence: true
   validates :quantity, presence: true,
-    numercality: {
+    numericality: {
       only_integer: true,
       greater_than: Settings.smallest.of_quantity,
       less_than: Settings.biggest.of_quantity
