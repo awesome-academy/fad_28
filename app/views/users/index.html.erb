@@ -6,7 +6,7 @@
     <div class="col-md-10">
       <br>
       <div class="row">
-        <div class="col-md-8"><%= render "users/filter" %></div>
+        <div class="col-md-8"><%= render "share/filter", url: users_path %></div>
         <div class="col-md-4">
           <%= link_to t(".create"), signup_path, class: "btn btn-success btn-lg btn-block" %>
         </div>

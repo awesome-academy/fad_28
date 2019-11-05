@@ -1,0 +1,11 @@
+<tr>
+  <td><%= category.id %></td>
+  <td><%= category.name %></td>
+  <td><%= parent_name_for category %></td>
+  <td>
+    <%= link_to t(".edit"), edit_category_path(category), class: "btn btn-warning" %>
+    <%= link_to t(".delete"), category, method: :delete, data: {confirm: t(".confirm")},
+      class: "btn btn-danger" %>
+  </td>
+  <td><strong><%= category.products.size %></strong> <%= t ".number"%></td>
+</tr>

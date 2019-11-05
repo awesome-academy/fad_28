@@ -64,9 +64,6 @@ en:
       gender: Gender
       phone: Phone
       action: Action
-    filter:
-      submit: Search
-      search_name: enter user name...
   session:
     new:
       page: Login
@@ -135,5 +132,35 @@ en:
       order: Orders
       category: Categories
       product: Products
-    filter_form:
-      title: Search for name...
+    filter:
+      search_name: search by name
+  categories:
+    index:
+      page: Categories
+      name: Name
+      parent: Parent
+      action: Action
+      new: New category
+      info: Information
+    category:
+      edit: Edit
+      delete: Delete
+      confirm: Are you sure?
+      number: product in use
+      none: NONE
+    new:
+      page: New category
+    form:
+      submit: Save
+      select: Select parent category
+    create:
+      success: Create category successful
+    edit:
+      page: Edit categories
+    update:
+      success: Update category successful
+      fail: Update category failure
+    destroy:
+      success: Deleted
+      fail: Delete failure
+      can't_delete: Can not delete existing product category

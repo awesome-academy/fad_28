@@ -1,5 +1,7 @@
 class Category < ApplicationRecord
-  has_many :products, dependent: :destroy
+  has_many :products
 
-  validates :name, presence: true, uniquiness: {case_sensitive: false}
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
+
+  scope :filter, ->(params){where "name like ?", "%#{params}%"}
 end

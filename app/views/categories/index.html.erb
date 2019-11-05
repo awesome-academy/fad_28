@@ -1,0 +1,30 @@
+<% provide :page, t(".page") %>
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-md-2">
+      <%= render "share/menu_admin" %>
+    </div>
+    <div class="col-md-10">
+      <br>
+      <div class="row">
+        <div class="col-md-8">
+          <%= render "share/filter", url: categories_path %>
+        </div>
+        <div class="col-md-4">
+          <%= link_to t(".new"), new_category_path, class: "btn btn-success btn-lg btn-block" %>
+        </div>
+      </div>
+      <table class="table" id="table">
+        <tr>
+          <th>#</th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".parent" %></th>
+          <th><%= t ".action" %></th>
+          <th><%= t ".info" %></th>
+        </tr>
+        <%= render @categories %>
+      </table>
+      <%= will_paginate @categories %>
+    </div>
+  </div>
+</div>
