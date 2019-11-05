@@ -7,7 +7,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :phone
       t.integer :status_id, default: 1
-      t.references :payment, foreign_key: true
+      t.integer :payment_id, default: 1
 
       t.timestamps
     end

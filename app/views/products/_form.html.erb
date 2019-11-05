@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="jumbotron">
+    <%= form_for @product do |f| %>
+      <h1 class="text-center"><%= yield :page %></h1>
+      <br>
+      <%= render "share/errors", object: @product %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :category_id %>
+            <%= f.select :category_id, load_category, {prompt: t(".select")},
+            class: "form-control form-control-lg" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :price %>
+            <%= f.text_field :price, class: "form-control form-control-lg" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :discount %>
+            <%= f.text_field :discount, class: "form-control form-control-lg" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="custom-control custom-checkbox mb-3">
+            <%= f.check_box :sold_many, value: true, class: "custom-control-input" %>
+            <%= f.label :sold_many, class: "custom-control-label" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :close_discount_at %>&nbsp;&nbsp;&nbsp;
+            <%= f.date_select :close_discount_at, order: [:day, :month, :year] %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :image %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control form-control-lg" %>
+      </div>
+      <div class="text-center">
+        <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>

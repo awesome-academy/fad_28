@@ -164,3 +164,38 @@ en:
       success: Deleted
       fail: Delete failure
       can't_delete: Can not delete existing product category
+  products:
+    product:
+      view: View
+      edit: Edit
+      delete: Delete
+      confirm: Are you sure?
+    index:
+      all: All
+      food: Food
+      drink: Drink
+      new: New product
+    new:
+      page: New product
+    form:
+      submit: Save
+      select: Select category
+    edit:
+      page: Edit product
+    create:
+      success: Create product successful
+    update:
+      success: Updated
+      fail: Update failure
+    destroy:
+      success: Deleted
+      fail: Delete failure
+    show:
+      add: Add to cart
+  number:
+    currency:
+      format:
+        unit: vnd
+        precision: 0
+        delimiter: "."
+        format: "%n %u"

@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :change_password, :change_avatar, only: :update
     get "admin", to: "admin#index"
     resources :categories, except: :show
+    resources :products
   end
 end

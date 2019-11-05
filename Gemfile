@@ -18,6 +18,7 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", ">= 1.3.0"
+gem "whenever"
 gem "will_paginate", "~> 3.1.6"
 gem "will_paginate-bootstrap4"
 

@@ -38,17 +38,10 @@ ActiveRecord::Schema.define(version: 2019_10_22_132155) do
     t.string "email"
     t.string "phone"
     t.integer "status_id", default: 1
-    t.bigint "payment_id"
+    t.integer "payment_id", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["payment_id"], name: "index_orders_on_payment_id"
     t.index ["status_id"], name: "index_orders_on_status_id"
-  end
-
-  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_132155) do
     t.string "image"
     t.float "price"
     t.float "discount"
+    t.date "close_discount_at"
     t.boolean "sold_many", default: false
     t.text "description"
     t.bigint "category_id"
@@ -95,6 +89,5 @@ ActiveRecord::Schema.define(version: 2019_10_22_132155) do
   add_foreign_key "evaluates", "users"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
-  add_foreign_key "orders", "payments"
   add_foreign_key "products", "categories"
 end
