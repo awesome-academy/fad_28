@@ -1,0 +1,40 @@
+<% provide :page, @product.name %>
+<br>
+<div class="container">
+  <div class="detail">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @product.image.url, class: "img-fluid" %>
+        <% if @product.discount.present? %>
+          <div class="discount"><%= display_discount_for @product %>%</div>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <h1><%= @product.name %></h1>
+        <% if @product.discount.present? %>
+          <div class="price">
+            <h4><%= number_to_currency(price_for @product) %></h4>
+            <h4><del><%= number_to_currency @product.price %></del></h4>
+          </div>
+        <% else %>
+          <h4><%= number_to_currency @product.price %></h4>
+        <% end %>
+        <br>
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control form-control-lg" value=1 id="value">
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-success btn-lg btn-block"><%= t ".add" %></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <h3><%= t ".description" %></h3>
+        <p class="description"><%= @product.description %></p>
+      </div>
+    </div>
+  </div>
+</div>

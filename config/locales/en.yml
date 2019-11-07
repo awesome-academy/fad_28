@@ -64,6 +64,7 @@ en:
       gender: Gender
       phone: Phone
       action: Action
+      page: User manage
   session:
     new:
       page: Login
@@ -164,3 +165,44 @@ en:
       success: Deleted
       fail: Delete failure
       can't_delete: Can not delete existing product category
+  products:
+    product:
+      confirm: Are you sure?
+    index:
+      page: Product manage
+      new: New product
+      image: Image
+      name: Name
+      category: Category
+      price: Price
+      discount: Discount
+      after_discount: After discount
+      sold_many: Sold many
+      action: Action
+    new:
+      page: New product
+    form:
+      submit: Save
+      select: Select category
+    edit:
+      page: Edit product
+    create:
+      success: Create product successful
+    update:
+      success: Updated
+      fail: Update failure
+    destroy:
+      success: Deleted
+      fail: Delete failure
+    show:
+      add: Add to cart
+  number:
+    currency:
+      format:
+        unit: vnd
+        precision: 0
+        delimiter: "."
+        format: "%n %u"
+  admin:
+    index:
+      page: Manager

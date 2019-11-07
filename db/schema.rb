@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_132155) do
     t.string "image"
     t.float "price"
     t.float "discount"
+    t.date "close_discount_at"
     t.boolean "sold_many", default: false
     t.text "description"
     t.bigint "category_id"
