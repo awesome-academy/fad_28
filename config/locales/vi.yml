@@ -61,6 +61,7 @@ vi:
       delete: Xóa
       confirm: Bạn đã chắc chắn chưa?
     index:
+      page: Quản lý người dùng
       create: Tạo người dùng mới
       name: Tên
       email: Email
@@ -82,6 +83,16 @@ vi:
       category:
         name: Tên
         parent: Thể loại
+      product:
+        name: Tên
+        image: Hình ảnh
+        price: Giá
+        discount: Giảm giá
+        sold_many: Đã bán nhiều
+        description: Mô tả
+        category_id: Thể loại
+        category: Thể loại
+        close_discount_at: Ngày đóng giảm giá
     errors:
       messages:
         blank: không được để trống
@@ -191,3 +202,47 @@ vi:
       success: Đã xóa
       fail: Không thể xóa
       can't_delete: Không thể xóa danh mục sản phẩm hiện có
+  products:
+    product:
+      view: Xem
+      edit: Sửa
+      delete: Xóa
+      confirm: Bạn chắc chắn không?
+    index:
+      page: Quản lý sản phẩm
+      new: Sản phẩm mới
+      discount: Giảm giá
+      sold_many: Bán nhiều
+      image: Hình ảnh
+      name: Tên
+      category: Thể loại
+      price: Đơn giá
+      after_discount: Sau giảm giá
+      action: Hoạt động
+    new:
+      page: Sản phẩm mới
+    form:
+      submit: Lưu lại
+      select: Chọn thể loại
+    edit:
+      page: Sửa sản phẩm
+    create:
+      success: Tạo sản phẩm thành công
+    update:
+      success: Đã cập nhật
+      fail: Cập nhật thất bại
+    destroy:
+      success: Đã xóa
+      fail: Không thể xóa
+    show:
+      add: Giỏ hàng
+  number:
+    currency:
+      format:
+        unit: vnd
+        precision: 0
+        delimiter: "."
+        format: "%n %u"
+  admin:
+    index:
+      page: Quản lý

@@ -6,9 +6,14 @@ class Product < ApplicationRecord
   validates :name, :image, :category_id, presence: true
   validates :price, presence: true,
     numericality: {greater_than: Settings.smallest.of_price}
-  validates :discount,
+  validates :discount, allow_nil: true,
     numericality: {
       greater_than: Settings.smallest.of_discount,
       less_than: Settings.biggest.of_discount
     }
+
+  mount_uploader :image, ImageUploader
+
+  scope :filter_by, ->(params){where "name like ?", "%#{params}%"}
+  scope :timeout_discount, ->{where "close_discount_at < ?", Time.zone.now}
 end

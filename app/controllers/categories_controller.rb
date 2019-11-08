@@ -4,7 +4,8 @@ class CategoriesController < ApplicationController
   before_action :allow_destroy, only: :destroy
 
   def index
-    @categories = Category.filter(params[:name]).paginate page: params[:page],
+    category = Category.includes(:products)
+    @categories = category.filter(params[:name]).paginate page: params[:page],
       per_page: Settings.items
   end
 

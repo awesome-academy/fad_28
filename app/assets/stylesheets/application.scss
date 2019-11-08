@@ -29,10 +29,16 @@ body {
     padding: 0 1rem !important;
     font-weight: bold;
   }
-  .nav-link:hover { color: $green; }
+  .nav-link:hover {
+    color: $green;
+  }
 }
-.bg-1 { background: image-url('slide-1.jpg'); }
-.bg-2 { background: image-url('slide-2.jpg'); }
+.bg-1 {
+  background: image-url('slide-1.jpg');
+}
+.bg-2 {
+  background: image-url('slide-2.jpg');
+}
 .bg-1, .bg-2 {
   height: 650px;
   background-size: cover;
@@ -52,7 +58,9 @@ body {
         text-transform: uppercase;
         font-weight: bold;
       }
-      h1 { font-weight: bold; }
+      h1 {
+        font-weight: bold;
+      }
     }
   }
 }
@@ -71,7 +79,9 @@ body {
     justify-content: space-between;
   }
 }
-label { font-weight: bold; }
+label {
+  font-weight: bold;
+}
 .show-left {
   margin-top: 1.5rem;
   .avatar {
@@ -87,7 +97,9 @@ label { font-weight: bold; }
       width: auto;
     }
   }
-  h5 { line-height: 2; }
+  h5 {
+    line-height: 2;
+  }
 }
 .nav-pills .nav-link {
   font-weight: bold;
@@ -121,15 +133,79 @@ label { font-weight: bold; }
     background: #212121;
     color: $green;
   }
-  .fa { margin-right: 0.5rem; }
+  .fa {
+    margin-right: 0.5rem;
+  }
 }
-.row-fluid { margin-left: -30px; }
-.table th { border-top: none; }
-::-webkit-scrollbar { width: 0; }
+.row-fluid {
+  margin-left: -30px;
+}
+.table th {
+  border-top: none;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.items {
+  margin-bottom: 25px;
+  padding-bottom: 0.75rem;
+  img { margin-bottom: 0.75rem; }
+  .action {
+    display: flex;
+    justify-content: space-around;
+  }
+  .link_product {
+    text-decoration: none;
+    color: $bg-menu;
+    h5 {
+      padding: 0 18px;
+    }
+  }
+  h6 {
+    padding: 0 18px;
+  }
+}
+.discount {
+  position: absolute;
+  z-index: 10;
+  padding: 5px 10px;
+  background: $discount;
+  color: $white;
+  top: 0;
+  font-weight: bold;
+  box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.5);
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+.description {
+  line-height: 2;
+}
+.detail {
+  background: $white;
+  padding: 1.5rem;
+  box-shadow: 1px 6px 5px 6px rgba(0, 0, 0, 0.5);
+  input {
+    text-align: center;
+  }
+}
+.zoom-out-img {
+  width: 100px;
+}
+.table th, .table td {
+  vertical-align: unset;
+}
 @media only screen and (max-width: 576px) {
-  .alert { width: 100%; }
-  .navbar .nav-link { padding: 10px !important; }
-  .content-slide { flex-direction: column; }
+  .alert {
+    width: 100%;
+  }
+  .navbar .nav-link {
+    padding: 10px !important;
+  }
+  .content-slide {
+    flex-direction: column;
+  }
   .div-form, .profile {
     width: 100%;
     padding: 1rem;
@@ -139,5 +215,7 @@ label { font-weight: bold; }
     height: auto;
     position: relative;
   }
-  .search-box { margin-bottom: 25px; }
+  .search-box {
+    margin-bottom: 25px;
+  }
 }
