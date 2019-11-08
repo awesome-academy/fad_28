@@ -14,5 +14,10 @@ Rails.application.routes.draw do
     get "admin", to: "admin#index"
     resources :categories, except: :show
     resources :products
+    resources :stores, only: :index do
+      collection do
+        get :food, :drink
+      end
+    end
   end
 end

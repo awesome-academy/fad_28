@@ -10,7 +10,7 @@
           <%= link_to t(".home"), root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to t(".product"), "#", class: "nav-link" %>
+          <%= link_to t(".product"), stores_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to t(".share"), "#", class: "nav-link" %>
@@ -22,7 +22,7 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "#", class: "nav-link" do %>
+          <%= link_to "", class: "nav-link", "data-toggle": "modal", "data-target": "#search" do %>
             <i class="fa fa-search"></i>
           <% end %>
         </li>
@@ -48,3 +48,4 @@
     </div>
   </div>
 </div>
+<%= render "layouts/search" %>

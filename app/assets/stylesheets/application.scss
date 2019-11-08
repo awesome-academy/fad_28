@@ -1,10 +1,12 @@
 @import 'bootstrap';
 @import 'color';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
 body {
   margin: 0;
   padding: 0;
   background: $bg;
+  font-family: 'Roboto Slab', serif;
 }
 #content { margin-top: 76px; }
 .alert {
@@ -195,6 +197,86 @@ label {
 }
 .table th, .table td {
   vertical-align: unset;
+}
+.home-page {
+  background: $white;
+  .component-1 {
+    .col-md-6 {
+      margin-top: 25px;
+    }
+    .zoom {
+      overflow: hidden;
+    }
+    img {
+      transition: 0.5s;
+      width: 100%;
+    }
+    .zoom:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .component-2 {
+    margin-top: 50px;
+    h1 {
+      margin-bottom: 50px;
+    }
+    .nav {
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .nav-pills .nav-link.active {
+      background: $green;
+    }
+    .items {
+      overflow: hidden;
+    }
+    img {
+      transition: 0.3s;
+    }
+    .items:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+.menu-store {
+  .title {
+    padding: 20px;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: $green;
+    border-radius: 10px 10px 0 0;
+  }
+  .nav-link {
+    padding: 10px 20px;
+    color: $black;
+    border: 1px solid $border;
+    transition: 0.3s;
+  }
+  .nav-link:hover {
+    color: $white;
+    background: $green;
+  }
+  .glass {
+    border: 1px solid $border;
+    border-radius: 10px 10px 0 0;
+    form {
+      padding: 10px 20px;
+    }
+  }
+}
+.store {
+  padding-top: 25px;
+  background: $white;
+}
+.fix {
+  .btn, .form-control {
+    border-radius: 0;
+  }
 }
 @media only screen and (max-width: 576px) {
   .alert {

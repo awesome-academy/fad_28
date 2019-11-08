@@ -1,0 +1,13 @@
+<div class="store">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render "share/menu_stores" %>
+      </div>
+      <div class="col-md-9">
+        <div class="row"><%= render "stores/product", object: @foods %></div>
+        <%= will_paginate @foods %>
+      </div>
+    </div>
+  </div>
+</div>

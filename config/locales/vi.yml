@@ -16,6 +16,10 @@ vi:
       natural: 100% tự nhiên
       discount: Giảm giá khi đặt mua ngay hôm nay
       view: xem ngay
+      product: Sản phẩm nổi bật
+      new: mới nhất
+      promotion: khuyến mãi
+      highlight: nổi bật
   users:
     new:
       page: Đăng ký
@@ -171,7 +175,13 @@ vi:
       category: Loại hàng hóa
       product: Sản phẩm
     filter:
-      search_name: tìm kiếm theo tên
+      search_name: tìm kiếm...
+    menu_stores:
+      product: Danh mục sản phẩm
+      food: Đồ ăn
+      drink: Đồ uống
+      all: Tất cả
+      filter: Lọc sản phẩm
   categories:
     index:
       page: Thể loại
@@ -246,3 +256,12 @@ vi:
   admin:
     index:
       page: Quản lý
+  stores:
+    filter:
+      name: Tên sản phẩm
+      min: Giá thấp nhất
+      max: Giá cao nhất
+      category: Chọn thể loại
+      highlight: Nổi bật
+      discount: Giảm giá
+      submit: Lọc
