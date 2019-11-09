@@ -1,0 +1,6 @@
+<tr>
+  <td><%= payment.id %></td>
+  <td><%= render "form", object: payment, url: payment_path(payment) %></td>
+  <td><%= link_to t(".delete"), payment, method: :delete,
+    data: {confirm: t(".confirm")}, class: "btn btn-danger btn-lg" %></td>
+</tr>

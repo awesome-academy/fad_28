@@ -137,6 +137,7 @@ en:
       order: Orders
       category: Categories
       product: Products
+      payment: Payments
     filter:
       search_name: search...
     menu_stores:
@@ -225,3 +226,61 @@ en:
       highlight: Highlight
       discount: Discount
       submit: Filter
+  carts:
+    index:
+      image: Image
+      name: Name
+      quantity: Quantity
+      price: Price
+      total: Total
+      your_cart: Your cart
+      cart_empty: Cart empty
+      comeback: Come back stores
+      order_total: Your total order is
+      payout: Proceed to payment
+      delete_all: Delete the entire cart
+      update_all: Update the entire cart
+  order_items:
+    create:
+      success: Added to cart
+      fail: Can't add to cart
+    update:
+      success: Updated cart
+      fail: Can't update
+    destroy:
+      success: Deleted
+      fail: Can't delete
+    order_item:
+      confirm: Are you sure?
+  orders:
+    index:
+      name: Name
+      email: Email
+      address: Address
+      phone: Phone
+      status: Status
+    show:
+      image: Image
+      name: Name
+      quantity: Quantity
+      price: Price
+      total: Total
+    edit:
+      page: Order
+      submit: Confirm
+  payments:
+    index:
+      name: Name
+      action: Action
+    payment:
+      delete: Delete
+      confirm: Are you sure?
+    create:
+      success: Create payment successful
+      fail: Can not create
+    update:
+      success: Update payment successful
+      fail: Can not update
+    destroy:
+      success: Deleted
+      fail: Can not delete

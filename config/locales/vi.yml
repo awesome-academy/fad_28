@@ -97,6 +97,13 @@ vi:
         category_id: Thể loại
         category: Thể loại
         close_discount_at: Ngày đóng giảm giá
+      order:
+        name: Tên
+        email: Email
+        address: Địa chỉ
+        phone: Số điện thoại
+        payment_id: Phương thức thanh toán
+        status_id: Trạng thái
     errors:
       messages:
         blank: không được để trống
@@ -174,6 +181,7 @@ vi:
       order: Đơn đặt hàng
       category: Loại hàng hóa
       product: Sản phẩm
+      payment: Thanh toán
     filter:
       search_name: tìm kiếm...
     menu_stores:
@@ -265,3 +273,62 @@ vi:
       highlight: Nổi bật
       discount: Giảm giá
       submit: Lọc
+  carts:
+    index:
+      image: Hình ảnh
+      name: Tên sản phẩm
+      quantity: Số lượng
+      price: Đơn giá
+      total: Tổng cộng
+      your_cart: Giỏ hàng của bạn
+      cart_empty: Giỏ hàng rỗng
+      comeback: Quay lại cửa hàng
+      order_total: Tổng đơn hàng của bạn là
+      payout: Tiến hành thanh toán
+      delete_all: Xóa tất cả
+      update_all: Cập nhật tất cả
+  order_items:
+    create:
+      success: Added to cart
+      fail: Can't add to cart
+    update:
+      success: Updated cart
+      fail: Can't update
+    delete:
+      success: Deleted
+      fail: Can't delete
+    order_item:
+      confirm: Are you sure?
+  orders:
+    index:
+      name: Tên
+      email: Email
+      address: Địa chỉ
+      phone: Số điện thoại
+      status: Trạng thái
+      orders:
+    show:
+      image: Hình ảnh
+      name: Tên
+      quantity: Số lượng
+      price: Đơn giá
+      total: Tổng
+    edit:
+      page: Đặt hàng
+      submit: Xác nhận
+  payments:
+    index:
+      name: Tên
+      action: Hoạt động
+    payment:
+      delete: Xóa
+      confirm: Bạn chắc chắn không?
+    create:
+      success: Tạo thành công
+      fail: Không thể tạo
+    update:
+      success: Cập nhật thành công
+      fail: Không thể cập nhật
+    destroy:
+      success: Đã xóa
+      fail: Không thể xóa
