@@ -10,7 +10,13 @@ class UsersController < ApplicationController
       per_page: Settings.items
   end
 
-  def show; end
+  def show
+    @orders = Order.newest.by_user(current_user.email).paginate page:
+      params[:page], per_page: Settings.items
+    @finished = Order.finish.by_user current_user.email
+    @counts = 0
+    @finished.each{|order| @counts += order.order_items.sum :quantity}
+  end
 
   def new
     @user = User.new

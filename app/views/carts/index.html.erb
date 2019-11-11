@@ -1,7 +1,7 @@
 <div class="container">
   <br>
-  <div class="carts">
-    <% if @all_items.any? %>
+  <% if @cart.present? %>
+    <div class="carts">
       <h1 class="text-center"><%= t ".your_cart" %></h1>
       <table class="table">
         <tr class="text-center">
@@ -12,26 +12,59 @@
           <th><%= t ".price" %></th>
           <th><%= t ".total" %></th>
         </tr>
-        <%= render @all_items %>
+        <% @products.each do |product| %>
+          <tr class="text-center">
+            <td>
+              <%= button_to destroy_path, method: :get, params: {product_id: product.id},
+                data: {confirm: t(".confirm")}, class: "btn" do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+            <td><%= image_tag product.image.url, class: "zoom-out-img" %></td>
+            <td><%= product.name %></td>
+            <td>
+              <%= form_with url: update_path, method: :get, local: true do |f| %>
+                <div class="input-group">
+                  <%= f.number_field :quantity, value: @cart[product.id.to_s],
+                    class: "form-control", min: 1, max: 99 %>
+                  <%= f.hidden_field :product_id, value: product.id %>
+                  <div class="input-group-append">
+                    <%= f.button :submit, class: "btn btn-success" do %>
+                    <i class="fa fa-edit"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </td>
+            <td><%= number_to_currency(price_for product) %></td>
+            <td>
+              <%= number_to_currency(sum_of_each_item @cart[product.id.to_s], price_for(product)) %>
+            </td>
+          </tr>
+        <% end %>
       </table>
-    <% else %>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="total-pay">
+          <h4 class="text-center">
+            <%= t ".order_total" %> <strong><%= number_to_currency @total %></strong>
+          </h4>
+          <br>
+          <%= link_to t(".payout"), new_order_path, class: "btn btn-success btn-block" %>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  <% else %>
+    <div class="carts">
       <div class="text-center">
         <h1><%= t ".cart_empty" %></h1>
         <br>
-        <%= link_to t(".comeback"), root_path, class: "btn btn-success" %>
-      </div>
-    <% end %>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <div class="total-pay">
-        <h4><%= t ".order_total" %> <strong><%= number_to_currency @total %></strong></h4>
-        <br>
-        <%= link_to t(".payout"), "#", class: "btn btn-success btn-block" %>
+        <%= link_to t(".comeback"), stores_path, class: "btn btn-success" %>
       </div>
     </div>
-    <div class="col-md-3"></div>
-  </div>
+  <% end %>
 </div>

@@ -28,3 +28,6 @@ items: 20
 
 # Limit
 tops: 12
+
+# Quantity
+max_quantity: 99

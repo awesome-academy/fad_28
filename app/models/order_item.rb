@@ -9,6 +9,4 @@ class OrderItem < ApplicationRecord
       greater_than: Settings.smallest.of_quantity,
       less_than: Settings.biggest.of_quantity
     }
-
-  scope :newest, ->{order "updated_at DESC"}
 end

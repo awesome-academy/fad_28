@@ -1,0 +1,8 @@
+<h1><%= t ".fad" %></h1>
+<h2><%= t ".order" %> <%= @order.id %></h2>
+<h3><%= @order.email %> <%= t ".ordered" %></h3>
+<% @order.order_items.each do |item| %>
+  <%= item.quantity %> x <%= item.product.name %>
+  <%= number_to_currency(item.price) %> = <%= number_to_currency(item.quantity * item.price) %>
+  <br>
+<% end %>

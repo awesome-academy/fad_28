@@ -27,8 +27,13 @@ module SessionHelper
     end
   end
 
+  def save_location
+    session[:url] = request.original_url if request.get?
+  end
+
   def signed_in
     return if current_user.present?
+    save_location
     redirect_to signin_path
   end
 
@@ -51,5 +56,10 @@ module SessionHelper
   def allow_signup
     return if current_user.nil? || current_user.admin?
     redirect_to current_user
+  end
+
+  def comeback_or_redirect_to default
+    redirect_to session[:url] || default
+    session.delete :url
   end
 end

@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   include SessionHelper
-  include CartsHelper
+  include ProductsHelper
 
-  before_action :load_language
+  before_action :load_language, :setup_cart
+
+  def setup_cart
+    session[:cart] ||= {}
+    @cart = session[:cart]
+  end
 
   def load_user
     @user = User.find_by id: params[:id]
@@ -13,6 +18,13 @@ class ApplicationController < ActionController::Base
 
   def load_category
     @categories = Category.all
+  end
+
+  def load_order
+    @order = Order.find_by id: params[:id]
+    return if @order
+    flash[:danger] = t ".not_found"
+    redirect_to orders_path
   end
 
   private
