@@ -1,0 +1,37 @@
+<div class="container">
+  <br>
+  <div class="carts">
+    <% if @all_items.any? %>
+      <h1 class="text-center"><%= t ".your_cart" %></h1>
+      <table class="table">
+        <tr class="text-center">
+          <th>#</th>
+          <th><%= t ".image" %></th>
+          <th><%= t ".name" %></th>
+          <th class="th-input"><%= t ".quantity" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".total" %></th>
+        </tr>
+        <%= render @all_items %>
+      </table>
+    <% else %>
+      <div class="text-center">
+        <h1><%= t ".cart_empty" %></h1>
+        <br>
+        <%= link_to t(".comeback"), root_path, class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="total-pay">
+        <h4><%= t ".order_total" %> <strong><%= number_to_currency @total %></strong></h4>
+        <br>
+        <%= link_to t(".payout"), "#", class: "btn btn-success btn-block" %>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

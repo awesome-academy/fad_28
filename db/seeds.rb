@@ -8,3 +8,9 @@ User.create(
   password: "123456",
   password_confirmation: "123456"
 )
+
+Payment.create([
+  {name: "Payment on delivery"},
+  {name: "ATM card"},
+  {name: "Visa card"}
+])

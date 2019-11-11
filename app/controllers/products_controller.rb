@@ -10,7 +10,9 @@ class ProductsController < ApplicationController
       per_page: Settings.items
   end
 
-  def show; end
+  def show
+    @order_item = OrderItem.new
+  end
 
   def new
     @product = Product.new

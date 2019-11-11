@@ -19,5 +19,8 @@ Rails.application.routes.draw do
         get :food, :drink
       end
     end
+    resources :payments, except: [:show, :new, :edit]
+    resources :carts, only: :index
+    resources :order_items, only: [:create, :update, :destroy]
   end
 end

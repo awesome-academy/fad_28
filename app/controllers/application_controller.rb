@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionHelper
+  include CartsHelper
 
   before_action :load_language
 

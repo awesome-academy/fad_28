@@ -278,6 +278,22 @@ label {
     border-radius: 0;
   }
 }
+.carts {
+  padding: 1rem;
+  background: $white;
+  box-shadow: 1px 5px 5px 4px rgba(0, 0, 0, 0.4);
+  .th-input {
+    width: 12%;
+  }
+  input {
+    text-align: center;
+  }
+}
+.total-pay {
+  padding: 2rem;
+  background: $white;
+  box-shadow: 1px 5px 5px 4px rgba(0, 0, 0, 0.4);
+}
 @media only screen and (max-width: 576px) {
   .alert {
     width: 100%;
