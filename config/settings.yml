@@ -21,6 +21,10 @@ vn:
 
 # Checkbox
 remembered: "1"
+checked: "1"
 
 # Paginate
 items: 20
+
+# Limit
+tops: 12

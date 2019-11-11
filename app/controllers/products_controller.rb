@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :signed_in, :only_admin, except: :show
+  before_action :load_category, only: [:new, :edit]
   before_action :load_product, except: [:index, :new, :create]
   before_action :allow_destroy, only: :destroy
 
@@ -13,7 +14,6 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = Category.all
   end
 
   def edit; end

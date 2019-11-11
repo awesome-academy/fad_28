@@ -8,7 +8,10 @@
           <h1><%= t ".natural" %></h1>
           <p><%= t ".discount" %></p>
           <div class="text-center">
-            <%= link_to t(".view"), "#", class: "btn btn-lg btn-success" %>
+            <%= form_with url: stores_path, method: :get, local: true do |f| %>
+              <%= f.hidden_field :name, value: "fruit" %>
+              <%= f.submit t(".view"), class: "btn btn-lg btn-success" %>
+            <% end %>
           </div>
         </div>
         <div><%= image_tag "onslide-1.png", class: "img-fluid" %></div>
@@ -22,10 +25,56 @@
           <h1><%= t ".natural" %></h1>
           <p><%= t ".discount" %></p>
           <div class="text-center">
-            <%= link_to t(".view"), "#", class: "btn btn-lg btn-success" %>
+            <%= form_with url: stores_path, method: :get, local: true do |f| %>
+              <%= f.hidden_field :name, value: "vegetable" %>
+              <%= f.submit t(".view"), class: "btn btn-lg btn-success" %>
+            <% end %>
           </div>
         </div>
         <div><%= image_tag "onslide-2.png", class: "img-fluid" %></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="home-page">
+  <div class="container">
+    <div class="component-1">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="zoom">
+            <%= link_to image_tag("banner1.jpg", class: "img-fluid"), drink_stores_path %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="zoom">
+            <%= link_to image_tag("banner4.jpg", class: "img-fluid"), food_stores_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="component-2">
+      <h1 class="text-center"><strong><%= t ".product" %></strong></h1>
+      <ul class="nav nav-pills" role="tablist">
+        <li class="nav-items">
+          <%= link_to t(".new"), "#new", class: "nav-link active", "data-toggle": "tab" %>
+        </li>
+        <li class="nav-items">
+          <%= link_to t(".promotion"), "#discount", class: "nav-link", "data-toggle": "tab" %>
+        </li>
+        <li class="nav-items">
+          <%= link_to t(".highlight"), "#highlight", class: "nav-link", "data-toggle": "tab" %>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="new">
+          <div class="row"><%= render "home/product", object: @newests %></div>
+        </div>
+        <div class="tab-pane fade" id="discount">
+          <div class="row"><%= render "home/product", object: @promotions %></div>
+        </div>
+        <div class="tab-pane fade" id="highlight">
+          <div class="row"><%= render "home/product", object: @highlights %></div>
+        </div>
       </div>
     </div>
   </div>

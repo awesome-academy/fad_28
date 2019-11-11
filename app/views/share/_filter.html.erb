@@ -5,7 +5,7 @@
         <i class="fa fa-search"></i>
       <% end %>
     </div>
-    <%= f.text_field :name, placeholder: t(".search_name"),
+    <%= f.text_field :name, placeholder: t(".search_name"), value: params[:name],
       class: "form-control form-control-lg" %>
   </div>
 <% end %>

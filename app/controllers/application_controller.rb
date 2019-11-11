@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def load_category
+    @categories = Category.all
+  end
+
   private
 
   def load_language

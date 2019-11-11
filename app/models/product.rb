@@ -16,4 +16,15 @@ class Product < ApplicationRecord
 
   scope :filter_by, ->(params){where "name like ?", "%#{params}%"}
   scope :timeout_discount, ->{where "close_discount_at < ?", Time.zone.now}
+  scope :get_category, ->(id){where "category_id = ? or parent_id = ?", id, id}
+  scope :newest, ->{order "created_at DESC"}
+  scope :is_highlight, ->{where "sold_many = true"}
+  scope :is_discount, ->{where "discount > 0"}
+  scope :search_by,
+    (lambda do |names|
+      where "categories.name like ? or products.name like ? or price like ?",
+        "%#{names}%", "%#{names}%", "%#{names}%"
+    end)
+  scope :min_price, ->(price){where "price >= ?", price}
+  scope :max_price, ->(price){where "price <= ?", price}
 end

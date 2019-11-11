@@ -16,6 +16,10 @@ en:
       natural: 100% natural
       discount: Discount when ordering today
       view: view now
+      product: Highlight products
+      new: newest
+      promotion: promotion
+      highlight: highlight
   users:
     new:
       page: Sign up
@@ -134,7 +138,13 @@ en:
       category: Categories
       product: Products
     filter:
-      search_name: search by name
+      search_name: search...
+    menu_stores:
+      product: Categories products
+      food: Food
+      drink: Drink
+      all: All
+      filter: Filter product
   categories:
     index:
       page: Categories
@@ -206,3 +216,12 @@ en:
   admin:
     index:
       page: Manager
+  stores:
+    filter:
+      name: Product name
+      min: Min price
+      max: Max price
+      category: Select category
+      highlight: Highlight
+      discount: Discount
+      submit: Filter
