@@ -20,7 +20,11 @@ Rails.application.routes.draw do
       end
     end
     resources :payments, except: [:show, :new, :edit]
-    resources :carts, only: :index
+    resources :carts, only: [:index, :create]
+    get "update", to: "carts#update_quantity"
+    get "destroy", to: "carts#destroy_item"
     resources :order_items, only: [:create, :update, :destroy]
+    resources :orders
+    resources :change_status, only: :update
   end
 end

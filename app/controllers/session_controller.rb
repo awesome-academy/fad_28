@@ -9,7 +9,7 @@ class SessionController < ApplicationController
     signin @user
     remember @user if params[:session][:remember] == Settings.remembered
     flash[:success] = t ".success"
-    redirect_to @user
+    comeback_or_redirect_to @user
   end
 
   def destroy

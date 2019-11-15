@@ -238,8 +238,18 @@ en:
       comeback: Come back stores
       order_total: Your total order is
       payout: Proceed to payment
-      delete_all: Delete the entire cart
-      update_all: Update the entire cart
+      confirm: Are you sure?
+    create:
+      updated: Updated quantity
+      success: Added to cart
+      too_much: Quantity too many
+      not_quantity: Quantity empty
+    update_quantity:
+      updated: Updated quantity
+      not_found: Not found item in cart
+    destroy_item:
+      success: Deleted
+      not_found: Not found item in cart
   order_items:
     create:
       success: Added to cart
@@ -253,21 +263,41 @@ en:
     order_item:
       confirm: Are you sure?
   orders:
+    order:
+      confirm: Are you sure?
     index:
       name: Name
       email: Email
       address: Address
       phone: Phone
       status: Status
+      next: Next
     show:
       image: Image
       name: Name
       quantity: Quantity
       price: Price
       total: Total
-    edit:
+      page: History order
+      can't_view: Can't view order
+    new:
       page: Order
-      submit: Confirm
+      new: Confirm
+    edit:
+      page: Edit order
+      edit: Change
+      can't: Can not edit order
+    create:
+      success: Thank for your ordered
+      fail: Can't not order
+    update:
+      success: Changed infomation order
+      fail: Can not change
+      can't: Can not change order
+    destroy:
+      success: Deleted order
+      fail: Can not delete
+      can't: Can not destroy order
   payments:
     index:
       name: Name
@@ -284,3 +314,18 @@ en:
     destroy:
       success: Deleted
       fail: Can not delete
+  order_mailer:
+    notice_customer:
+      fad: Foods and Drinks
+      hello: Hello
+      thank: Thank for your ordered
+  admin_mailer:
+    notice_admin:
+      notice: fad notification
+      fad: Foods and Drinks
+      order: The order number
+      ordered: ordered. Please try out system
+  change_status:
+    update:
+      success: Status changed
+      fail: Can't change status

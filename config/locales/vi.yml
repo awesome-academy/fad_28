@@ -285,37 +285,53 @@ vi:
       comeback: Quay lại cửa hàng
       order_total: Tổng đơn hàng của bạn là
       payout: Tiến hành thanh toán
-      delete_all: Xóa tất cả
-      update_all: Cập nhật tất cả
-  order_items:
+      confirm: Bạn chắc chắn không?
     create:
-      success: Added to cart
-      fail: Can't add to cart
-    update:
-      success: Updated cart
-      fail: Can't update
-    delete:
-      success: Deleted
-      fail: Can't delete
-    order_item:
-      confirm: Are you sure?
+      updated:  Đã cập nhật số lượng
+      success: Đã thêm vào giỏ hàng
+      too_much: Số lượng quá nhiều
+      not_quantity: Số lượng trống
+    update_quantity:
+      updated: Đã cập nhật số lượng
+      not_found: Không tìm thấy mục trong giỏ hàng
+    destroy_item:
+      success: Đã xóa
+      not_found: Không tìm thấy mục trong giỏ hàng
   orders:
+    order:
+      confirm: Are you sure?
     index:
       name: Tên
       email: Email
       address: Địa chỉ
       phone: Số điện thoại
       status: Trạng thái
-      orders:
+      next: Tiếp theo
     show:
       image: Hình ảnh
       name: Tên
       quantity: Số lượng
       price: Đơn giá
       total: Tổng
-    edit:
+      can't_view: Không thể xem đơn đặt hàng
+    new:
       page: Đặt hàng
-      submit: Xác nhận
+      new: Xác nhận
+    edit:
+      page: Chỉnh sửa dơn đặt hàng
+      edit: Thay đổi
+      can't: Không thể thay đổi
+    create:
+      success: Cảm ơn bạn đã đặt hàng
+      fail: Không thể đặt hàng
+    update:
+      success: Thay đổi thông tin đặt hàng thành công
+      fail: Không thể cập nhật
+      can't: Không thể thay đổi
+    destroy:
+      success: Đã hủy đơn đặt hàng
+      fail: Không thể hủy
+      can't: Không thể hủy đơn đặt hàng
   payments:
     index:
       name: Tên
@@ -332,3 +348,9 @@ vi:
     destroy:
       success: Đã xóa
       fail: Không thể xóa
+  change_status:
+    update:
+      success: Đã thay đổi
+      fail: Không thể thay đổi
+    edit:
+      confirm: Bạn chắc chắn không?

@@ -27,4 +27,5 @@ class Product < ApplicationRecord
     end)
   scope :min_price, ->(price){where "price >= ?", price}
   scope :max_price, ->(price){where "price <= ?", price}
+  scope :by_ids, ->(ids){where id: ids}
 end

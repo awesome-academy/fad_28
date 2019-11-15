@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-md-2">
+      <%= render "share/menu_admin" %>
+    </div>
+    <div class="col-md-10">
+      <br>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-items">
+          <%= link_to t(".place"), "#place", class: "nav-link active", "data-toggle": "tab" %>
+        </li>
+        <li class="nav-items">
+          <%= link_to t(".transport"), "#transport", class: "nav-link", "data-toggle": "tab" %>
+        </li>
+        <li class="nav-items">
+          <%= link_to t(".finish"), "#finish", class: "nav-link", "data-toggle": "tab" %>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="place">
+          <table class="table">
+            <tr>
+              <th>#</th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".email" %></th>
+              <th><%= t ".address" %></th>
+              <th><%= t ".phone" %></th>
+              <th><%= t ".status" %></th>
+              <th><%= t ".next" %></th>
+            </tr>
+            <%= render @places %>
+          </table>
+          <%= will_paginate @places %>
+        </div>
+        <div class="tab-pane fade" id="transport">
+          <table class="table">
+            <tr>
+              <th>#</th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".email" %></th>
+              <th><%= t ".address" %></th>
+              <th><%= t ".phone" %></th>
+              <th><%= t ".status" %></th>
+              <th><%= t ".next" %></th>
+            </tr>
+            <%= render @transports %>
+          </table>
+          <%= will_paginate @transports %>
+        </div>
+        <div class="tab-pane fade" id="finish">
+          <table class="table">
+            <tr>
+              <th>#</th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".email" %></th>
+              <th><%= t ".address" %></th>
+              <th><%= t ".phone" %></th>
+              <th><%= t ".status" %></th>
+            </tr>
+            <%= render @finishes %>
+          </table>
+          <%= will_paginate @finishes %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

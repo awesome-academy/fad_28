@@ -1,0 +1,38 @@
+<%= provide :page, t(".page") %>
+<div class="container">
+  <br>
+  <div class="carts">
+    <table class="table">
+      <tr class="text-center">
+        <th>#</th>
+        <th><%= t ".image" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".quantity" %></th>
+        <th><%= t ".price" %></th>
+        <th><%= t ".total" %></th>
+      </tr>
+      <% @order_items.each do |item| %>
+        <tr>
+          <td><%= item.id %></td>
+          <td><%= image_tag item.product.image.url, class: "zoom-out-img" %></td>
+          <td><%= item.product.name %></td>
+          <td><%= item.quantity %></td>
+          <td><%= number_to_currency item.price %></td>
+          <td><%= number_to_currency(sum_of_each_item item.quantity, item.price) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="total-pay">
+        <h4 class="text-center">
+          <%= t ".order_total" %> <strong><%= number_to_currency @total %></strong>
+        </h4>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
