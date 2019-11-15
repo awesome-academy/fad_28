@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :load_category, only: [:new, :edit]
   before_action :load_product, except: [:index, :new, :create]
   before_action :allow_destroy, only: :destroy
+  before_action :load_evaluates, only: :show
 
   def index
     product = Product.includes(:category)
@@ -12,6 +13,7 @@ class ProductsController < ApplicationController
 
   def show
     @order_item = OrderItem.new
+    @evaluate = Evaluate.new
   end
 
   def new
@@ -68,5 +70,12 @@ class ProductsController < ApplicationController
     return if exist_order_item.empty?
     flash[:danger] = t ".fail"
     redirect_to products_path
+  end
+
+  def load_evaluates
+    @evaluates = @product.evaluates.recently.paginate page: params[:page],
+      per_page: Settings.items
+    @sum_star = @evaluates.sum :star
+    @count_rating = @evaluates.size
   end
 end

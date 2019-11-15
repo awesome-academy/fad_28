@@ -13,7 +13,7 @@ class Order < ApplicationRecord
 
   enum status_id: {place: 1, transport: 2, finish: 3}
 
-  ORDER_PARAMS = [:payment_id, :name, :email, :address, :phone]
+  ORDER_PARAMS = %i(payment_id name email address phone).freeze
 
   scope :newest, ->{order "created_at DESC"}
   scope :by_user, ->(mail){where "email = ?", mail}

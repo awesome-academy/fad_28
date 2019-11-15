@@ -104,6 +104,8 @@ vi:
         phone: Số điện thoại
         payment_id: Phương thức thanh toán
         status_id: Trạng thái
+      evaluate:
+        content: Nội dung
     errors:
       messages:
         blank: không được để trống
@@ -254,6 +256,11 @@ vi:
       fail: Không thể xóa
     show:
       add: Giỏ hàng
+      recently: Nhận xét gần đây
+      please: Vui lòng đăng nhập để nhận xét
+      signin: Đăng nhập
+      no_comment: Chưa có comment ở đây
+      count_rating: lượt đánh giá
   number:
     currency:
       format:
@@ -352,5 +359,23 @@ vi:
     update:
       success: Đã thay đổi
       fail: Không thể thay đổi
-    edit:
+  evaluates:
+    evaluate:
+      comment: Nhận xét bởi
+      date: vào ngày
       confirm: Bạn chắc chắn không?
+    new:
+      leave: Để lại nhận xét của bạn ở đây
+      submit: Nhận xét
+    create:
+      success: Đã bình luận
+      fail: Không thể bình luận
+    update:
+        success: Cập nhật thành công
+        fail: Không thể cập nhật
+    destroy:
+      success: Đã xóa
+      fail: Không thể xóa
+    edit:
+      edit: Sửa nhận xét
+      submit: Lưu lại

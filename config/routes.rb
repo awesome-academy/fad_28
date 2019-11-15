@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     resources :order_items, only: [:create, :update, :destroy]
     resources :orders
     resources :change_status, only: :update
+    resources :evaluates, except: [:index, :show, :new]
   end
 end

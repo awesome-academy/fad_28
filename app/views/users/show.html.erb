@@ -64,6 +64,8 @@
           <%= render "change_password/edit" %>
         </div>
         <div class="tab-pane fade" id="feedback">
+          <%= render @evaluates %>
+          <%= will_paginate @evaluates %>
         </div>
         <div class="tab-pane fade" id="order">
           <table class="table">

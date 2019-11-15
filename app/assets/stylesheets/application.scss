@@ -294,6 +294,41 @@ label {
   background: $white;
   box-shadow: 1px 5px 5px 4px rgba(0, 0, 0, 0.4);
 }
+.evaluate {
+  padding: 0.5rem 2rem;
+  margin-top: 2rem;
+  background: $white;
+  box-shadow: 1px 6px 5px 6px rgba(0, 0, 0, 0.3);
+}
+.comment {
+  padding: 2rem;
+  margin-top: 2rem;
+  background: $white;
+  box-shadow: 1px 6px 5px 6px rgba(0, 0, 0, 0.3);
+}
+.star-box .fa-star {
+  color: $rating;
+}
+.rating {
+  .fa-star, .fa-star-half {
+    color: $rating;
+  }
+}
+.name {
+  color: $blue;
+}
+.sum-action {
+  display: flex;
+  justify-content: space-between;
+}
+.display-radio {
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked+label {
+    color: $rating;
+  }
+}
 @media only screen and (max-width: 576px) {
   .alert {
     width: 100%;

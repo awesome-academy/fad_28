@@ -9,4 +9,7 @@ class Evaluate < ApplicationRecord
       greater_than: Settings.smallest.of_star,
       less_than: Settings.biggest.of_star
     }
+  validates :content, presence: true
+
+  scope :recently, ->{order "created_at DESC"}
 end

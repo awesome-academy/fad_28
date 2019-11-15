@@ -1,0 +1,15 @@
+<div class="div-form">
+  <h1><%= t ".edit" %></h1>
+  <br>
+  <%= form_for @evaluate do |f| %>
+    <%= render "share/errors", object: @evaluate %>
+    <%= render "evaluates/rating", form: f %>
+    <div class="form-group">
+      <%= f.label :content %>
+      <%= f.text_area :content, class: "form-control", rows: 5 %>
+    </div>
+    <div class="form-group text-center">
+      <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
+    </div>
+  <% end %>
+</div>

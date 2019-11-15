@@ -1,0 +1,45 @@
+<p class="star-box">
+  <strong><%= evaluate.product.name %></strong>
+  &nbsp;&nbsp;&nbsp;
+  <% if evaluate.star == 5 %>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  <% elsif evaluate.star == 4 %>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  <% elsif evaluate.star == 3 %>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  <% elsif evaluate.star == 2 %>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  <% else %>
+    <i class="fa fa-star"></i>
+  <% end %>
+</p>
+<p>
+  <div class="sum-action">
+    <div>
+      <%= t ".comment" %> <strong class="name"><%= evaluate.user.name %></strong> <%= t ".date" %>
+      <%= evaluate.created_at.strftime("%d-%m-%Y") %>
+    </div>
+    <% if current_user == evaluate.user %>
+      <div class="action">
+        <%= link_to edit_evaluate_path(evaluate), class: "btn" do %>
+          <i class="fa fa-edit"></i>
+        <% end %>
+        <%= link_to evaluate, method: :delete, data: {confirm: t(".confirm")}, class: "btn" do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</p>
+<p><%= evaluate.content %></p>
+<hr>

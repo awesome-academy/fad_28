@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
     cart.each do |key, value|
       product = Product.find_by id: key
       price = price_for product
-      all_items.push({product_id: key.to_i, quantity: value, price: price})
+      all_items.push(product_id: key.to_i, quantity: value, price: price)
     end
     order.order_items.create(all_items)
   end
@@ -102,10 +102,6 @@ class OrdersController < ApplicationController
   def load_order_finishes
     @finishes = Order.finish.newest.paginate page: params[:page],
       per_page: Settings.items
-  end
-
-  def load_order_items
-    @order_items = @order.order_items.includes(:product)
   end
 
   def load_order_items
