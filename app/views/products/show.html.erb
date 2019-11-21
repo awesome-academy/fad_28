@@ -32,6 +32,11 @@
             </div>
           </div>
         <% end %>
+        <br>
+        <div class="rating">
+          <%= render "evaluates/avg_rating", sum_star: @sum_star, count_rating: @count_rating %>
+          <h6><%= @count_rating %> <%= t ".count_rating" %></h6>
+        </div>
       </div>
       <div class="col-md-4">
         <h3><%= t ".description" %></h3>
@@ -39,4 +44,28 @@
       </div>
     </div>
   </div>
+  <div class="evaluate">
+    <% if current_user %>
+      <div id="form-comment">
+        <%= render "evaluates/new" %>
+      </div>
+    <% else %>
+      <h3 class="text-center">
+        <%= t ".please" %> <%= link_to t(".signin"), signin_path, class: "btn btn-success" %>
+      </h3>
+    <% end %>
+  </div>
+  <div class="comment">
+    <% if @evaluates.any? %>
+      <h1><%= t ".recently" %></h1>
+      <br>
+      <div id="load-cmt">
+        <%= render @evaluates %>
+      </div>
+      <%= will_paginate @evaluates %>
+    <% else %>
+      <h1><%= t ".no_comment" %></h1>
+    <% end %>
+  </div>
+  <br>
 </div>

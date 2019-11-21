@@ -207,6 +207,11 @@ en:
       fail: Delete failure
     show:
       add: Add to cart
+      recently: Comment recently
+      please: Please login to comment
+      signin: Sign in
+      no_comment: None have comment here
+      count_rating: in turn rating
   number:
     currency:
       format:
@@ -329,3 +334,23 @@ en:
     update:
       success: Status changed
       fail: Can't change status
+  evaluates:
+    evaluate:
+      comment: Comment by
+      date: in date
+      confirm: Are you sure?
+    new:
+      leave: Leave your comment here
+      submit: Comment
+    create:
+      success: Commented
+      fail: Can't comment
+    update:
+      success: Update successful
+      fail: can't update
+    destroy:
+      success: Deleted
+      fail: Can't delete
+    edit:
+      edit: Edit comment
+      submit: Save as

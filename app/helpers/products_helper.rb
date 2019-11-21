@@ -16,4 +16,8 @@ module ProductsHelper
     return product.price if product.discount.nil?
     product.price * (100 - product.discount) / 100
   end
+
+  def caculate_rating sum_star, count_rating
+    (sum_star.to_f / count_rating).round(1) if sum_star.present?
+  end
 end
