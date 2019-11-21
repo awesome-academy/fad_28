@@ -1,0 +1,36 @@
+<%= provide :page, @suggest.product_name %>
+<br>
+<div class="container">
+  <div class="show-suggest">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="img">
+          <%= image_tag @suggest.image.url, class: "img-fluid" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <p><strong><%= t ".author" %></strong></p>
+        <div class="text-center">
+          <%= image_tag @suggest.user.image.url, class: "avt" %>
+          <h5><strong><%= @suggest.user.name %></strong></h5>
+          <p class="text-right"><%= @suggest.created_at.strftime("%d/%m/%Y") %></p>
+        </div>
+        <% if @suggest.admin_seen? %>
+          <p class="badge badge-success badge-pill"><%= t ".admin_seen" %></p>
+        <% else %>
+          <p class="badge badge-warning badge-pill"><%= t ".admin_not_seen" %></p>
+        <% end %>
+        <br>
+        <% if current_user&.admin? %>
+          <%= link_to t(".seen"), admin_seen_suggest_path(@suggest),
+            class: "btn btn-success btn-block" %>
+        <% end %>
+        <br>
+        <%= social_share_button_tag %>
+      </div>
+    </div>
+    <br>
+    <div class="text-center"><h1><%= @suggest.product_name %></h1></div>
+    <div><p class="description"><%= @suggest.description %></p></div>
+  </div>
+</div>

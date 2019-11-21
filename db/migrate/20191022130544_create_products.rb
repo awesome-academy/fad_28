@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.float :price
       t.float :discount
       t.date :close_discount_at
-      t.boolean :sold_many, default: false
+      t.boolean :sold_many
       t.text :description
       t.references :category, foreign_key: true
 

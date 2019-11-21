@@ -68,20 +68,37 @@
           <%= will_paginate @evaluates %>
         </div>
         <div class="tab-pane fade" id="order">
-          <table class="table">
-            <tr>
-              <th>#</th>
-              <th><%= t ".name" %></th>
-              <th><%= t ".email" %></th>
-              <th><%= t ".address" %></th>
-              <th><%= t ".phone" %></th>
-              <th><%= t ".status" %></th>
-            </tr>
-            <%= render @orders %>
-          </table>
-          <%= will_paginate @orders %>
+          <% if @orders.present? %>
+            <table class="table">
+              <tr>
+                <th>#</th>
+                <th><%= t ".name" %></th>
+                <th><%= t ".email" %></th>
+                <th><%= t ".address" %></th>
+                <th><%= t ".phone" %></th>
+                <th><%= t ".status" %></th>
+              </tr>
+              <%= render @orders %>
+            </table>
+            <%= will_paginate @orders %>
+          <% end %>
         </div>
         <div class="tab-pane fade" id="share">
+          <% if @suggests.present? %>
+            <table class="table">
+              <tr>
+                <th><%= t ".image" %></th>
+                <th><%= t ".product_name" %></th>
+                <th><%= t ".description" %></th>
+                <th><%= t ".date" %></th>
+                <th class="action-in-user"><%= t ".action" %></th>
+              </tr>
+              <% @suggests.each do |suggest| %>
+                <%= render "suggests/your_share", suggest: suggest %>
+              <% end %>
+            </table>
+            <%= will_paginate @suggests %>
+          <% end %>
         </div>
       </div>
     </div>

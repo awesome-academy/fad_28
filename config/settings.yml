@@ -31,3 +31,4 @@ tops: 12
 
 # Quantity
 max_quantity: 99
+truncate: 120

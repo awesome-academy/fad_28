@@ -34,9 +34,11 @@
         <% end %>
         <br>
         <div class="rating">
-          <%= render "evaluates/avg_rating", sum_star: @sum_star, count_rating: @count_rating %>
+          <%= render "evaluates/avg_rating", avg: @avg_star %>
           <h6><%= @count_rating %> <%= t ".count_rating" %></h6>
         </div>
+        <br>
+        <%= social_share_button_tag %>
       </div>
       <div class="col-md-4">
         <h3><%= t ".description" %></h3>

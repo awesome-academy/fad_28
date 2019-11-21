@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-md-2">
+      <%= render "share/menu_admin" %>
+    </div>
+    <div class="col-md-10">
+      <% if @suggests.present? %>
+        <table class="table">
+          <tr>
+            <th><%= t ".image" %></th>
+            <th><%= t ".product_name" %></th>
+            <th><%= t ".date" %></th>
+            <th><%= t ".author" %></th>
+            <th><%= t ".seen" %></th>
+          </tr>
+          <% @suggests.each do |s| %>
+            <tr>
+              <td><%= image_tag s.image.url, class: "img-in-user" %></td>
+              <td><%= s.product_name %></td>
+              <td><%= s.created_at.strftime("%d/%m/%Y") %></td>
+              <td><%= s.user.name %></td>
+              <td>
+                <%= link_to t(".view"), s, class: "btn btn-info" %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+        <%= will_paginate @suggests %>
+      <% end %>
+    </div>
+  </div>
+</div>

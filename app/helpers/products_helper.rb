@@ -17,7 +17,7 @@ module ProductsHelper
     product.price * (100 - product.discount) / 100
   end
 
-  def caculate_rating sum_star, count_rating
-    (sum_star.to_f / count_rating).round(1) if sum_star.present?
+  def new_suggest
+    Suggest.not_seen.size
   end
 end

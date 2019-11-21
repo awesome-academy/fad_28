@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import 'color';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import 'social-share-button';
 
 body {
   margin: 0;
@@ -327,6 +328,49 @@ label {
   }
   input[type="radio"]:checked+label {
     color: $rating;
+  }
+}
+.content-suggest {
+  padding: 1rem;
+  .action {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.show-suggest {
+  padding: 1rem;
+  background: $white;
+  .description {
+    line-height: 3;
+  }
+  .avt {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+}
+.img-in-user {
+  width: 200px;
+}
+.action-in-user {
+  width: 17%;
+}
+.img-suggest {
+  width: 348px;
+  height: 232px;
+  position: relative;
+  overflow: hidden;
+  img {
+    display: inline;
+    height: 100%;
+    width: auto;
+  }
+}
+.social-share-button {
+  .ssb-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
   }
 }
 @media only screen and (max-width: 576px) {

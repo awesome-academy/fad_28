@@ -36,5 +36,14 @@
         <%= t ".payment" %>
       <% end %>
     </li>
+    <li class="nav-items">
+      <%= link_to admin_view_new_suggests_path, class: "nav-link" do %>
+        <i class="fa fa-surprise"></i>
+        <%= t ".suggests" %>
+        <sup class="badge badge-success badge-pill">
+          <%= new_suggest %>
+        </sup>
+      <% end %>
+    </li>
   </ul>
 </div>

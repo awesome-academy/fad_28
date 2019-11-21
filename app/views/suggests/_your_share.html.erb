@@ -1,0 +1,18 @@
+<tr>
+  <td><%= image_tag suggest.image.url, class: "img-in-user" %></td>
+  <td><%= suggest.product_name %></td>
+  <td><%= suggest.description.truncate(Settings.truncate) %></td>
+  <td><%= suggest.created_at.strftime("%d/%m/%Y") %></td>
+  <td>
+    <%= link_to suggest, class: "btn btn-info" do %>
+      <i class="fa fa-eye"></i>
+    <% end %>
+    <%= link_to edit_suggest_path(suggest), class: "btn btn-warning" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to suggest, method: :delete, data: {confirm: t(".confirm")},
+      class: "btn btn-danger" do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>
