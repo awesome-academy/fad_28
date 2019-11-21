@@ -48,6 +48,12 @@ vi:
       address: Địa chỉ
       male: nam
       female: nữ
+      signout: Đăng xuất
+      image: Hình ảnh
+      product_name: Tên sản phẩm
+      description: Mô tả
+      date: Ngày viết
+      action: Hoạt động
     edit_profile:
       update: Cập nhật hồ sơ
       male: Nam
@@ -106,6 +112,10 @@ vi:
         status_id: Trạng thái
       evaluate:
         content: Nội dung
+      suggest:
+        product_name: Tên sản phẩm
+        description: Mô tả
+        image: Hình ảnh
     errors:
       messages:
         blank: không được để trống
@@ -192,6 +202,7 @@ vi:
       drink: Đồ uống
       all: Tất cả
       filter: Lọc sản phẩm
+      suggests: Gợi ý
   categories:
     index:
       page: Thể loại
@@ -379,3 +390,43 @@ vi:
     edit:
       edit: Sửa nhận xét
       submit: Lưu lại
+  suggests:
+    index:
+      no_share: Chưa có chia sẻ nào
+      new: Gợi ý mới
+    form:
+      name: Tên sản phẩm
+      description: Thêm mô tả
+    new:
+      page: Gợi ý mới
+      new_suggest: Gợi ý mới
+    edit:
+      page: Chỉnh sửa gợi ý
+      change: Thay đổi
+    suggest:
+      confirm: Bạn chắc chắc không
+    create:
+      success: Tạo gợi ý thành công
+      fail: Không thể tạo
+    update:
+      not_found: Gợi ý không tồn tại
+      success: Đã thay đổi gợi ý
+      fail: Không thể thay đổi gợi ý
+    destroy:
+      not_found: Gợi ý không tồn tại
+      success: Đã xóa gợi ý
+      fail: Không thể xóa gợi ý
+    show:
+      author: Tác giả
+      admin_seen: Quản trị viên đã xem
+      admin_not_seen: Quản trị viên chưa xem
+      seen: Nhấp vào để xem
+    your_share:
+      confirm: Bạn chắc chắc không?
+    admin:
+      image: Hình ảnh
+      product_name: Tên sản phẩm
+      date: Ngày viết
+      author: Tác giả
+      seen: Xem
+      view: Xem

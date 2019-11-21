@@ -1,4 +1,9 @@
 class Suggest < ApplicationRecord
-  validates :your_name, :product_name, :image, presence: true
-  validates :your_name, length: {maximum: Settings.size.of_name}
+  belongs_to :user
+  validates :product_name, :image, :user_id, presence: true
+
+  mount_uploader :image, ImageUploader
+
+  scope :newest, ->{order "created_at DESC"}
+  scope :not_seen, ->{where "admin_seen is null"}
 end

@@ -6,3 +6,4 @@
 //= require popper
 //= require bootstrap
 //= require custom
+//= require social-share-button

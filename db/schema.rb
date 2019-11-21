@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2019_10_22_132155) do
+ActiveRecord::Schema.define(version: 2019_11_21_021426) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "parent_id"
     t.string "name"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_132155) do
     t.float "price"
     t.float "discount"
     t.date "close_discount_at"
-    t.boolean "sold_many", default: false
+    t.boolean "sold_many"
     t.text "description"
     t.bigint "category_id"
     t.datetime "created_at", null: false
@@ -67,19 +67,20 @@ ActiveRecord::Schema.define(version: 2019_10_22_132155) do
   end
 
   create_table "suggests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "your_name"
     t.string "product_name"
     t.string "image"
     t.text "description"
+    t.boolean "admin_seen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_suggests_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "role_id", default: 2
     t.string "email"
     t.string "password_digest"
-    t.string "remember_digest"
     t.string "reset_password_digest"
     t.string "name"
     t.boolean "gender"
@@ -98,4 +99,5 @@ ActiveRecord::Schema.define(version: 2019_10_22_132155) do
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "payments"
   add_foreign_key "products", "categories"
+  add_foreign_key "suggests", "users"
 end

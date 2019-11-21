@@ -75,7 +75,7 @@ class ProductsController < ApplicationController
   def load_evaluates
     @evaluates = @product.evaluates.recently.paginate page: params[:page],
       per_page: Settings.items
-    @sum_star = @evaluates.sum :star
+    @avg_star = @product.evaluates.average :star
     @count_rating = @evaluates.size
   end
 end

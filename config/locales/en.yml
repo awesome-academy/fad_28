@@ -45,6 +45,11 @@ en:
       male: male
       female: female
       signout: Sign out
+      image: Image
+      product_name: Product name
+      description: Description
+      date: Date write
+      action: Action
     edit_profile:
       update: Update profile
       male: Male
@@ -138,6 +143,7 @@ en:
       category: Categories
       product: Products
       payment: Payments
+      suggests: Suggests
     filter:
       search_name: search...
     menu_stores:
@@ -354,3 +360,43 @@ en:
     edit:
       edit: Edit comment
       submit: Save as
+  suggests:
+    index:
+      no_share: There is no sharing
+      new: New suggest
+    form:
+      name: Product name
+      description: Add description
+    new:
+      page: New suggest
+      new_suggest: New suggest
+    edit:
+      page: Edit your suggest
+      change: Change
+    suggest:
+      confirm: Are you sure?
+    create:
+      success: Create suggest successful
+      fail: Can't create
+    update:
+      not_found: Suggest is not found
+      success: Changed suggest
+      fail: Can't change suggest
+    destroy:
+      not_found: Suggest is not found
+      success: Deleted suggest
+      fail: Can't delete suggest
+    show:
+      author: Author
+      admin_seen: Admin seen already
+      admin_not_seen: Admin not seen
+      seen: Click to seen
+    your_share:
+      confirm: Are you sure?
+    admin:
+      image: Image
+      product_name: Product name
+      date: Date create
+      author: Author
+      seen: Seen
+      view: View

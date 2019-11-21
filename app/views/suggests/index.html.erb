@@ -1,0 +1,14 @@
+<br>
+<div class="container">
+  <div class="text-right">
+    <%= link_to t(".new"), new_suggest_path, class: "btn btn-success" %>
+  </div>
+  <% if @suggests.any? %>
+    <div class="row">
+      <%= render @suggests %>
+      <%= will_paginate @suggests %>
+    </div>
+  <% else %>
+    <h1><%= t ".no_share" %></h1>
+  <% end %>
+</div>

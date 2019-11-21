@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :only_admin, only: [:index, :destroy]
   before_action :load_user, only: [:show, :update, :destroy]
   before_action :correct_user, only: [:show, :update]
-  before_action :load_evaluates, only: :show
+  before_action :load_evaluates, :load_suggests, only: :show
 
   def index
     @users = User.filter_by(params[:name]).paginate page: params[:page],
@@ -77,5 +77,10 @@ class UsersController < ApplicationController
   def load_evaluates
     evaluate = current_user.evaluates.includes(:product)
     @evaluates = evaluate.paginate page: params[:page], per_page: Settings.items
+  end
+
+  def load_suggests
+    @suggests = current_user.suggests.paginate page: params[:page],
+      per_page: Settings.items
   end
 end

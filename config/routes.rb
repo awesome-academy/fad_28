@@ -27,5 +27,13 @@ Rails.application.routes.draw do
     resources :orders
     resources :change_status, only: :update
     resources :evaluates, except: [:index, :show, :new]
+    resources :suggests do
+      collection do
+        get :admin_view_new
+      end
+      member do
+        get :admin_seen
+      end
+    end
   end
 end
