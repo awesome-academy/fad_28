@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :signed_in, :only_admin
+  before_action :authenticate_user!, :only_admin
   before_action :load_category, only: [:edit, :update, :destroy]
   before_action :allow_destroy, only: :destroy
 

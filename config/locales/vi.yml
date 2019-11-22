@@ -20,51 +20,106 @@ vi:
       new: mới nhất
       promotion: khuyến mãi
       highlight: nổi bật
+  devise:
+    confirmations:
+      new:
+        resend: Gửi lại hướng dẫn xác nhận
+        submit: Xác nhận
+    passwords:
+      new:
+        page: Quên mật khẩu của bạn?
+        submit: Gửi cho tôi hướng dẫn đặt lại mật khẩu
+      edit:
+        page: Thay đổi mật khẩu của bạn
+        submit: Thay đổi
+    registrations:
+      new:
+        page: Đăng ký thành viên
+        character: ký tự tối thiểu
+        submit: Đăng ký
+      edit:
+        page: Chỉnh sửa tài khoản
+        wating: Đang chờ xác nhận
+        character: ký tự tối thiểu
+        submit: Cập nhật
+    sessions:
+      new:
+        page: Đăng nhập hệ thống
+        remember: Lưu tài khoản
+        forgot: Quên mật khẩu?
+        submit: Đăng nhập
+    shared:
+      links:
+        login: Đăng nhập hệ thống
+        signup: Đăng ký tài khoản
+        forgot: Bạn đã quên mật khẩu?
+        confirmation: Xác thực tài khoản
+        unlock: Mở khóa tài khoản
+    unlocks:
+      new:
+        page: Gửi lại hướng dẫn mở khóa
+        submit: Xác nhận
   users:
+    omniauth_callbacks:
+      facebook:
+        success: Đăng nhập thành công
+        fail: Đăng nhập thất bại
+      google_oauth2:
+        success: Đăng nhập thành công
+        fail: Đăng nhập thất bại
     new:
-      page: Đăng ký
-      signup: Đăng Ký Thành Viên
-      name: Tên của bạn
-      email: Email để đăng nhập
-      password: Mật khẩu
-      confirm: Xác nhận mật khẩu
-      submit: Tạo tài khoản
+      page: Tạo tài khoản
+      submit: Xác nhận
     create:
-      saved: Đăng ký tài khoản thành công
       success: Đã tạo tài khoản
     show:
       not_found: Không tìm thấy người dùng
-      manager: Quản lý hệ thống
-      customer: Khách hàng thân thiết
-      control: điều khiển
-      update: hồ sơ
-      password: mật khẩu
-      feedback: phản hồi
-      order: đơn đặt hàng
-      share: chia sẻ
+    suggests:
+      image: Hình ảnh
+      product_name: Tên sản phẩm
+      description: Mô tả
+      date: Ngày viết
+      action: Hoạt động
+    orders:
+      name: Tên
+      email: Email
+      address: Địa chỉ
+      phone: Số điện thoại
+      status: Trạng thái
+    links:
+      control: Bảng điều khiển
+      update: Hồ sơ
+      password: Tài khoản
+      feedback: Đánh giá
+      order: Đơn đặt hàng
+      share: Chia sẻ
+      signout: Đăng xuất
+      avatar: Thay đổi ảnh đại diện
+      delete: Xóa tài khoản
+      confirm: Bạn chắc chắn không?
+    profile:
       email: Email
       gender: Giới tính
       phone: Số điện thoại
       address: Địa chỉ
       male: nam
       female: nữ
-      signout: Đăng xuất
-      image: Hình ảnh
-      product_name: Tên sản phẩm
-      description: Mô tả
-      date: Ngày viết
-      action: Hoạt động
-    edit_profile:
-      update: Cập nhật hồ sơ
+      manager: Quản lý hệ thống
+      customer: Khách hàng thân thiết
+    edit:
+      page: Cập nhật hồ sơ
       male: Nam
       female: Nữ
       submit: Cập nhật
+      not_found: Không tìm thấy người dùng
     update:
       success: Cập nhật hồ sơ thành công
       fail: Cập nhật hồ sơ thất bại
+      not_found: Không tìm thấy người dùng
     destroy:
       success: Đã xóa
       fail: Không thể xóa
+      not_found: Không tìm thấy người dùng
     user:
       male: Nam
       female: Nữ
@@ -81,10 +136,11 @@ vi:
   activerecord:
     attributes:
       user:
-        email: Email
+        email: Thư điện tử
         name: Tên
         password: Mật khẩu
         password_confirmation: Xác nhận mật khẩu
+        current_password: Mật khẩu hiện tại
         gender: Giới tính
         address: Địa chỉ
         phone: Số điện thoại
@@ -125,62 +181,9 @@ vi:
         confirmation: không đúng
         taken: đã tồn tại
         required: không tồn tại
-  session:
-    new:
-      page: Đăng nhập
-      email: Email
-      password: Mật khẩu
-      remember: Lưu tài khoản
-      forgot: Quên mật khẩu?
-      submit: Đăng nhập
-    create:
-      invalid: Email hoặc mật khẩu của bạn không chính xác
-      success: Đăng nhập thành công
-    destroy:
-      not_signed_in: Vui lòng đăng nhập
-      signout: Đã đăng xuất
-  user_mailer:
-    reset_password:
-      reset: Đặt lại mật khẩu
-      app: Foods and Drinks Store
-      hello: Xin chào,
-      message: Bạn có thể đặt lại mật khẩu tại đây
-  reset_password:
-    new:
-      page: Quên mật khẩu
-      submit: Xác nhận
-    create:
-      sent: Vui lòng kiểm tra email của bạn để thay đổi mật khẩu
-      not_found: Email không tồn tại
-    edit:
-      page: Đổi mật khẩu
-      password: Mật khẩu
-      confirm: Xác nhận mật khẩu
-      submit: Xác nhận
-      not_found: Người dùng không tồn tại
-      invalid: Đường dẫn không chính xác
-    update:
-      blank: không được để trống
-      success: Đặt lại mật khẩu thành công
-      fail: Đặt lại mật khẩu thất bại
-      not_found: Người dùng không tồn tại
-      invalid: Đường dẫn không chính xác
-  change_password:
-    edit:
-      page: Đổi mật khẩu
-      old_password: Mật khẩu cũ
-      new_password: Mật khẩu mới
-      confirm: Xác nhận mật khẩu
-      submit: Thay đổi
-    update:
-      not_found: Người dùng không tồn tại
-      not_match: Mật khẩu cũ không trùng khớp
-      success: Đã đổi mật khẩu. Vui lòng đăng nhập lại
-      fail: Đổi mật khẩu thất bại
   change_avatar:
     update:
       success: Đã thay đổi ảnh đại diện
-      not_found: Không tìm thấy người dùng
       not_found: Không tìm thấy người dùng
       not_change: Không thay đổi
     edit:
@@ -194,6 +197,8 @@ vi:
       category: Loại hàng hóa
       product: Sản phẩm
       payment: Thanh toán
+      suggests: Gợi ý
+      signout: Đăng xuất
     filter:
       search_name: tìm kiếm...
     menu_stores:
@@ -202,7 +207,6 @@ vi:
       drink: Đồ uống
       all: Tất cả
       filter: Lọc sản phẩm
-      suggests: Gợi ý
   categories:
     index:
       page: Thể loại
@@ -270,7 +274,7 @@ vi:
       recently: Nhận xét gần đây
       please: Vui lòng đăng nhập để nhận xét
       signin: Đăng nhập
-      no_comment: Chưa có comment ở đây
+      no_comment: Chưa có bình luận ở đây
       count_rating: lượt đánh giá
   number:
     currency:
@@ -317,7 +321,7 @@ vi:
       not_found: Không tìm thấy mục trong giỏ hàng
   orders:
     order:
-      confirm: Are you sure?
+      confirm: Bạn chắc chắn không?
     index:
       name: Tên
       email: Email
@@ -335,6 +339,13 @@ vi:
     new:
       page: Đặt hàng
       new: Xác nhận
+    transports:
+      name: Tên
+      email: Email
+      address: Địa chỉ
+      phone: Số điện thoại
+      status: Trạng thái
+      next: Tiếp theo
     edit:
       page: Chỉnh sửa dơn đặt hàng
       edit: Thay đổi
@@ -342,6 +353,13 @@ vi:
     create:
       success: Cảm ơn bạn đã đặt hàng
       fail: Không thể đặt hàng
+    places:
+      name: Tên
+      email: Email
+      address: Địa chỉ
+      phone: Số điện thoại
+      status: Trạng thái
+      next: Tiếp theo
     update:
       success: Thay đổi thông tin đặt hàng thành công
       fail: Không thể cập nhật
@@ -350,6 +368,17 @@ vi:
       success: Đã hủy đơn đặt hàng
       fail: Không thể hủy
       can't: Không thể hủy đơn đặt hàng
+    finishes:
+      name: Tên
+      email: Email
+      address: Địa chỉ
+      phone: Số điện thoại
+      status: Trạng thái
+    links:
+      all: Tất cả đơn hàng
+      place: Đã đặt hàng
+      transport: Đang vận chuyển
+      finish: Đã hoàn thành
   payments:
     index:
       name: Tên
@@ -368,7 +397,7 @@ vi:
       fail: Không thể xóa
   change_status:
     update:
-      success: Đã thay đổi
+      success: Đã chuyển trạng thái
       fail: Không thể thay đổi
   evaluates:
     evaluate:
@@ -382,8 +411,8 @@ vi:
       success: Đã bình luận
       fail: Không thể bình luận
     update:
-        success: Cập nhật thành công
-        fail: Không thể cập nhật
+      success: Cập nhật thành công
+      fail: Không thể cập nhật
     destroy:
       success: Đã xóa
       fail: Không thể xóa
@@ -399,7 +428,7 @@ vi:
       description: Thêm mô tả
     new:
       page: Gợi ý mới
-      new_suggest: Gợi ý mới
+      new_suggest: Tạo gợi ý
     edit:
       page: Chỉnh sửa gợi ý
       change: Thay đổi
@@ -423,10 +452,10 @@ vi:
       seen: Nhấp vào để xem
     your_share:
       confirm: Bạn chắc chắc không?
-    admin:
+    admin_view_new:
       image: Hình ảnh
       product_name: Tên sản phẩm
       date: Ngày viết
       author: Tác giả
-      seen: Xem
+      seen: Đã xem
       view: Xem

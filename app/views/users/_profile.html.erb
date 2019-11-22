@@ -1,0 +1,23 @@
+<% user ||= current_user %>
+<div class="show-left">
+  <div class="avatar">
+    <%= image_tag user.image.url %>
+  </div>
+  <h1 class="text-center"><strong><%= user.name %></strong></h1>
+  <hr>
+  <h5><strong><%= t ".email" %></strong> <%= user.email %></h5>
+  <h5><strong><%= t ".gender" %></strong> <%= gender_for user %></h5>
+  <h5><strong><%= t ".phone" %></strong> <%= user.phone %></h5>
+  <h5><strong><%= t ".address" %></strong> <%= user.address %></h5>
+  <% if user.admin? %>
+    <%= link_to t(".manager"), admin_path, class: "btn btn-lg btn-warning btn-block" %>
+  <% elsif user.customer? %>
+    <h5><strong><%= t ".customer" %></strong></h5>
+    <div class="progress">
+      <div style="width: <%= count_quantity_ordered_for user %>%"
+        class="progress-bar progress-bar-striped progress-bar-animated">
+        <%= count_quantity_ordered_for user %>
+      </div>
+    </div>
+  <% end %>
+</div>

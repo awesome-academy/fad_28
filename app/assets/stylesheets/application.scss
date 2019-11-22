@@ -67,20 +67,28 @@ body {
     }
   }
 }
-.div-form {
-  width: 50%;
+sup.star {
+  font-size: 16px;
+  font-weight: bold;
+  color: $star;
+  vertical-align: sub;
+  padding: 0 0.2rem;
+}
+.div-form, .div-form-half {
   padding: 2rem;
   background: $white;
-  box-shadow: 5px 6px 7px 5px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  box-shadow: 5px 6px 7px 2px rgba(0, 0, 0, 0.3);
   .component {
     display: flex;
     justify-content: space-between;
   }
+  .btn-block + .btn-block {
+    margin-top: 0.9rem;
+  }
+}
+.div-form-half {
+  width: 50%;
+  margin: auto;
 }
 label {
   font-weight: bold;
@@ -118,8 +126,7 @@ label {
   padding: 2rem;
   background: $white;
   border-radius: 1rem;
-  box-shadow: 5px 6px 7px 5px rgba(0, 0, 0, 0.5);
-  transform: translateY(1rem);
+  box-shadow: 5px 6px 7px 2px rgba(0, 0, 0, 0.3);
 }
 .menu {
   background: #380d40;
@@ -282,7 +289,7 @@ label {
 .carts {
   padding: 1rem;
   background: $white;
-  box-shadow: 1px 5px 5px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 5px 5px 2px rgba(0, 0, 0, 0.3);
   .th-input {
     width: 12%;
   }
@@ -293,7 +300,18 @@ label {
 .total-pay {
   padding: 2rem;
   background: $white;
-  box-shadow: 1px 5px 5px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 5px 5px 2px rgba(0, 0, 0, 0.3);
+}
+.content-cmt {
+  display: flex;
+  align-items: center;
+  .img-comment {
+    width: 50px;
+    margin-right: 1rem;
+  }
+  p {
+    margin-bottom: 0;
+  }
 }
 .evaluate {
   padding: 0.5rem 2rem;

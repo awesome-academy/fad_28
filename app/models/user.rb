@@ -2,64 +2,31 @@ class User < ApplicationRecord
   has_many :evaluates, dependent: :destroy
   has_many :suggests, dependent: :destroy
 
-  attr_accessor :remember_token, :reset_password_token
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+    :validatable, :confirmable, :lockable, :timeoutable, :trackable,
+    :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  FORMAT_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, uniqueness: {case_sensitive: false},
-    format: {with: FORMAT_EMAIL}, length: {maximum: Settings.size.of_email}
   validates :name, presence: true, length: {maximum: Settings.size.of_name}
   validates :phone, numericality: true, allow_nil: true
-  has_secure_password
-  validates :password, presence: true,
-    length: {minimum: Settings.size.of_password}, on: :skip
+
+  before_save{email.downcase!}
 
   enum role_id: {admin: 1, customer: 2, employee: 3}
 
   mount_uploader :image, ImageUploader
 
-  before_save{email.downcase!}
-
   scope :filter_by, ->(params){where "name like ?", "%#{params}%"}
 
-  def digest string
-    cost =
-      if ActiveModel::SecurePassword.min_cost
-        BCrypt::Engine::MIN_COST
-      else
-        BCrypt::Engine.cost
-      end
-    BCrypt::Password.create string, cost: cost
-  end
-
-  def new_token
-    SecureRandom.urlsafe_base64
-  end
-
-  def save_remember_token
-    self.remember_token = new_token
-    update_attribute :remember_digest, digest(remember_token)
-  end
-
-  def forget_remember_token
-    update_attribute :remember_digest, nil
-  end
-
-  def authenticate? attribute, token
-    digest = send "#{attribute}_digest"
-    return false unless digest
-    BCrypt::Password.new(digest).is_password? token
-  end
-
-  def save_reset_password_token
-    self.reset_password_token = new_token
-    update_attribute :reset_password_digest, digest(reset_password_token)
-  end
-
-  def send_email_reset_password
-    UserMailer.reset_password(self).deliver_now
-  end
-
-  def clear_reset_password_token
-    update_attribute :reset_password_digest, nil
+  def self.from_omniauth auth
+    user = User.find_by email: auth.info.email
+    return user if user
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.name = auth.info.name
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.skip_confirmation!
+    end
   end
 end

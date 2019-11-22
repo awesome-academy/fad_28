@@ -1,0 +1,26 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="div-form">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="div-form">
+        <h1 class="text-center"><%= t ".resend" %></h1>
+        <%= form_for resource, as: resource_name, url: confirmation_path(resource_name) do |f| %>
+          <%= render "share/errors", object: resource %>
+          <div class="form-group">
+            <%= f.label :email %><sup class="star">*</sup>
+            <%= f.email_field :email, autofocus: true, class: "form-control form-control-lg" %>
+          </div>
+          <div class="text-center">
+            <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

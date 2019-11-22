@@ -41,5 +41,8 @@
     <% end %>
   </div>
 </p>
-<p><%= evaluate.content %></p>
+<div class="content-cmt">
+  <%= image_tag evaluate.user.image.url, class: "rounded-circle img-comment" %>
+  <p><%= evaluate.content %></p>
+</div>
 <hr>

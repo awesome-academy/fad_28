@@ -32,16 +32,16 @@
         <li class="nav-item">
           <%= link_to image_tag("en.png"), Settings.en.to_h, class: "nav-link" %>
         </li>
-        <% if current_user %>
+        <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to t(".account"), current_user, class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to t(".signin"), signin_path, class: "nav-link" %>
+            <%= link_to t(".signin"), new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to t(".signup"), signup_path, class: "nav-link" %>
+            <%= link_to t(".signup"), new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>

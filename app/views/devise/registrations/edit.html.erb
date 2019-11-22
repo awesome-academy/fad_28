@@ -1,0 +1,42 @@
+<% provide :page, t(".page") %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "users/profile" %>
+    </div>
+    <div class="col-md-8">
+      <%= render "users/links" %>
+      <div class="profile">
+        <h1><%= t ".page" %></h1>
+        <br>
+        <%= form_for resource, as: resource_name, url: registration_path(resource_name),
+          method: :put do |f| %>
+          <%= render "share/errors", object: resource %>
+          <div class="form-group">
+            <%= f.label :current_password %><sup class="star">*</sup>
+            <%= f.password_field :current_password, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email %><sup class="star">*</sup>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              (<em><%= t ".wating" %> <%= resource.unconfirmed_email %></em>)
+            <% end %>
+            <%= f.email_field :email, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <em>(<%= @minimum_password_length %> <%= t ".character" %>)</em>
+            <%= f.password_field :password, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: "form-control form-control-lg" %>
+          </div>
+          <div class="text-center">
+            <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

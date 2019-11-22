@@ -14,3 +14,12 @@ Payment.create([
   {name: "ATM card"},
   {name: "Visa card"}
 ])
+
+Category.create([
+  {name: "Food"},
+  {name: "Drink"},
+  {name: "Fruit", parent_id: 1},
+  {name: "Juice", parent_id: 2},
+  {name: "Vegetable", parent_id: 1},
+  {name: "Milk tea", parent_id: 2}
+])

@@ -1,5 +1,5 @@
 class ChangeAvatarController < ApplicationController
-  before_action :signed_in, :load_user, :valid_params
+  before_action :authenticate_user!, :load_user, :valid_params
 
   def update
     if @user.update_attribute :image, params[:user][:image]

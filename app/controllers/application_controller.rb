@@ -1,12 +1,17 @@
 class ApplicationController < ActionController::Base
-  include SessionHelper
   include ProductsHelper
 
   before_action :load_language, :setup_cart
+  before_action :config_params_devise, if: :devise_controller?
 
   def setup_cart
     session[:cart] ||= {}
     @cart = session[:cart]
+  end
+
+  def only_admin
+    return if current_user.admin?
+    redirect_to root_path
   end
 
   def load_user
@@ -40,5 +45,9 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def config_params_devise
+    devise_parameter_sanitizer.permit :sign_up, keys: [:name]
   end
 end

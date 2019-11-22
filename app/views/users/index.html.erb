@@ -9,20 +9,22 @@
       <div class="row">
         <div class="col-md-8"><%= render "share/filter", url: users_path %></div>
         <div class="col-md-4">
-          <%= link_to t(".create"), signup_path, class: "btn btn-success btn-lg btn-block" %>
+          <%= link_to t(".create"), new_user_path, class: "btn btn-success btn-lg btn-block" %>
         </div>
       </div>
-      <table class="table">
-        <tr>
-          <th><%= t ".name" %></th>
-          <th><%= t ".email" %></th>
-          <th><%= t ".gender" %></th>
-          <th><%= t ".phone" %></th>
-          <th><%= t ".action" %></th>
-        </tr>
-        <%= render @users %>
-      </table>
-      <%= will_paginate @users %>
+      <% if @users.present? %>
+        <table class="table">
+          <tr>
+            <th><%= t ".name" %></th>
+            <th><%= t ".email" %></th>
+            <th><%= t ".gender" %></th>
+            <th><%= t ".phone" %></th>
+            <th><%= t ".action" %></th>
+          </tr>
+          <%= render @users %>
+        </table>
+        <%= will_paginate @users %>
+      <% end %>
     </div>
   </div>
 </div>

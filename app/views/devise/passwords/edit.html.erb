@@ -1,0 +1,33 @@
+<%= provide :page, t(".page") %>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="div-form">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="div-form">
+        <h1 class="text-center"><%= t ".page" %></h1>
+        <%= form_for resource, as: resource_name, url: password_path(resource_name),
+          method: :put do |f| %>
+          <%= render "share/errors", object: resource %>
+          <%= f.hidden_field :reset_password_token %>
+          <div class="form-group">
+            <%= f.label :password %><sup class="star">*</sup>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <%= f.password_field :password, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation %><sup class="star">*</sup>
+            <%= f.password_field :password_confirmation, class: "form-control form-control-lg" %>
+          </div>
+          <div class="text-center">
+            <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

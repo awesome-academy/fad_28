@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :signed_in, :only_admin, except: :show
-  before_action :load_category, only: [:new, :edit]
+  before_action :authenticate_user!, :only_admin, except: :show
+  before_action :load_category, except: [:index, :show, :destroy]
   before_action :load_product, except: [:index, :new, :create]
   before_action :allow_destroy, only: :destroy
   before_action :load_evaluates, only: :show
