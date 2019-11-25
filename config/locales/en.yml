@@ -20,47 +20,128 @@ en:
       new: newest
       promotion: promotion
       highlight: highlight
+  devise:
+    confirmations:
+      new:
+        resend: Resend confirmation instructions
+        submit: Confirm
+    mailer:
+      confirmation_instructions:
+        welcome: Welcome
+        message: You can confirm your account email through the link below
+        confirm: Confirm my account
+      email_changed:
+        welcome: Hello
+        message: We're contacting you to notify you that your email is being changed to
+      password_change:
+        welcome: Hello
+        message: We're contacting you to notify you that your password has been changed
+      reset_password_instructions:
+        welcome: Hello
+        message: "Someone has requested a link to change your password. You can do this through the link below"
+        confirm: Change my password
+        suggest: If you didn't request this, please ignore this email
+        how_to: Your password won't change until you access the link above and create a new one
+      unlock_instructions:
+        welcome: Hello
+        message: "Your account has been locked due to an excessive number of unsuccessful sign in attempts"
+        click: Click the link below to unlock your account
+        confirm: Unlock my account
+    passwords:
+      new:
+        page: Forgot your password?
+        submit: Send me reset password instructions
+      edit:
+        page: Change your password
+        submit: Change
+    registrations:
+      new:
+        page: Member registration
+        character: characters minimum
+        submit: Sign up
+      edit:
+        page: Edit account
+        wating: Wating confirmation
+        character: characters minimum
+        submit: Update
+    sessions:
+      new:
+        page: Login system
+        remember: Remember me
+        forgot: Forgot password?
+        submit: Login
+    shared:
+      links:
+        login: Sign in system
+        signup: Sign up account
+        forgot: Forgot your password?
+        confirmation: Confirmation account
+        unlock: Unlocks account
+    unlocks:
+      new:
+        page: Resend unlock instructions
+        submit: Confirm
   users:
+    omniauth_callbacks:
+      facebook:
+        success: Sign in successful
+        fail: Sign in failure
+      google_oauth2:
+        success: Sign in successful
+        fail: Sign in failure
     new:
-      page: Sign up
-      signup: Member Registration
-      submit: Create Account
+      page: Create account
+      submit: Confirm
     create:
-      saved: Account registration successful
       success: Created account
     show:
       not_found: User is not found
-      manager: The system manage
-      customer: Loyal customer
-      control: control
-      update: profile
-      password: password
-      feedback: feedback
-      order: order
-      share: share
+    suggests:
+      image: Image
+      product_name: Product name
+      description: Description
+      date: Date write
+      action: Action
+    orders:
+      name: Name
+      email: Email
+      address: Address
+      phone: Phone
+      status: Status
+    links:
+      control: Dashboard
+      update: Profile
+      password: Account
+      feedback: Evaluates
+      order: Order
+      share: Share
+      signout: Sign out
+      avatar: Change avatar
+      delete: Delete account
+      confirm: Are you sure?
+    profile:
       email: Email
       gender: Gender
       phone: Phone
       address: Address
       male: male
       female: female
-      signout: Sign out
-      image: Image
-      product_name: Product name
-      description: Description
-      date: Date write
-      action: Action
-    edit_profile:
-      update: Update profile
+      manager: The system manage
+      customer: Loyal customer
+    edit:
+      page: Edit profile
       male: Male
       female: Female
       submit: Update
+      not_found: User is not found
     update:
       success: Update profile successful
       fail: Update profile failure
+      not_found: User is not found
     destroy:
       success: Deleted
       fail: Can't delete
+      not_found: User is not found
     user:
       male: Male
       female: Female
@@ -74,58 +155,6 @@ en:
       phone: Phone
       action: Action
       page: User manage
-  session:
-    new:
-      page: Login
-      email: Email
-      password: Password
-      remember: Remember me
-      forgot: Forgot password?
-      submit: Sign in
-    create:
-      invalid: Your email or password invalid
-      success: Sign in successful
-    destroy:
-      not_signed_in: Please login
-      signout: Signed out
-  user_mailer:
-    reset_password:
-      reset: Reset Password
-      app: Foods and Drinks Store
-      hello: Hello,
-      message: You can reset password here
-  reset_password:
-    new:
-      page: Forgot password
-      submit: Confirm
-    create:
-      sent: Please check email to reset your password
-      not_found: Email is not found
-    edit:
-      page: Reset password
-      password: Password
-      confirm: Password confirmation
-      submit: Confirm
-      not_found: User is not found
-      invalid: Invalid link
-    update:
-      blank: can't be blank
-      success: Reset password successful
-      fail: Reset password failure
-      not_found: User is not found
-      invalid: Invalid link
-  change_password:
-    edit:
-      page: Change password
-      old_password: Old password
-      new_password: New password
-      confirm: Password confirmation
-      submit: Change
-    update:
-      not_found: User is not found
-      not_match: Old password is not match
-      success: Changed password. Please sign in again
-      fail: Change password failure
   change_avatar:
     update:
       success: Change avatar successful
@@ -144,6 +173,7 @@ en:
       product: Products
       payment: Payments
       suggests: Suggests
+      signout: Sign out
     filter:
       search_name: search...
     menu_stores:
@@ -261,18 +291,6 @@ en:
     destroy_item:
       success: Deleted
       not_found: Not found item in cart
-  order_items:
-    create:
-      success: Added to cart
-      fail: Can't add to cart
-    update:
-      success: Updated cart
-      fail: Can't update
-    destroy:
-      success: Deleted
-      fail: Can't delete
-    order_item:
-      confirm: Are you sure?
   orders:
     order:
       confirm: Are you sure?
@@ -294,6 +312,13 @@ en:
     new:
       page: Order
       new: Confirm
+    places:
+      name: Name
+      email: Email
+      address: Address
+      phone: Phone
+      status: Status
+      next: Next
     edit:
       page: Edit order
       edit: Change
@@ -301,6 +326,13 @@ en:
     create:
       success: Thank for your ordered
       fail: Can't not order
+    transports:
+      name: Name
+      email: Email
+      address: Address
+      phone: Phone
+      status: Status
+      next: Next
     update:
       success: Changed infomation order
       fail: Can not change
@@ -309,6 +341,18 @@ en:
       success: Deleted order
       fail: Can not delete
       can't: Can not destroy order
+    finishes:
+      name: Name
+      email: Email
+      address: Address
+      phone: Phone
+      status: Status
+      next: Next
+    links:
+      all: All orders
+      place: Places
+      transport: Transports
+      finish: Finishes
   payments:
     index:
       name: Name
@@ -393,7 +437,7 @@ en:
       seen: Click to seen
     your_share:
       confirm: Are you sure?
-    admin:
+    admin_view_new:
       image: Image
       product_name: Product name
       date: Date create

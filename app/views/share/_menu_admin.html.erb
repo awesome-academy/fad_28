@@ -45,5 +45,11 @@
         </sup>
       <% end %>
     </li>
+    <li class="nav-items">
+      <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+        <i class="fa fa-sign-out-alt"></i>
+        <%= t".signout" %>
+      <% end %>
+    </li>
   </ul>
 </div>

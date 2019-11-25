@@ -13,21 +13,23 @@
         </div>
       </div>
       <br>
-      <table class="table">
-        <tr class="text-center">
-          <th>#</th>
-          <th><%= t ".image" %></th>
-          <th><%= t ".name" %></th>
-          <th><%= t ".category" %></th>
-          <th><%= t ".price" %></th>
-          <th><%= t ".discount" %></th>
-          <th><%= t ".after_discount" %></th>
-          <th><%= t ".sold_many" %></th>
-          <th><%= t ".action" %></th>
-        </tr>
-        <%= render @products %>
-      </table>
-      <%= will_paginate @products %>
+      <% if @products.present? %>
+        <table class="table">
+          <tr class="text-center">
+            <th>#</th>
+            <th><%= t ".image" %></th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".category" %></th>
+            <th><%= t ".price" %></th>
+            <th><%= t ".discount" %></th>
+            <th><%= t ".after_discount" %></th>
+            <th><%= t ".sold_many" %></th>
+            <th><%= t ".action" %></th>
+          </tr>
+          <%= render @products %>
+        </table>
+        <%= will_paginate @products %>
+      <% end %>
     </div>
   </div>
 </div>

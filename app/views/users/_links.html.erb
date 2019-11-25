@@ -1,0 +1,45 @@
+<% user = current_user %>
+<br>
+<ul class="nav justify-content-center">
+  <li class="nav-items">
+    <%= link_to t(".control"), user, class: "nav-link active" %>
+  </li>
+  <li class="nav-items">
+    <%= link_to registration_path(user), data: {confirm: t(".confirm")},
+      method: :delete, class: "nav-link" do %>
+      <i class="fa fa-trash" title="<%= t ".delete" %>"></i>
+    <% end %>
+  </li>
+  <li class="nav-items">
+    <%= link_to t(".update"), edit_user_path(user), class: "nav-link" %>
+  </li>
+  <% if user.uid.nil? %>
+    <li class="nav-items">
+      <%= link_to t(".password"), edit_user_registration_path(user), class: "nav-link" %>
+    </li>
+  <% else %>
+    <li class="nav-items">
+      <%= link_to t(".password"), "", class: "nav-link", disabled: true %>
+    </li>
+  <% end %>
+  <li class="nav-items">
+    <%= link_to "", "data-target": "#change-avatar", "data-toggle": "modal", class: "nav-link" do %>
+      <i class="fa fa-camera" title="<%= t ".avatar" %>"></i>
+    <% end %>
+  </li>
+  <li class="nav-items">
+    <%= link_to t(".feedback"), evaluates_user_path(user), class: "nav-link" %>
+  </li>
+  <li class="nav-items">
+    <%= link_to t(".order"), orders_user_path(user), class: "nav-link" %>
+  </li>
+  <li class="nav-items">
+    <%= link_to t(".share"), suggests_user_path(user), class: "nav-link" %>
+  </li>
+  <li class="nav-items">
+    <%= link_to t(".signout"), destroy_user_session_path, method: :delete,
+      data: {confirm: t(".confirm")}, class: "nav-link" %>
+  </li>
+</ul>
+<br>
+<%= render "change_avatar/edit", user: user %>

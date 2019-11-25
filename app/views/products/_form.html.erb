@@ -1,17 +1,17 @@
-<div class="container">
+<div class="div-form">
   <%= form_for @product do |f| %>
     <h1 class="text-center"><%= yield :page %></h1>
     <%= render "share/errors", object: @product %>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <%= f.label :name %>
+          <%= f.label :name %><sup class="star">*</sup>
           <%= f.text_field :name, class: "form-control form-control-lg" %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <%= f.label :category_id %>
+          <%= f.label :category_id %><sup class="star">*</sup>
           <%= f.select :category_id, load_category, {prompt: t(".select")},
           class: "form-control form-control-lg" %>
         </div>
@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <%= f.label :price %>
+          <%= f.label :price %><sup class="star">*</sup>
           <%= f.text_field :price, class: "form-control form-control-lg" %>
         </div>
       </div>
@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="form-group">
-      <%= f.file_field :image %>
+      <%= f.file_field :image %><sup class="star">*</sup>
     </div>
     <div class="form-group">
       <%= f.label :description %>

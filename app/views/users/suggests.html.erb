@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "users/profile" %>
+    </div>
+    <div class="col-md-8">
+      <%= render "users/links" %>
+      <% if @suggests.present? %>
+        <table class="table">
+          <tr>
+            <th><%= t ".image" %></th>
+            <th><%= t ".product_name" %></th>
+            <th><%= t ".description" %></th>
+            <th><%= t ".date" %></th>
+            <th class="action-in-user"><%= t ".action" %></th>
+          </tr>
+          <% @suggests.each do |suggest| %>
+            <%= render "suggests/your_share", suggest: suggest %>
+          <% end %>
+        </table>
+        <%= will_paginate @suggests %>
+      <% end %>
+    </div>
+  </div>
+</div>

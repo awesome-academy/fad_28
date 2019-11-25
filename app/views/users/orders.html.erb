@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "users/profile" %>
+    </div>
+    <div class="col-md-8">
+      <%= render "users/links" %>
+      <% if @orders.present? %>
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".email" %></th>
+            <th><%= t ".address" %></th>
+            <th><%= t ".phone" %></th>
+            <th><%= t ".status" %></th>
+          </tr>
+          <%= render @orders %>
+        </table>
+        <%= will_paginate @orders %>
+      <% end %>
+    </div>
+  </div>
+</div>

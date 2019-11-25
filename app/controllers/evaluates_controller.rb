@@ -1,5 +1,5 @@
 class EvaluatesController < ApplicationController
-  before_action :signed_in
+  before_action :authenticate_user!
   before_action :load_data, only: :create
   before_action :load_evaluate, except: :create
   before_action :load_product, :correct_user, only: [:update, :destroy]

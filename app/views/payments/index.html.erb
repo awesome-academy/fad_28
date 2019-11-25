@@ -11,15 +11,17 @@
           <%= render "form", object: @payment, url: payments_path %>
         </div>
       </div>
-      <table class="table">
-        <tr>
-          <th>#</th>
-          <th><%= t ".name" %></th>
-          <th><%= t ".action" %></th>
-        </tr>
-        <%= render @payments %>
-      </table>
-      <%= will_paginate @payments %>
+      <% if @payments.present? %>
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".action" %></th>
+          </tr>
+          <%= render @payments %>
+        </table>
+        <%= will_paginate @payments %>
+      <% end %>
     </div>
   </div>
 </div>

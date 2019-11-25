@@ -1,0 +1,43 @@
+<% provide :page, t(".page") %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "users/profile" %>
+    </div>
+    <div class="col-md-8">
+      <%= render "users/links" %>
+      <div class="profile">
+        <%= form_with model: @user, local: true do |f| %>
+          <h1><%= t(".page") %></h1>
+          <br>
+          <%= render "share/errors", object: @user %>
+          <div class="form-group">
+            <%= f.label :name %><sup class="star">*</sup>
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :phone %><sup class="star">*</sup>
+            <%= f.text_field :phone, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :address %>
+            <%= f.text_area :address, class: "form-control form-control-lg" %>
+          </div>
+          <div class="radio-group">
+            <div>
+              <%= f.radio_button :gender, true %>
+              <%= f.label t(".male") %>
+            </div>
+            <div>
+              <%= f.radio_button :gender, false %>
+              <%= f.label t(".female") %>
+            </div>
+          </div>
+          <div class="text-center">
+            <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

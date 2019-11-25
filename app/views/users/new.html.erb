@@ -1,33 +1,41 @@
 <% provide :page, t(".page") %>
-<div class="div-form">
-  <h1 class="text-center"><%= t ".signup" %></h1>
-  <br>
-  <%= form_for @user do |f| %>
-    <%= render "share/errors", object: @user %>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.text_field :email, class: "form-control form-control-lg" %>
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-md-2">
+      <%= render "share/menu_admin" %>
     </div>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control form-control-lg" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control form-control-lg" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: "form-control form-control-lg" %>
-    </div>
-    <% if current_user&.admin? %>
-      <div class="form-group">
-        <%= f.label :role_id %>
-        <%= f.select :role_id, load_role, {}, {class: "form-control form-control-lg"} %>
+    <div class="col-md-10">
+      <br>
+      <div class="profile">
+        <h1 class="text-center"><%= t ".page" %></h1>
+        <br>
+        <%= form_for @user do |f| %>
+          <%= render "share/errors", object: @user %>
+          <div class="form-group">
+            <%= f.label :email %><sup class="star">*</sup>
+            <%= f.text_field :email, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %><sup class="star">*</sup>
+            <%= f.password_field :password, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation %><sup class="star">*</sup>
+            <%= f.password_field :password_confirmation, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :name %><sup class="star">*</sup>
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :role_id %><sup class="star">*</sup>
+            <%= f.select :role_id, load_role, {}, {class: "form-control form-control-lg"} %>
+          </div>
+          <div class="text-center">
+            <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-    <div class="text-center">
-      <%= f.submit t(".submit"), class: "btn btn-success btn-lg" %>
     </div>
-  <% end %>
+  </div>
 </div>

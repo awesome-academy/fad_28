@@ -1,22 +1,23 @@
-<div class="div-form">
+<br>
+<div class="div-form-half">
   <h1 class="text-center"><%= yield :page %></h1>
   <%= form_for @order do |f| %>
     <%= render "share/errors", object: @order %>
     <%= f.hidden_field :email, value: current_user.email %>
     <div class="form-group">
-      <%= f.label :name %>
+      <%= f.label :name %><sup class="star">*</sup>
       <%= f.text_field :name, value: current_user.name, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :address %>
+      <%= f.label :address %><sup class="star">*</sup>
       <%= f.text_field :address, value: current_user.address, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :phone %>
+      <%= f.label :phone %><sup class="star">*</sup>
       <%= f.text_field :phone, value: current_user.phone, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :payment_id %>
+      <%= f.label :payment_id %><sup class="star">*</sup>
       <%= f.select :payment_id, load_payment, {}, class: "form-control" %>
     </div>
     <div class="form-group text-center">

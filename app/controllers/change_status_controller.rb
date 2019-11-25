@@ -1,5 +1,5 @@
 class ChangeStatusController < ApplicationController
-  before_action :signed_in, :load_order
+  before_action :authenticate_user!, :only_admin, :load_order
 
   def update
     if @order.update_attribute :status_id, params[:status_id].to_i

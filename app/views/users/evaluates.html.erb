@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "users/profile" %>
+    </div>
+    <div class="col-md-8">
+      <%= render "users/links" %>
+      <% if @evaluates.present? %>
+        <%= render @evaluates %>
+        <%= will_paginate @evaluates %>
+      <% end %>
+    </div>
+  </div>
+</div>

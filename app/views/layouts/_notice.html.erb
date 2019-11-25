@@ -1,3 +1,9 @@
-<% flash.each do |type, msg| %>
-  <div class="alert alert-<%= type %> text-center"><%= msg %></div>
+<% if flash.present? %>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %> text-center"><%= msg %></div>
+  <% end %>
+<% elsif notice.present? %>
+  <div class="alert text-center"><%= notice %></div>
+<% elsif alert.present? %>
+  <div class="alert text-center"><%= alert %></div>
 <% end %>

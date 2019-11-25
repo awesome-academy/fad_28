@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-md-2">
+      <%= render "share/menu_admin" %>
+    </div>
+    <div class="col-md-10">
+      <%= render "orders/links" %>
+      <% if @finishes.present? %>
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".email" %></th>
+            <th><%= t ".address" %></th>
+            <th><%= t ".phone" %></th>
+            <th><%= t ".status" %></th>
+          </tr>
+          <%= render @finishes %>
+        </table>
+        <%= will_paginate @finishes %>
+      <% end %>
+    </div>
+  </div>
+</div>

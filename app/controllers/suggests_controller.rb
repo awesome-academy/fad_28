@@ -1,5 +1,5 @@
 class SuggestsController < ApplicationController
-  before_action :signed_in, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :load_suggest, except: [:index, :new, :create, :admin_view_new]
 
   def index

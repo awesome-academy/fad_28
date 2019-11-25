@@ -1,0 +1,41 @@
+<% provide :page, t(".page") %>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="div-form">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="div-form">
+        <h1 class="text-center"><%= t ".page" %></h1>
+        <%= form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
+          <div class="form-group">
+            <%= f.label :email %><sup class="star">*</sup>
+            <%= f.email_field :email, class: "form-control form-control-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %><sup class="star">*</sup>
+            <%= f.password_field :password, class: "form-control form-control-lg" %>
+          </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="component">
+              <div class="custom-control custom-checkbox">
+                <%= f.check_box :remember_me, class: "custom-control-input" %>
+                <%= f.label :remember_me, t(".remember"), class: "custom-control-label" %>
+              </div>
+              <% if devise_mapping.recoverable? %>
+                <div><%= link_to t(".forgot"), new_password_path(resource_name) %></div>
+              <% end %>
+            </div>
+          <% end %>
+          <br>
+          <div class="form-group text-center">
+            <%= f.submit t(".submit") , class: "btn btn-success btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

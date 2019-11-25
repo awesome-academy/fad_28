@@ -1,14 +1,15 @@
 class OrdersController < ApplicationController
-  before_action :signed_in
-  before_action :only_admin, :load_order_places, :load_order_transports,
-    :load_order_finishes, only: :index
+  before_action :authenticate_user!
+  before_action :only_admin, only: [:index, :places, :transports, :finishes]
   before_action :load_payment, except: [:index, :show]
-  before_action :load_order, except: [:index, :new, :create]
+  before_action :load_order, only: [:show, :edit, :update, :destroy]
   before_action :load_order_items, :calculate_total,
     :allow_view_detail_order, only: :show
   before_action :allow_edit_and_destroy, only: [:edit, :update, :destroy]
 
-  def index; end
+  def index
+    @orders = Order.paginate page: params[:page], per_page: Settings.items
+  end
 
   def show; end
 
@@ -55,6 +56,21 @@ class OrdersController < ApplicationController
     redirect_to current_user
   end
 
+  def places
+    @places = Order.place.newest.paginate page: params[:page],
+      per_page: Settings.items
+  end
+
+  def transports
+    @transports = Order.transport.newest.paginate page: params[:page],
+      per_page: Settings.items
+  end
+
+  def finishes
+    @finishes = Order.finish.newest.paginate page: params[:page],
+      per_page: Settings.items
+  end
+
   private
 
   def order_params
@@ -87,21 +103,6 @@ class OrdersController < ApplicationController
     return if current_user == user && @order.place?
     flash[:danger] = t ".can't"
     redirect_to current_user
-  end
-
-  def load_order_places
-    @places = Order.place.newest.paginate page: params[:page],
-      per_page: Settings.items
-  end
-
-  def load_order_transports
-    @transports = Order.transport.newest.paginate page: params[:page],
-      per_page: Settings.items
-  end
-
-  def load_order_finishes
-    @finishes = Order.finish.newest.paginate page: params[:page],
-      per_page: Settings.items
   end
 
   def load_order_items

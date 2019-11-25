@@ -1,9 +1,9 @@
-<div class="div-form">
+<div class="profile">
   <h1 class="text-center"><%= yield :page %></h1>
   <%= form_for @category do |f| %>
     <%= render "share/errors", object: @category %>
     <div class="form-group">
-      <%= f.label :name %>
+      <%= f.label :name %><sup class="star">*</sup>
       <%= f.text_field :name, class: "form-control form-control-lg" %>
     </div>
     <div class="form-group">
