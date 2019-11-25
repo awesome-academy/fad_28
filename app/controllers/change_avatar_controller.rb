@@ -2,6 +2,7 @@ class ChangeAvatarController < ApplicationController
   before_action :authenticate_user!, :load_user, :valid_params
 
   def update
+    authorize! :update, @user
     if @user.update_attribute :image, params[:user][:image]
       flash[:success] = t ".success"
     else

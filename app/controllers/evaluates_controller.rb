@@ -1,8 +1,9 @@
 class EvaluatesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :load_data, only: :create
   before_action :load_evaluate, except: :create
-  before_action :load_product, :correct_user, only: [:update, :destroy]
+  before_action :load_product, only: [:update, :destroy]
 
   def edit; end
 
@@ -55,11 +56,6 @@ class EvaluatesController < ApplicationController
     @evaluate = Evaluate.find_by id: params[:id]
     return if @evaluate
     flash[:danger] = t ".fail"
-    redirect_to product_path @product
-  end
-
-  def correct_user
-    return if current_user == @evaluate.user
     redirect_to product_path @product
   end
 

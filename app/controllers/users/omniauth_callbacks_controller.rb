@@ -13,8 +13,8 @@ class Users::OmniauthCallbacksController < ApplicationController
       flash[:success] = t ".success"
       sign_in_and_redirect user, event: :authenticate
     else
-      data = "#{provider}_data"
-      session["devise.data"] = request.env["omniauth.auth"].except(:extra)
+      session["devise.#{provider}_data"] =
+        request.env["omniauth.auth"].except(:extra)
       flash[:danger] = t ".fail"
       redirect_to new_user_registration_path
     end

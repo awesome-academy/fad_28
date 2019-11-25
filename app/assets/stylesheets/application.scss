@@ -307,6 +307,7 @@ label {
   align-items: center;
   .img-comment {
     width: 50px;
+    height: 50px;
     margin-right: 1rem;
   }
   p {
@@ -318,6 +319,9 @@ label {
   margin-top: 2rem;
   background: $white;
   box-shadow: 1px 6px 5px 6px rgba(0, 0, 0, 0.3);
+  .text-center {
+    margin-bottom: 0;
+  }
 }
 .comment {
   padding: 2rem;
