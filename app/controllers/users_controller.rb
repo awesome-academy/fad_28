@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.filter_by(params[:name]).paginate page: params[:page],
+    @search = User.ransack params[:q]
+    @users = @search.result.paginate page: params[:page],
       per_page: Settings.items
   end
 

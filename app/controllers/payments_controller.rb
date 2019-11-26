@@ -5,7 +5,8 @@ class PaymentsController < ApplicationController
   before_action :allow_destroy, only: :destroy
 
   def index
-    @payments = Payment.filter_by(params[:name]).paginate page: params[:page],
+    @search = Payment.ransack params[:q]
+    @payments = @search.result.paginate page: params[:page],
       per_page: Settings.items
     @payment = Payment.new
   end

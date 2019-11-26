@@ -5,7 +5,7 @@
       <br>
       <div class="row">
         <div class="col-md-6">
-          <%= render "share/filter", url: payments_path %>
+          <%= render "share/filter", object: @search, url: payments_path, attributes: :name_cont %>
         </div>
         <div class="col-md-6">
           <%= render "form", object: @payment, url: payments_path %>

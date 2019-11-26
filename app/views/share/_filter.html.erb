@@ -1,11 +1,11 @@
-<%= form_with url: url, method: :get, local: true do |f| %>
+<%= search_form_for object, url: url do |f| %>
   <div class="input-group search-box">
     <div class="input-group-prepend">
       <%= f.button :submit, class: "btn btn-lg btn-success" do %>
         <i class="fa fa-search"></i>
       <% end %>
     </div>
-    <%= f.text_field :name, placeholder: t(".search_name"), value: params[:name],
+    <%= f.search_field attributes, placeholder: t(".search_name"),
       class: "form-control form-control-lg" %>
   </div>
 <% end %>

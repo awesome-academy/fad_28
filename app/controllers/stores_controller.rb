@@ -1,11 +1,8 @@
 class StoresController < ApplicationController
   before_action :load_category
-  before_action :load_product, :by_name, :by_min_price, :by_max_price,
-    :by_category, :by_highlight, :by_discount, only: :index
+  before_action :load_search_products
 
-  def index
-    @products = @products.paginate page: params[:page], per_page: Settings.items
-  end
+  def index; end
 
   def food
     food = Category.find_by name: "food"
@@ -23,35 +20,9 @@ class StoresController < ApplicationController
 
   private
 
-  def load_product
-    @products = Product.all
-  end
-
-  def by_name
-    @products = @products.joins(:category).search_by params[:name] if
-      params[:name].present?
-  end
-
-  def by_min_price
-    @products = @products.min_price params[:min_price] if
-      params[:min_price].present?
-  end
-
-  def by_max_price
-    @products = @products.max_price params[:max_price] if
-      params[:max_price].present?
-  end
-
-  def by_category
-    @products = @products.joins(:category).get_category params[:category_id] if
-      params[:category_id].present?
-  end
-
-  def by_highlight
-    @products = @products.is_highlight if params[:sold_many] == Settings.checked
-  end
-
-  def by_discount
-    @products = @products.is_discount if params[:discount] == Settings.checked
+  def load_search_products
+    @search = Product.ransack params[:q]
+    @products = @search.result.paginate page: params[:page],
+      per_page: Settings.items
   end
 end

@@ -8,7 +8,8 @@
       <br>
       <div class="row">
         <div class="col-md-8">
-          <%= render "share/filter", url: categories_path %>
+          <%= render "share/filter", object: @search, url: categories_path,
+            attributes: :name_cont %>
         </div>
         <div class="col-md-4">
           <%= link_to t(".new"), new_category_path, class: "btn btn-success btn-lg btn-block" %>
@@ -18,8 +19,8 @@
         <table class="table" id="table">
           <tr>
             <th>#</th>
-            <th><%= t ".name" %></th>
-            <th><%= t ".parent" %></th>
+            <th><%= sort_link @search, :name, t(".name") %></th>
+            <th><%= sort_link @search, :parent_id, t(".parent") %></th>
             <th><%= t ".action" %></th>
             <th><%= t ".info" %></th>
           </tr>

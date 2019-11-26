@@ -4,7 +4,8 @@ class SuggestsController < ApplicationController
   before_action :load_suggest, except: [:index, :new, :create, :admin_view_new]
 
   def index
-    @suggests = Suggest.newest.paginate page: params[:page],
+    @search = Suggest.includes(:user).ransack params[:q]
+    @suggests = @search.result.newest.paginate page: params[:page],
       per_page: Settings.items
   end
 
