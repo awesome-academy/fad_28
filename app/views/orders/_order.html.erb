@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to order.id, order, class: "btn btn-info" %></td>
+  <td><%= link_to order_counter + 1, order, class: "btn btn-info" %></td>
   <td><%= order.name %></td>
   <td><%= order.email %></td>
   <td><%= order.address %></td>
@@ -17,18 +17,29 @@
     </td>
   <% elsif current_user.admin? %>
     <td>
-      <% if order.place? %>
-        <%= button_to change_status_path(order), method: :patch, params: {status_id: 2},
-          data: {confirm: t(".confirm")}, class: "btn btn-primary" do %>
-          <i class="fa fa-shipping-fast"></i>
+      <div class="three-action">
+        <% if order.place? %>
+          <%= button_to change_status_path(order), method: :patch, params: {status_id: 2},
+            data: {confirm: t(".confirm")}, class: "btn btn-primary" do %>
+            <i class="fa fa-shipping-fast"></i>
+          <% end %>
         <% end %>
-      <% end %>
-      <% if order.transport? %>
-        <%= button_to change_status_path(order), method: :patch, params: {status_id: 3},
-          data: {confirm: t(".confirm")}, class: "btn btn-success" do %>
-          <i class="fa fa-check"></i>
+        <% if order.transport? %>
+          <%= button_to change_status_path(order), method: :patch, params: {status_id: 3},
+            data: {confirm: t(".confirm")}, class: "btn btn-success" do %>
+            <i class="fa fa-check"></i>
+          <% end %>
         <% end %>
-      <% end %>
+        <% if order.email == current_user.email && order.place? %>
+          <%= link_to order, method: :delete, data: {confirm: t(".confirm")},
+            class: "btn btn-danger" do %>
+            <i class="fa fa-times"></i>
+          <% end %>
+          <%= link_to edit_order_path(order), class: "btn btn-info" do %>
+            <i class="fa fa-edit"></i>
+          <% end %>
+        <% end %>
+      </div>
     </td>
   <% end %>
 </tr>

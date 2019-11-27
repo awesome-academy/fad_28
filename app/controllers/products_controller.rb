@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :only_admin, only: :index
-  load_and_authorize_resource
   before_action :load_category, except: [:index, :show, :destroy]
   before_action :load_product, except: [:index, :new, :create]
   before_action :allow_destroy, only: :destroy
   before_action :load_evaluates, only: :show
+  load_and_authorize_resource
 
   def index
     @search = Product.includes(:category).ransack params[:q]
@@ -76,7 +76,7 @@ class ProductsController < ApplicationController
   def load_evaluates
     @evaluates = @product.evaluates.recently.paginate page: params[:page],
       per_page: Settings.items
-    @avg_star = @product.evaluates.average :star
     @count_rating = @evaluates.size
+    @avg_star = @product.evaluates.average(:star).to_f.round(1)
   end
 end

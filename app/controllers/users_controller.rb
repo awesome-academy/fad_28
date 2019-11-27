@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource
   before_action :only_admin, only: :index
   before_action :load_user, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
     @search = User.ransack params[:q]
@@ -53,7 +53,8 @@ class UsersController < ApplicationController
   end
 
   def suggests
-    @suggests = current_user.suggests.paginate page: params[:page],
+    @search = current_user.suggests.ransack params[:q]
+    @suggests = @search.result.paginate page: params[:page],
       per_page: Settings.items
   end
 

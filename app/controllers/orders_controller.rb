@@ -1,14 +1,15 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource
   before_action :only_admin, only: [:index, :places, :transports, :finishes]
   before_action :load_payment, except: [:index, :show]
   before_action :load_order, only: [:show, :edit, :update, :destroy]
   before_action :load_order_items, :calculate_total, only: :show
   before_action :allow_edit_and_destroy, only: [:edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
-    @orders = Order.paginate page: params[:page], per_page: Settings.items
+    @orders = Order.progress.paginate page: params[:page],
+      per_page: Settings.items
   end
 
   def show; end
@@ -33,14 +34,14 @@ class OrdersController < ApplicationController
       end
     rescue StandardError
       flash[:danger] = t ".fail"
-      redirect_to root_path
+      render :new
     end
   end
 
   def update
     if @order.update order_params
       flash[:success] = t ".success"
-      redirect_to current_user
+      redirect_to orders_user_path current_user
     else
       flash.now[:danger] = t ".fail"
       render :edit
@@ -53,16 +54,16 @@ class OrdersController < ApplicationController
     else
       flash[:danger] = t ".fail"
     end
-    redirect_to current_user
+    redirect_back fallback_location: root_path
   end
 
   def places
-    @places = Order.place.newest.paginate page: params[:page],
+    @places = Order.place.paginate page: params[:page],
       per_page: Settings.items
   end
 
   def transports
-    @transports = Order.transport.newest.paginate page: params[:page],
+    @transports = Order.transport.paginate page: params[:page],
       per_page: Settings.items
   end
 

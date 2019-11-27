@@ -10,6 +10,8 @@ vi:
       signup: đăng ký
       signin: đăng nhập
       account: tài khoản
+    footer:
+      copyright: Khởi tạo bởi Thuc PT vào năm 2019
   home:
     index:
       fruit: trái cây
@@ -81,12 +83,14 @@ vi:
       description: Mô tả
       date: Ngày viết
       action: Hoạt động
+      new: Tạo gợi ý mới
     orders:
       name: Tên
       email: Email
       address: Địa chỉ
       phone: Số điện thoại
       status: Trạng thái
+      action: Hoạt động
     links:
       control: Bảng điều khiển
       update: Hồ sơ
@@ -182,6 +186,7 @@ vi:
         confirmation: không đúng
         taken: đã tồn tại
         required: không tồn tại
+        not_a_number: không tồn tại
   change_avatar:
     update:
       success: Đã thay đổi ảnh đại diện
@@ -313,10 +318,11 @@ vi:
       updated:  Đã cập nhật số lượng
       success: Đã thêm vào giỏ hàng
       too_much: Số lượng quá nhiều
-      not_quantity: Số lượng trống
+      incorrect: Số lượng không chính xác, không thể thêm vào giỏ hàng
     update_quantity:
       updated: Đã cập nhật số lượng
       not_found: Không tìm thấy mục trong giỏ hàng
+      incorrect: Số lượng không chính xác, không thể cập nhật
     destroy_item:
       success: Đã xóa
       not_found: Không tìm thấy mục trong giỏ hàng
@@ -337,6 +343,10 @@ vi:
       price: Đơn giá
       total: Tổng
       can't_view: Không thể xem đơn đặt hàng
+      transport: Vận chuyển đơn hàng
+      finishes: Hoàn thành đơn hàng
+      edit: Chỉnh sửa đơn hàng
+      cancel: Hủy đơn hàng
     new:
       page: Đặt hàng
       new: Xác nhận
@@ -414,12 +424,15 @@ vi:
     update:
       success: Cập nhật thành công
       fail: Không thể cập nhật
+      not_found: Không tìm thấy đánh giá
     destroy:
       success: Đã xóa
       fail: Không thể xóa
+      not_found: Không tìm thấy đánh giá
     edit:
       edit: Sửa nhận xét
       submit: Lưu lại
+      not_found: Không tìm thấy đánh giá
   suggests:
     index:
       no_share: Chưa có chia sẻ nào
@@ -451,6 +464,7 @@ vi:
       admin_seen: Quản trị viên đã xem
       admin_not_seen: Quản trị viên chưa xem
       seen: Nhấp vào để xem
+      new: Tạo gợi ý mới
     your_share:
       confirm: Bạn chắc chắc không?
     admin_view_new:

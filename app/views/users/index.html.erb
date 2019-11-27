@@ -18,6 +18,7 @@
       <% if @users.present? %>
         <table class="table">
           <tr>
+            <th>#</th>
             <th><%= sort_link @search, :name, t(".name") %></th>
             <th><%= sort_link @search, :email, t(".email") %></th>
             <th><%= sort_link @search, :gender, t(".gender") %></th>

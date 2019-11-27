@@ -1,43 +1,45 @@
 <div class="menu">
   <ul class="nav flex-column">
     <li class="nav-items">
-      <%= link_to admin_path, class: "nav-link" do %>
+      <%= link_to admin_path, class: "nav-link #{"active" if current_page? admin_path}" do %>
         <i class="fa fa-undo-alt"></i>
         <%= t ".dashboard" %>
       <% end %>
     </li>
     <li class="nav-items">
-      <%= link_to users_path, class: "nav-link" do %>
+      <%= link_to users_path, class: "nav-link #{"active" if current_page? users_path}" do %>
         <i class="fa fa-users"></i>
         <%= t ".user" %>
       <% end %>
     </li>
     <li class="nav-items">
-      <%= link_to orders_path, class: "nav-link" do %>
+      <%= link_to orders_path, class: "nav-link #{"active" if current_page? orders_path}" do %>
         <i class="fa fa-notes-medical"></i>
         <%= t ".order" %>
       <% end %>
     </li>
     <li class="nav-items">
-      <%= link_to products_path, class: "nav-link" do %>
+      <%= link_to products_path, class: "nav-link #{"active" if current_page? products_path}" do %>
         <i class="fa fa-balance-scale-right"></i>
         <%= t ".product" %>
       <% end %>
     </li>
     <li class="nav-items">
-      <%= link_to categories_path, class: "nav-link" do %>
+      <%= link_to categories_path,
+        class: "nav-link #{"active" if current_page? categories_path}" do %>
         <i class="fa fa-indent"></i>
         <%= t ".category" %>
       <% end %>
     </li>
     <li class="nav-items">
-      <%= link_to payments_path, class: "nav-link" do %>
+      <%= link_to payments_path, class: "nav-link #{"active" if current_page? payments_path}" do %>
         <i class="fa fa-sim-card"></i>
         <%= t ".payment" %>
       <% end %>
     </li>
     <li class="nav-items">
-      <%= link_to admin_view_new_suggests_path, class: "nav-link" do %>
+      <%= link_to admin_view_new_suggests_path,
+        class: "nav-link #{"active" if current_page? admin_view_new_suggests_path}" do %>
         <i class="fa fa-surprise"></i>
         <%= t ".suggests" %>
         <sup class="badge badge-success badge-pill">

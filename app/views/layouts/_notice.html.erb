@@ -1,9 +1,9 @@
-<% if flash.present? %>
+<% if flash[:notice] %>
+  <div class="alert alert-success text-center"><%= notice %></div>
+<% elsif flash[:alert] %>
+  <div class="alert alert-danger text-center"><%= alert %></div>
+<% else %>
   <% flash.each do |type, msg| %>
     <div class="alert alert-<%= type %> text-center"><%= msg %></div>
   <% end %>
-<% elsif notice.present? %>
-  <div class="alert text-center"><%= notice %></div>
-<% elsif alert.present? %>
-  <div class="alert text-center"><%= alert %></div>
 <% end %>

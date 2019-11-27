@@ -1,7 +1,7 @@
 class SuggestsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  load_and_authorize_resource
   before_action :load_suggest, except: [:index, :new, :create, :admin_view_new]
+  load_and_authorize_resource
 
   def index
     @search = Suggest.includes(:user).ransack params[:q]
@@ -44,7 +44,7 @@ class SuggestsController < ApplicationController
     else
       flash[:danger] = t ".fail"
     end
-    redirect_to suggests_path
+    redirect_to suggests_user_path current_user
   end
 
   def admin_view_new
