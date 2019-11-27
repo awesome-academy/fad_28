@@ -1,6 +1,7 @@
 en:
   not_support: Language is not supported
   base: FAD
+  exception: Can not access page
   layouts:
     header:
       home: home

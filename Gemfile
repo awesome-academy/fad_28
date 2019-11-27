@@ -5,6 +5,7 @@ ruby "2.5.5"
 gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.3.1"
+gem "cancancan"
 gem "carrierwave", "~> 1.2.2"
 gem "coffee-rails", "~> 4.2"
 gem "config"

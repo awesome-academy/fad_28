@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :only_admin, only: [:index, :places, :transports, :finishes]
   before_action :load_payment, except: [:index, :show]
   before_action :load_order, only: [:show, :edit, :update, :destroy]
-  before_action :load_order_items, :calculate_total,
-    :allow_view_detail_order, only: :show
+  before_action :load_order_items, :calculate_total, only: :show
   before_action :allow_edit_and_destroy, only: [:edit, :update, :destroy]
 
   def index
@@ -89,13 +89,6 @@ class OrdersController < ApplicationController
       all_items.push(product_id: key.to_i, quantity: value, price: price)
     end
     order.order_items.create(all_items)
-  end
-
-  def allow_view_detail_order
-    user = User.find_by email: @order.email
-    return if current_user == user || current_user.admin?
-    flash[:danger] = t ".can't_view"
-    redirect_to current_user
   end
 
   def allow_edit_and_destroy

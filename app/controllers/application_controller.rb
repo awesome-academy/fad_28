@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :load_language, :setup_cart
   before_action :config_params_devise, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied do
+    flash[:danger] = I18n.t(".exception")
+    redirect_to root_path
+  end
+
   def setup_cart
     session[:cart] ||= {}
     @cart = session[:cart]
