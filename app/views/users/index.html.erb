@@ -7,7 +7,10 @@
     <div class="col-md-10">
       <br>
       <div class="row">
-        <div class="col-md-8"><%= render "share/filter", url: users_path %></div>
+        <div class="col-md-8">
+          <%= render "share/filter", object: @search, url: users_path,
+            attributes: :name_or_email_or_phone_cont %>
+        </div>
         <div class="col-md-4">
           <%= link_to t(".create"), new_user_path, class: "btn btn-success btn-lg btn-block" %>
         </div>
@@ -15,10 +18,10 @@
       <% if @users.present? %>
         <table class="table">
           <tr>
-            <th><%= t ".name" %></th>
-            <th><%= t ".email" %></th>
-            <th><%= t ".gender" %></th>
-            <th><%= t ".phone" %></th>
+            <th><%= sort_link @search, :name, t(".name") %></th>
+            <th><%= sort_link @search, :email, t(".email") %></th>
+            <th><%= sort_link @search, :gender, t(".gender") %></th>
+            <th><%= sort_link @search, :phone, t(".phone") %></th>
             <th><%= t ".action" %></th>
           </tr>
           <%= render @users %>

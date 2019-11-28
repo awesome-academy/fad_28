@@ -7,7 +7,10 @@
     <div class="col-md-10">
       <br>
       <div class="row">
-        <div class="col-md-8"><%= render "share/filter", url: products_path %></div>
+        <div class="col-md-8">
+          <%= render "share/filter", object: @search, url: products_path,
+            attributes: :name_or_category_name_cont %>
+        </div>
         <div class="col-md-4">
           <%= link_to t(".new"), new_product_path, class: "btn btn-success btn-block btn-lg" %>
         </div>
@@ -16,14 +19,14 @@
       <% if @products.present? %>
         <table class="table">
           <tr class="text-center">
-            <th>#</th>
+            <th><%= sort_link @search, :id, "#" %></th>
             <th><%= t ".image" %></th>
-            <th><%= t ".name" %></th>
-            <th><%= t ".category" %></th>
-            <th><%= t ".price" %></th>
-            <th><%= t ".discount" %></th>
+            <th><%= sort_link @search, :name, t(".name") %></th>
+            <th><%= sort_link @search, :category_id, t(".category") %></th>
+            <th><%= sort_link @search, :price, t(".price") %></th>
+            <th><%= sort_link @search, :discount, t(".discount") %></th>
             <th><%= t ".after_discount" %></th>
-            <th><%= t ".sold_many" %></th>
+            <th><%= sort_link @search, :sold_many, t(".sold_many") %></th>
             <th><%= t ".action" %></th>
           </tr>
           <%= render @products %>

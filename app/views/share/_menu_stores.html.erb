@@ -16,6 +16,6 @@
   <br>
   <div class="glass">
     <div class="title"><%= t ".filter" %></div>
-    <%= render "stores/filter" %>
+    <%= render "stores/filter", object: @search, url: stores_path %>
   </div>
 </div>

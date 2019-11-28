@@ -1,7 +1,8 @@
 <div class="modal fade" id="search">
   <div class="modal-dialog modal-lg">
     <div class="modal-content fix">
-      <%= render "share/filter", url: stores_path %>
+      <%= render "share/filter", object: @produce, url: stores_path,
+        attributes: :name_or_category_name_cont %>
     </div>
   </div>
 </div>

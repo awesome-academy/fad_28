@@ -15,8 +15,6 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  scope :filter_by, ->(params){where "name like ?", "%#{params}%"}
-
   def self.from_omniauth auth
     result = User.find_by email: auth.info.email
     return result if result

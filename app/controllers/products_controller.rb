@@ -8,13 +8,12 @@ class ProductsController < ApplicationController
   before_action :load_evaluates, only: :show
 
   def index
-    product = Product.includes(:category)
-    @products = product.filter_by(params[:name]).paginate page: params[:page],
+    @search = Product.includes(:category).ransack params[:q]
+    @products = @search.result.paginate page: params[:page],
       per_page: Settings.items
   end
 
   def show
-    @order_item = OrderItem.new
     @evaluate = Evaluate.new
   end
 

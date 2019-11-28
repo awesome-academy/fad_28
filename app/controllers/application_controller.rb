@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ProductsHelper
 
-  before_action :load_language, :setup_cart
+  before_action :load_language, :setup_cart, :load_search_object
   before_action :config_params_devise, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do
@@ -54,5 +54,11 @@ class ApplicationController < ActionController::Base
 
   def config_params_devise
     devise_parameter_sanitizer.permit :sign_up, keys: [:name]
+  end
+
+  def load_search_object
+    @produce = Product.includes(:category).ransack params[:q]
+    @products = @produce.result.paginate page: params[:page],
+      per_page: Settings.items
   end
 end
