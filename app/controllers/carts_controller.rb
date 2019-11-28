@@ -20,8 +20,12 @@ class CartsController < ApplicationController
   end
 
   def update_quantity
-    @cart[@product_id] = params[:quantity].to_i
-    flash[:success] = t ".updated"
+    if params[:quantity].to_i.positive?
+      @cart[@product_id] = params[:quantity].to_i
+      flash[:success] = t ".updated"
+    else
+      flash[:danger] = t ".incorrect"
+    end
     redirect_to carts_path
   end
 
@@ -49,8 +53,8 @@ class CartsController < ApplicationController
   end
 
   def try_out_params
-    return if params[:quantity].present?
-    flash[:danger] = t ".not_quantity"
-    redirect_to carts_path
+    return if params[:quantity].to_i.positive?
+    flash[:danger] = t ".incorrect"
+    redirect_back fallback_location: root_path
   end
 end

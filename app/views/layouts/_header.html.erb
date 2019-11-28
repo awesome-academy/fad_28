@@ -7,16 +7,19 @@
     <div class="collapse navbar-collapse" id="navtop">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <%= link_to t(".home"), root_path, class: "nav-link" %>
+          <%= link_to t(".home"), root_path,
+            class: "nav-link #{"active" if current_page? root_path}" %>
         </li>
         <li class="nav-item">
-          <%= link_to t(".product"), stores_path, class: "nav-link" %>
+          <%= link_to t(".product"), stores_path,
+            class: "nav-link #{"active" if current_page? stores_path}" %>
         </li>
         <li class="nav-item">
-          <%= link_to t(".share"), suggests_path, class: "nav-link" %>
+          <%= link_to t(".share"), suggests_path,
+            class: "nav-link #{"active" if current_page? suggests_path}" %>
         </li>
         <li class="nav-item">
-          <%= link_to carts_path, class: "nav-link" do %>
+          <%= link_to carts_path, class: "nav-link #{"active" if current_page? carts_path}" do %>
             <i class="fa fa-shopping-cart"></i>
             <sup class="badge badge-pill badge-info"><%= load_size_cart %></sup>
           <% end %>
@@ -27,21 +30,26 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to image_tag("vi.png"), Settings.vn.to_h, class: "nav-link" %>
+          <%= link_to image_tag("vi.png", class: "img-locale"), Settings.vn.to_h,
+            class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to image_tag("en.png"), Settings.en.to_h, class: "nav-link" %>
+          <%= link_to image_tag("en.png", class: "img-locale"), Settings.en.to_h,
+            class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to t(".account"), current_user, class: "nav-link" %>
+            <%= link_to t(".account"), current_user,
+              class: "nav-link #{"active" if current_page? current_user}" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to t(".signin"), new_user_session_path, class: "nav-link" %>
+            <%= link_to t(".signin"), new_user_session_path,
+              class: "nav-link #{"active" if current_page? new_user_session_path}" %>
           </li>
           <li class="nav-item">
-            <%= link_to t(".signup"), new_user_registration_path, class: "nav-link" %>
+            <%= link_to t(".signup"), new_user_registration_path,
+              class: "nav-link #{"active" if current_page? new_user_registration_path}" %>
           </li>
         <% end %>
       </ul>

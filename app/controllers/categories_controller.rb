@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource
   before_action :load_category, only: [:edit, :update, :destroy]
   before_action :allow_destroy, only: :destroy
+  load_and_authorize_resource
 
   def index
     @search = Category.includes(:products).ransack params[:q]

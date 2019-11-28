@@ -35,6 +35,18 @@ body {
   .nav-link:hover {
     color: $green;
   }
+  .navbar-nav {
+    align-items: center;
+  }
+  .img-locale {
+    display: flex;
+  }
+  .active {
+    color: $green;
+  }
+  .border-locale {
+    border: 1px solid $border;
+  }
 }
 .bg-1 {
   background: image-url('slide-1.jpg');
@@ -139,7 +151,7 @@ label {
     font-weight: bold;
     transition: 0.3s;
   }
-  .nav-link:hover {
+  .nav-link:hover, .active {
     background: #212121;
     color: $green;
   }
@@ -195,7 +207,7 @@ label {
 .detail {
   background: $white;
   padding: 1.5rem;
-  box-shadow: 1px 6px 5px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.4);
   input {
     text-align: center;
   }
@@ -207,7 +219,6 @@ label {
   vertical-align: unset;
 }
 .home-page {
-  background: $white;
   .component-1 {
     .col-md-6 {
       margin-top: 25px;
@@ -264,10 +275,10 @@ label {
     color: $black;
     border: 1px solid $border;
     transition: 0.3s;
+    font-weight: bold;
   }
-  .nav-link:hover {
-    color: $white;
-    background: $green;
+  .nav-link:hover, .active {
+    color: $green;
   }
   .glass {
     border: 1px solid $border;
@@ -279,7 +290,6 @@ label {
 }
 .store {
   padding-top: 25px;
-  background: $white;
 }
 .fix {
   .btn, .form-control {
@@ -318,7 +328,7 @@ label {
   padding: 0.5rem 2rem;
   margin-top: 2rem;
   background: $white;
-  box-shadow: 1px 6px 5px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.4);
   .text-center {
     margin-bottom: 0;
   }
@@ -327,10 +337,13 @@ label {
   padding: 2rem;
   margin-top: 2rem;
   background: $white;
-  box-shadow: 1px 6px 5px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.4);
 }
 .star-box .fa-star {
   color: $rating;
+}
+.fa-star-of-life {
+  color: $none_star;
 }
 .rating {
   .fa-star, .fa-star-half {
@@ -370,6 +383,10 @@ label {
     border-radius: 50%;
     margin-bottom: 15px;
   }
+  .img .img-fluid {
+    width: 100%;
+    height: auto
+  }
 }
 .img-in-user {
   width: 200px;
@@ -394,6 +411,10 @@ label {
     height: 24px;
     width: 24px;
   }
+}
+.three-action {
+  display: flex;
+  justify-content: space-between;
 }
 @media only screen and (max-width: 576px) {
   .alert {

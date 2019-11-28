@@ -4,12 +4,12 @@ class Order < ApplicationRecord
 
   FORMAT_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: FORMAT_EMAIL},
-      length: {maximum: Settings.size.of_email}, on: :update
+      length: {maximum: Settings.size.of_email}
   validates :name, presence: true,
-    length: {maximum: Settings.size.of_name}, on: :update
-  validates :phone, numericality: true, on: :update
-
-  before_create :set_default_payment
+    length: {maximum: Settings.size.of_name}
+  validates :phone, numericality: true
+  validates :address, presence: true, length: {maximum: Settings.size.address}
+  validates :payment_id, presence: true
 
   enum status_id: {place: 1, transport: 2, finish: 3}
 
@@ -17,10 +17,7 @@ class Order < ApplicationRecord
 
   scope :newest, ->{order "created_at DESC"}
   scope :by_user, ->(mail){where "email = ?", mail}
-
-  def set_default_payment
-    self.payment_id = 1
-  end
+  scope :progress, ->{order "status_id"}
 
   def send_email_for_customer
     OrderMailer.notice_customer(self).deliver_now
@@ -28,5 +25,13 @@ class Order < ApplicationRecord
 
   def send_email_for_admin
     AdminMailer.notice_admin(self).deliver_now
+  end
+
+  def send_email_transporting
+    OrderMailer.notice_transport(self).deliver_now
+  end
+
+  def send_email_finished
+    OrderMailer.notice_finished(self).deliver_now
   end
 end

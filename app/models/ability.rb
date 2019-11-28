@@ -2,6 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize user
+    can :read, [Product, Suggest]
     if user.present?
       can [:read, :update, :evaluates, :orders, :suggests], User, id: user.id
       can :manage, [Evaluate, Suggest], user_id: user.id

@@ -10,6 +10,8 @@ en:
       signup: sign up
       signin: sign in
       account: account
+    footer:
+      copyright: Initial by Thuc PT in 2019
   home:
     index:
       fruit: fruit
@@ -76,8 +78,8 @@ en:
         login: Sign in system
         signup: Sign up account
         forgot: Forgot your password?
-        confirmation: Confirmation account
-        unlock: Unlocks account
+        confirmation: Account confirmation
+        unlock: Unlock account
     unlocks:
       new:
         page: Resend unlock instructions
@@ -103,12 +105,14 @@ en:
       description: Description
       date: Date write
       action: Action
+      new: Create new suggest
     orders:
       name: Name
       email: Email
       address: Address
       phone: Phone
       status: Status
+      action: Action
     links:
       control: Dashboard
       update: Profile
@@ -285,10 +289,11 @@ en:
       updated: Updated quantity
       success: Added to cart
       too_much: Quantity too many
-      not_quantity: Quantity empty
+      incorrect: Quantity incorrect. Can't add to cart
     update_quantity:
       updated: Updated quantity
       not_found: Not found item in cart
+      incorrect: Quantity incorrect. Can't update
     destroy_item:
       success: Deleted
       not_found: Not found item in cart
@@ -310,6 +315,10 @@ en:
       total: Total
       page: History order
       can't_view: Can't view order
+      transport: Transport order
+      finishes: Order finished
+      edit: Edit order
+      cancel: Cancel order
     new:
       page: Order
       new: Confirm
@@ -375,6 +384,14 @@ en:
       fad: Foods and Drinks
       hello: Hello
       thank: Thank for your ordered
+    notice_transport:
+      fad: Foods and Drinks
+      hello: Hello
+      transporting: Transporting your order
+    notice_finished:
+      fad: Foods and Drinks
+      hello: Hello
+      finished: Your order finished
   admin_mailer:
     notice_admin:
       notice: fad notification
@@ -399,12 +416,15 @@ en:
     update:
       success: Update successful
       fail: can't update
+      not_found: Evaluate is not found
     destroy:
       success: Deleted
       fail: Can't delete
+      not_found: Evaluate is not found
     edit:
       edit: Edit comment
       submit: Save as
+      not_found: Evaluate is not found
   suggests:
     index:
       no_share: There is no sharing
@@ -436,6 +456,7 @@ en:
       admin_seen: Admin seen already
       admin_not_seen: Admin not seen
       seen: Click to seen
+      new: Create new suggest
     your_share:
       confirm: Are you sure?
     admin_view_new:

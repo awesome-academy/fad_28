@@ -1,31 +1,36 @@
-<% case avg.to_f.round(1) %>
-<% when 1 %>
+<% if avg == 0 %>
+  <i class="fa fa-star-of-life"></i>
+  <i class="fa fa-star-of-life"></i>
+  <i class="fa fa-star-of-life"></i>
+  <i class="fa fa-star-of-life"></i>
+  <i class="fa fa-star-of-life"></i>
+<% elsif avg < 1.3 %>
   <i class="fa fa-star"></i>
-<% when 1.5 %>
-  <i class="fa fa-star"></i>
-  <i class="fa fa-star-half"></i>
-<% when 2 %>
-  <i class="fa fa-star"></i>
-  <i class="fa fa-star"></i>
-<% when 2.5 %>
-  <i class="fa fa-star"></i>
+<% elsif avg < 1.8 %>
   <i class="fa fa-star"></i>
   <i class="fa fa-star-half"></i>
-<% when 3 %>
+<% elsif avg < 2.3 %>
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>
-  <i class="fa fa-star"></i>
-<% when 3.5 %>
-  <i class="fa fa-star"></i>
+<% elsif avg < 2.8 %>
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>
   <i class="fa fa-star-half"></i>
-<% when 4 %>
+<% elsif avg < 3.3 %>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+<% elsif avg < 3.8 %>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star-half"></i>
+<% elsif avg < 4.3 %>
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>
-<% when 4.5 %>
+<% elsif avg < 4.8 %>
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>
   <i class="fa fa-star"></i>

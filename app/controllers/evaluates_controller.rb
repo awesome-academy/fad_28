@@ -1,9 +1,9 @@
 class EvaluatesController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource
   before_action :load_data, only: :create
   before_action :load_evaluate, except: :create
   before_action :load_product, only: [:update, :destroy]
+  load_and_authorize_resource
 
   def edit; end
 
@@ -36,7 +36,7 @@ class EvaluatesController < ApplicationController
     else
       flash[:danger] = t ".fail"
     end
-    redirect_to product_path @product
+    redirect_back fallback_location: root_path
   end
 
   private
@@ -55,8 +55,8 @@ class EvaluatesController < ApplicationController
   def load_evaluate
     @evaluate = Evaluate.find_by id: params[:id]
     return if @evaluate
-    flash[:danger] = t ".fail"
-    redirect_to product_path @product
+    flash[:danger] = t ".not_found"
+    redirect_to root_path
   end
 
   def load_data

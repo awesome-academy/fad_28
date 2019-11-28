@@ -5,6 +5,15 @@
     </div>
     <div class="col-md-8">
       <%= render "users/links" %>
+      <div class="row">
+        <div class="col-md-8">
+          <%= render "share/filter", object: @search, url: suggests_user_path,
+            attributes: :product_name_or_description_or_user_name_cont %>
+        </div>
+        <div class="col-md-4">
+          <%= link_to t(".new"), new_suggest_path, class: "btn btn-success btn-lg btn-block" %>
+        </div>
+      </div>
       <% if @suggests.present? %>
         <table class="table">
           <tr>

@@ -1,4 +1,4 @@
-<%= search_form_for object, url: url do |f| %>
+<%= search_form_for object, url: url, name: :query do |f| %>
   <div class="input-group search-box">
     <div class="input-group-prepend">
       <%= f.button :submit, class: "btn btn-lg btn-success" do %>

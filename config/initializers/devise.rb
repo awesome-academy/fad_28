@@ -10,7 +10,12 @@ Devise.setup do |config|
   config.expire_all_remember_me_on_sign_out = true
   config.password_length = 6..128
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
-  config.reset_password_within = 6.hours
+  config.reset_password_within = 4.hours
+  config.confirm_within = 4.hours
+  config.maximum_attempts = 4
+  config.unlock_in = 3.days
+  config.last_attempt_warning = false
+  config.timeout_in = 4.hours
   config.sign_out_via = :delete
   config.scoped_views = true
   config.omniauth :google_oauth2, ENV["GOOGLE_APP_ID"], ENV["GOOGLE_APP_SECRET"]
