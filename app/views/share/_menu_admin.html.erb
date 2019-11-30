@@ -1,7 +1,8 @@
 <div class="menu">
   <ul class="nav flex-column">
     <li class="nav-items">
-      <%= link_to admin_path, class: "nav-link #{"active" if current_page? admin_path}" do %>
+      <%= link_to admin_index_path,
+        class: "nav-link #{"active" if current_page? admin_index_path}" do %>
         <i class="fa fa-undo-alt"></i>
         <%= t ".dashboard" %>
       <% end %>

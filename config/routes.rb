@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       end
     end
     resources :change_avatar, only: :update
-    get "admin", to: "admin#index"
+    resources :admin, only: :index do
+      collection do
+        get :orders_by_day, :orders_by_week, :orders_by_month, :orders_by_year
+      end
+    end
     resources :categories, except: :show
     resources :products
     resources :stores, only: :index do

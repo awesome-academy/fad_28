@@ -292,6 +292,37 @@ vi:
   admin:
     index:
       page: Quản lý
+      category: Số lượng thể loại
+      product: Số lượng sản phẩm
+    links:
+      dashboard: Bảng điều khiển
+      order_by_day: Đơn hàng theo ngày
+      order_by_week: Đơn hàng theo tuần
+      order_by_month: Đơn hàng theo tháng
+      order_by_year: Đơn hàng theo năm
+    orders_by_day:
+      order: Đơn hàng hoàn thành hôm nay
+      revenue: Doanh thu hôm nay
+      count_day: Số đơn hàng hoàn thành mỗi ngày
+      revenue_day: Doanh thu mỗi ngày
+    orders_by_week:
+      order: Đơn hàng hoàn thành tuần này
+      revenue: Doanh thu tuần này
+      count_week: Số đơn hàng hoàn thành mỗi tuần
+      revenue_day: Doanh thu mỗi tuần
+    orders_by_month:
+      order: Đơn hàng hoàn thành tháng này
+      revenue: Doanh thu tháng này
+      count_month: Số đơn hàng hoàn thành mỗi tháng
+      revenue_day: Doanh thu mỗi tháng
+    orders_by_year:
+      order: Đơn hàng hoàn thành năm nay
+      revenue: Doanh thu năm nay
+      count_year: Số đơn hàng hoàn thành mỗi năm
+      revenue_year: Doanh thu mỗi năm
+    other_info:
+      user: Số người dùng đang hoạt động
+      request: Yêu cầu chờ xử lý
   stores:
     filter:
       name: Tên sản phẩm

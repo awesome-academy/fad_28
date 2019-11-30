@@ -7,3 +7,5 @@
 //= require bootstrap
 //= require custom
 //= require social-share-button
+//= require chartkick
+//= require Chart.bundle

@@ -4,7 +4,33 @@
     <div class="col-md-2">
       <%= render "share/menu_admin" %>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 admin">
+      <%= render "admin/links" %>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="component-1">
+            <div>
+              <div class="text"><%= t ".category" %></div>
+              <div class="number">
+                <strong><%= @count_categories %></strong>
+              </div>
+            </div>
+            <div><i class="fa fa-indent fa-2x"></i></div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="component-2">
+            <div>
+              <div class="text"><%= t ".product" %></div>
+              <div class="number">
+                <strong><%= @count_products %></strong>
+              </div>
+            </div>
+            <div><i class="fa fa-balance-scale-right fa-2x"></i></div>
+          </div>
+        </div>
+        <%= render "admin/other_info" %>
+      </div>
     </div>
   </div>
 </div>

@@ -416,6 +416,51 @@ label {
   display: flex;
   justify-content: space-between;
 }
+.admin {
+  .component-1, .component-2, .component-3, .component-4 {
+    background: $white;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid $blue;
+    border-right: 4px solid $blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      color: $blue;
+      font-weight: bold;
+      font-size:14px;
+      margin-bottom: 10px;
+    }
+    .number {
+      font-size: 24px;
+    }
+  }
+  .fa {
+    color: $border;
+  }
+  .component-2 {
+    border-left: 4px solid $green_2;
+    border-right: 4px solid $green_2;
+    .text {
+      color: $green_2;
+    }
+  }
+  .component-3 {
+    border-left: 4px solid $orange;
+    border-right: 4px solid $orange;
+    .text {
+      color: $orange;
+    }
+  }
+  .component-4 {
+    border-left: 4px solid $light;
+    border-right: 4px solid $light;
+    .text {
+      color: $light;
+    }
+  }
+}
 @media only screen and (max-width: 576px) {
   .alert {
     width: 100%;
