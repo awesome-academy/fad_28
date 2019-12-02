@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2019_11_21_035944) do
+ActiveRecord::Schema.define(version: 2019_12_02_083230) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "parent_id"
     t.string "name"
@@ -105,10 +105,12 @@ ActiveRecord::Schema.define(version: 2019_11_21_035944) do
     t.datetime "locked_at"
     t.string "provider"
     t.string "uid"
+    t.string "slug"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
+    t.index ["slug"], name: "index_users_on_slug", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 

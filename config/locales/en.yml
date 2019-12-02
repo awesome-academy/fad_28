@@ -2,6 +2,7 @@ en:
   not_support: Language is not supported
   base: FAD
   exception: Can not access page
+  not_found: Can't find object
   layouts:
     header:
       home: home

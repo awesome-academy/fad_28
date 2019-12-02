@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @payment = Payment.new name: params[:payment][:name]
+    @payment = Payment.new payment_params
     if @payment.save
       flash[:success] = t ".success"
     else
@@ -22,7 +22,7 @@ class PaymentsController < ApplicationController
   end
 
   def update
-    if @payment.update name: params[:payment][:name]
+    if @payment.update payment_params
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".fail"
@@ -41,6 +41,10 @@ class PaymentsController < ApplicationController
 
   private
 
+  def payment_params
+    params.require(:payment).permit :name
+  end
+
   def load_payment
     @payment = Payment.find_by id: params[:id]
     return if @payment
@@ -50,7 +54,7 @@ class PaymentsController < ApplicationController
 
   def allow_destroy
     order_existing = @payment.orders
-    return unless order_existing
+    return if order_existing.empty?
     flash[:danger] = t ".fail"
     redirect_to payments_path
   end

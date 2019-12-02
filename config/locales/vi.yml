@@ -2,6 +2,7 @@ vi:
   not_support: Ngôn ngữ không được hỗ trợ
   base: FAD
   exception: Không thể truy cập trang
+  not_found: Không tìm thấy đối tượng
   layouts:
     header:
       home: trang chủ
