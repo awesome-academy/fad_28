@@ -263,6 +263,37 @@ en:
   admin:
     index:
       page: Manager
+      category: Number of categories
+      product: Number of products
+    links:
+      dashboard: Dashboard
+      order_by_day: Orders by day
+      order_by_week: Orders by week
+      order_by_month: Orders by month
+      order_by_year: Orders by year
+    orders_by_day:
+      order: Orders completed today
+      revenue: Revenue today
+      count_day: Number of completed orders for each day
+      revenue_day: Revenue every day
+    orders_by_week:
+      order: Orders completed this week
+      revenue: Revenue this week
+      count_week: Number of completed orders for each week
+      revenue_day: Revenue every week
+    orders_by_month:
+      order: Orders completed this month
+      revenue: Revenue this month
+      count_month: Number of completed orders for each month
+      revenue_day: Revenue every month
+    orders_by_year:
+      order: Orders completed this year
+      revenue: Revenue this year
+      count_year: Number of completed orders for each year
+      revenue_year: Revenue every year
+    other_info:
+      user: Number of users online
+      request: Pending request
   stores:
     filter:
       name: Product name

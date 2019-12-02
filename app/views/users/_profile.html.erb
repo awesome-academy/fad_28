@@ -10,7 +10,7 @@
   <h5><strong><%= t ".phone" %></strong> <%= user.phone %></h5>
   <h5><strong><%= t ".address" %></strong> <%= user.address %></h5>
   <% if user.admin? %>
-    <%= link_to t(".manager"), admin_path, class: "btn btn-lg btn-warning btn-block" %>
+    <%= link_to t(".manager"), admin_index_path, class: "btn btn-lg btn-warning btn-block" %>
   <% elsif user.customer? %>
     <h5><strong><%= t ".customer" %></strong></h5>
     <div class="progress">

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-md-2">
+      <%= render "share/menu_admin" %>
+    </div>
+    <div class="col-md-10 admin">
+      <%= render "admin/links" %>
+      <div class="row">
+        <%= render "admin/order_info", count: @count_orders, total: @total_price,
+          title1: t(".order"), title2: t(".revenue") %>
+        <%= render "admin/other_info" %>
+      </div>
+      <br>
+      <h5><%= t ".count_week" %></h5>
+      <%= line_chart @count_orders %>
+      <br>
+      <h5><%= t ".revenue_week" %></h5>
+      <%= column_chart @total_price %>
+      </div>
+    </div>
+  </div>
+</div>
