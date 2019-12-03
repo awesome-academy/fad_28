@@ -9,7 +9,7 @@
     </div>
     <div class="form-group"><%= f.file_field :image %></div>
     <div class="form-group">
-      <%= f.text_area :description, placeholder: t(".description"),
+      <%= f.cktext_area :description, placeholder: t(".description"),
         class: "form-control", rows: 5 %>
     </div>
     <div class="form-group text-center">
