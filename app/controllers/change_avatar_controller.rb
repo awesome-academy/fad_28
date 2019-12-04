@@ -1,14 +1,13 @@
 class ChangeAvatarController < ApplicationController
-  before_action :authenticate_user!, :load_user, :valid_params
+  before_action :authenticate_user!, :valid_params
 
   def update
-    authorize! :update, @user
-    if @user.update_attribute :image, params[:user][:image]
+    if current_user.update_attribute :image, params[:user][:image]
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".fail"
     end
-    redirect_to @user
+    redirect_back fallback_location: root_path
   end
 
   private

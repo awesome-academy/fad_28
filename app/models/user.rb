@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  extend FriendlyId
+
+  friendly_id :name, use: [:slugged, :finders]
+
   has_many :evaluates, dependent: :destroy
   has_many :suggests, dependent: :destroy
 
@@ -26,5 +30,9 @@ class User < ApplicationRecord
       user.uid = auth.uid
       user.skip_confirmation!
     end
+  end
+
+  def should_generate_new_friendly_id?
+    name_changed?
   end
 end

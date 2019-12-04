@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:danger] = I18n.t(".not_found")
+    redirect_to root_path
+  end
+
   def setup_cart
     session[:cart] ||= {}
     @cart = session[:cart]
@@ -16,13 +21,6 @@ class ApplicationController < ActionController::Base
 
   def only_admin
     return if current_user.admin?
-    redirect_to root_path
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-    flash[:danger] = t ".not_found"
     redirect_to root_path
   end
 
