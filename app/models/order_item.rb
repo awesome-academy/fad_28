@@ -9,4 +9,7 @@ class OrderItem < ApplicationRecord
       greater_than: Settings.smallest.of_quantity,
       less_than: Settings.biggest.of_quantity
     }
+  scope :by_products, (lambda do
+    group(:product_id).having("sum(quantity) > #{Settings.sum_quantity}")
+  end)
 end
