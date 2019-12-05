@@ -1,0 +1,27 @@
+<% provide :page, t(".page") %>
+<div class="container-fluid">
+  <div class="row row-fluid">
+    <div class="col-md-2">
+      <%= render "share/menu_admin" %>
+    </div>
+    <div class="col-md-10 admin">
+      <% if @trash_products.present? %>
+        <table class="table">
+          <tr class="text-center">
+            <th>#</th>
+            <th><%= t ".image" %></th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".category" %></th>
+            <th><%= t ".price" %></th>
+            <th><%= t ".discount" %></th>
+            <th><%= t ".after_discount" %></th>
+            <th><%= t ".sold_many" %></th>
+            <th><%= t ".action" %></th>
+          </tr>
+          <%= render @trash_products %>
+        </table>
+        <%= will_paginate @trash_products %>
+      <% end %>
+    </div>
+  </div>
+</div>

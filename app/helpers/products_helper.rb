@@ -20,4 +20,9 @@ module ProductsHelper
   def new_suggest
     Suggest.not_seen.size
   end
+
+  def load_limit_items
+    items = Settings.limit.to_h
+    options_for_select items.values
+  end
 end

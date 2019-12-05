@@ -9,3 +9,9 @@ $(document).ready(function() {
     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
   });
 });
+// auto submit form limit items
+$(document).ready(function() {
+  $("#show-limit").on("change", function(){
+    $(this).closest("form").trigger("submit");
+  });
+});

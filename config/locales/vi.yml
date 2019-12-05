@@ -206,6 +206,7 @@ vi:
       payment: Thanh toán
       suggests: Gợi ý
       signout: Đăng xuất
+      trash: Thùng rác
     filter:
       search_name: tìm kiếm...
     menu_stores:
@@ -246,8 +247,7 @@ vi:
       can't_delete: Không thể xóa danh mục sản phẩm hiện có
   products:
     product:
-      view: Xem
-      edit: Sửa
+      restore: Khôi phục
       delete: Xóa
       confirm: Bạn chắc chắn không?
     index:
@@ -261,6 +261,7 @@ vi:
       price: Đơn giá
       after_discount: Sau giảm giá
       action: Hoạt động
+      limit: Giới hạn mục
     new:
       page: Sản phẩm mới
     form:
@@ -268,14 +269,17 @@ vi:
       select: Chọn thể loại
     edit:
       page: Sửa sản phẩm
+      not_found: Không tìm thấy sản phẩm
     create:
       success: Tạo sản phẩm thành công
     update:
       success: Đã cập nhật
       fail: Cập nhật thất bại
+      not_found: Không tìm thấy sản phẩm
     destroy:
-      success: Đã xóa
-      fail: Không thể xóa
+      success: Đã đưa vào thùng rác
+      fail: Không thể đưa vào thùng rác
+      not_found: Không tìm thấy sản phẩm
     show:
       add: Giỏ hàng
       recently: Nhận xét gần đây
@@ -283,6 +287,15 @@ vi:
       signin: Đăng nhập
       no_comment: Chưa có bình luận ở đây
       count_rating: lượt đánh giá
+      not_found: Không tìm thấy sản phẩm
+    restore:
+      not_found: Không tìm thấy sản phẩm
+      restored: Đã khôi phục
+      fail: Không thể phục hồi
+    delete:
+      not_found: Không tìm thấy sản phẩm
+      deleted: Đã xóa
+      fail: Không thể xóa
   number:
     currency:
       format:
@@ -324,6 +337,16 @@ vi:
     other_info:
       user: Số người dùng đang hoạt động
       request: Yêu cầu chờ xử lý
+    trash:
+      page: Thùng rác
+      image: Hình ảnh
+      name: Tên
+      category: Thể loại
+      price: Đơn giá
+      discount: Giảm giá
+      after_discount: Sau giảm giá
+      sold_many: Bán nhiều
+      action: Hoạt động
   stores:
     filter:
       name: Tên sản phẩm
@@ -368,6 +391,7 @@ vi:
       phone: Số điện thoại
       status: Trạng thái
       next: Tiếp theo
+      limit: Giới hạn mục
     show:
       image: Hình ảnh
       name: Tên

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include ProductsHelper
+  include Pagy::Backend
 
   before_action :load_language, :setup_cart, :load_search_object
   before_action :config_params_devise, if: :devise_controller?

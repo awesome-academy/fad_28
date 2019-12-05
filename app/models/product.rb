@@ -12,6 +12,8 @@ class Product < ApplicationRecord
       less_than: Settings.biggest.of_discount
     }
 
+  acts_as_paranoid
+
   mount_uploader :image, ImageUploader
 
   scope :timeout_discount, ->{where "close_discount_at < ?", Time.zone.now}
@@ -20,4 +22,7 @@ class Product < ApplicationRecord
   scope :is_highlight, ->{where "sold_many = true"}
   scope :is_discount, ->{where "discount > 0"}
   scope :by_ids, ->(ids){where id: ids}
+  scope :toggle_sold_many, (lambda do
+    where "sold_many = 0 and id = ?", OrderItem.by_products.pluck(:product_id)
+  end)
 end
