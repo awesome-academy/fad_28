@@ -1,7 +1,7 @@
 <tr>
   <td><%= image_tag suggest.image.url, class: "img-in-user" %></td>
   <td><%= suggest.product_name %></td>
-  <td><%= suggest.description.truncate(Settings.truncate) %></td>
+  <td><%= raw suggest.description.truncate(Settings.truncate) %></td>
   <td><%= suggest.created_at.strftime("%d/%m/%Y") %></td>
   <td>
     <%= link_to suggest, class: "btn btn-info" do %>
