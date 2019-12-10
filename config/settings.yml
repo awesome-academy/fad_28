@@ -34,3 +34,14 @@ tops: 12
 max_quantity: 99
 truncate: 120
 requests: 100
+sum_quantity: 100
+
+# limit per_page
+limit:
+  five: 5
+  ten: 10
+  fifteen: 15
+  twenty: 20
+  thirty: 30
+  fourty: 40
+  fifty: 50

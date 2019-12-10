@@ -7,11 +7,18 @@
     <div class="col-md-10">
       <br>
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-2">
+          <%= search_form_for @search do |f| %>
+            <%= select_tag :item, load_limit_items, prompt: t(".limit"), id: "show-limit",
+              class: "form-control form-control-lg" %>
+          <% end %>
+        </div>
+        <br>
+        <div class="col-md-7">
           <%= render "share/filter", object: @search, url: products_path,
             attributes: :name_or_category_name_cont %>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <%= link_to t(".new"), new_product_path, class: "btn btn-success btn-block btn-lg" %>
         </div>
       </div>

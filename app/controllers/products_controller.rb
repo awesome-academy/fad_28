@@ -9,8 +9,8 @@ class ProductsController < ApplicationController
 
   def index
     @search = Product.includes(:category).ransack params[:q]
-    @products = @search.result.paginate page: params[:page],
-      per_page: Settings.items
+    @products = @search.result.page params[:page]
+    @products = @products.per_page params[:item].to_i if params[:item].present?
   end
 
   def show
@@ -52,10 +52,28 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def restore
+    if @product.restore recursive: true
+      flash[:success] = t ".restored"
+    else
+      flash[:danger] = t ".fail"
+    end
+    redirect_to trash_admin_index_path
+  end
+
+  def hard_destroy
+    if @product.really_destroy!
+      flash[:success] = t ".deleted"
+    else
+      flash[:danger] = t ".fail"
+    end
+    redirect_to trash_admin_index_path
+  end
+
   private
 
   def load_product
-    @product = Product.find_by id: params[:id]
+    @product = Product.with_deleted.find_by id: params[:id]
     return if @product
     flash[:danger] = t ".not_found"
     redirect_to products_path

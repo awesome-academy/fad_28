@@ -6,6 +6,9 @@
     <div class="col-md-10">
       <%= render "orders/links" %>
       <% if @orders.present? %>
+        <%= search_form_for @search do |f| %>
+          <%= select_tag :item, load_limit_items, id: "show-limit", prompt: t(".limit") %>
+        <% end %>
         <table class="table">
           <tr>
             <th>#</th>
@@ -18,7 +21,7 @@
           </tr>
           <%= render @orders %>
         </table>
-        <%= will_paginate @orders %>
+        <%== pagy_bootstrap_nav @pagy %>
       <% end %>
     </div>
   </div>

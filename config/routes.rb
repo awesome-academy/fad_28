@@ -14,10 +14,15 @@ Rails.application.routes.draw do
     resources :admin, only: :index do
       collection do
         get :orders_by_day, :orders_by_week, :orders_by_month, :orders_by_year
+        get :trash
       end
     end
     resources :categories, except: :show
-    resources :products
+    resources :products do
+      member do
+        get :restore, :hard_destroy
+      end
+    end
     resources :stores, only: :index do
       collection do
         get :food, :drink

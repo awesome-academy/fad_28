@@ -22,6 +22,11 @@ class AdminController < ApplicationController
     count_and_caculate_order Order.finish.group_by_year(:created_at)
   end
 
+  def trash
+    @trash_products = Product.only_deleted.paginate page: params[:page],
+      per_page: Settings.items
+  end
+
   private
 
   def count_and_caculate_order group_by_time

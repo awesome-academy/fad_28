@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2019_12_02_133826) do
+ActiveRecord::Schema.define(version: 2019_12_09_064627) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "parent_id"
     t.string "name"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_133826) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "remember_digest"
     t.string "name"
     t.text "address"
     t.string "email"
@@ -72,8 +71,10 @@ ActiveRecord::Schema.define(version: 2019_12_02_133826) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["created_at"], name: "index_products_on_created_at"
+    t.index ["deleted_at"], name: "index_products_on_deleted_at"
   end
 
   create_table "suggests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

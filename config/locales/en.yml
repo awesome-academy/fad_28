@@ -180,6 +180,7 @@ en:
       payment: Payments
       suggests: Suggests
       signout: Sign out
+      trash: Trash
     filter:
       search_name: search...
     menu_stores:
@@ -221,6 +222,8 @@ en:
   products:
     product:
       confirm: Are you sure?
+      restore: Restore
+      delete: Delete
     index:
       page: Product manage
       new: New product
@@ -232,6 +235,7 @@ en:
       after_discount: After discount
       sold_many: Sold many
       action: Action
+      limit: Limit items
     new:
       page: New product
     form:
@@ -239,14 +243,17 @@ en:
       select: Select category
     edit:
       page: Edit product
+      not_found: Product is not not_found
     create:
       success: Create product successful
     update:
       success: Updated
       fail: Update failure
+      not_found: Product is not not_found
     destroy:
-      success: Deleted
-      fail: Delete failure
+      success: Moved to trash
+      fail: Move to trash failure
+      not_found: Product is not not_found
     show:
       add: Add to cart
       recently: Comment recently
@@ -254,6 +261,15 @@ en:
       signin: Sign in
       no_comment: None have comment here
       count_rating: in turn rating
+      not_found: Product is not not_found
+    restore:
+      not_found: Product is not not_found
+      restored: Restored
+      fail: Can't restore
+    delete:
+      not_found: Product is not not_found
+      deleted: Deleted
+      fail: Can't delete
   number:
     currency:
       format:
@@ -295,6 +311,16 @@ en:
     other_info:
       user: Number of users online
       request: Pending request
+    trash:
+      image: Image
+      name: Name
+      category: Category
+      price: Price
+      discount: Discount
+      after_discount: After discount
+      sold_many: Sold many
+      action: Action
+      page: Trash
   stores:
     filter:
       name: Product name
@@ -339,6 +365,7 @@ en:
       phone: Phone
       status: Status
       next: Next
+      limit: Limit items
     show:
       image: Image
       name: Name
