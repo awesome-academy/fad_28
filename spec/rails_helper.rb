@@ -20,4 +20,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+  config.include(Shoulda::Matchers::ActionController,
+    {type: :model, file_path: /spec\/controllers/})
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
