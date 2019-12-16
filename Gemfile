@@ -39,6 +39,9 @@ gem "will_paginate-bootstrap4"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
+  gem "rspec-activemodel-mocks"
+  gem "rspec-rails"
   gem "rubocop", "~> 0.54.0", require: false
 end
 
@@ -52,5 +55,10 @@ end
 group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
+  gem "faker"
+  gem "guard-rspec"
+  gem "launchy"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
 end
